@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "name": "GenoTEX: A Benchmark Dataset for Automatic Exploration of Gene Expression Data",
+  "description": "GenoTEX is a comprehensive benchmark dataset designed for the automatic exploration and analysis of gene expression data. It includes over 150 CSV files, each recording gene expression profiles across multiple conditions and species. This dataset aims to facilitate the development and evaluation of machine learning models for gene expression data analysis.",
+  "creator": [
+    {
+      "@type": "Person",
+      "name": "Haoyang",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "University of Illinois at Urbana-Champaign"
+      }
+    }
+  ],
+  "keywords": [
+    "gene expression",
+    "benchmark dataset",
+    "automatic exploration",
+    "machine learning",
+    "bioinformatics"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "version": "1.0",
+  "funding": [
+    {
+      "@type": "MonetaryGrant",
+      "name": "Accelerate Foundation Models Research (AFMR) initiative",
+      "funder": {
+        "@type": "Organization",
+        "name": "AFMR Initiative"
+      }
+    }
+  ],
+  "publication": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Automatic Exploration of Gene Expression Data with Large Language Models",
+      "url": "https://doi.org/your-publication-url"
+    }
+  ],
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Global"
+  },
+  "temporalCoverage": "2023-2024"
+}

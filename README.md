@@ -12,8 +12,8 @@ Our recent paper introducing this dataset will be released soon. You can access 
 
 ## Download
 
-- [Input data](https://drive.google.com/link-to-input-data)
-- [Preprocessed data](https://drive.google.com/link-to-preprocessed-data)
+- [Input data](https://drive.google.com/drive/folders/1c45TUp5f8nkRbFa7LIIOJv2foN6yBX6c)
+- [Preprocessed data](https://drive.google.com/drive/folders/1T-ot3wwVHaAB1NiTesua-Tyqp8CXn7uQ)
 
 ## File Structure
 
