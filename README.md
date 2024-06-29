@@ -1,14 +1,15 @@
 # GenoTEX
 
-Welcome to the official repository for GenoTEX: a benchmark for the auTomatic EXploration of Genomics data. GenoTEX supports the evaluation and development of Large Language Model (LLM)-based methods for automating gene expression data analysis, including dataset selection, preprocessing, and statistical analysis.
+Welcome to the official repository of the **Geno**mics Data Au**t**omatic **Ex**ploration Benchmark (GenoTEX), described in our paper [here](https://arxiv.org/abs/2406.15341). GenoTEX supports the evaluation and development of Large Language Model (LLM)-based methods for automating gene expression data analysis, including dataset selection, preprocessing, and statistical analysis.
 
 ## Introduction
 
 GenoTEX offers annotated code and results for solving a variety of gene identification questions, organized in a comprehensive analysis pipeline that meets computational genomics standards. These annotations are curated by human bioinformaticians to ensure accuracy and reliability.
-
-Our recent paper introducing this dataset will be released soon. You can access the dataset and other resources from this repository to support your research and development in genomics data analysis.
+You can access the dataset and other resources from this repository to support your research and development in automatic gene data analysis.
 
 <img src="imgs/icon.webp" alt="Data Icon" width="200">
+
+Our work belongs to the general topic of AI4Science, where we show the potential and limitations of LLM-based agents in scientific explorations. 
 
 ## Download
 
@@ -54,5 +55,15 @@ Our recent paper introducing this dataset will be released soon. You can access 
     We welcome contributions to enhance GenoTEX. Please fork the repository, create a new branch for your feature or bug 
     fix, and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
 
+## Citation
+If you use GenoTEX in your research, please cite our paper using the following BibTeX entry:
+```
+@article{liu2024genotex,
+  title={GenoTEX: A Benchmark for Evaluating LLM-Based Exploration of Gene Expression Data in Alignment with Bioinformaticians},
+  author={Liu, Haoyang and Wang, Haohan},
+  journal={arXiv preprint arXiv:2406.15341},
+  year={2024}
+}
+```
 ## License
     This project is licensed under the Creative Commons (CC) license.
