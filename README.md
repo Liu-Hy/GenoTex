@@ -8,7 +8,7 @@ GenoTEX offers annotated code and results for solving a variety of gene identifi
 
 Our recent paper introducing this dataset will be released soon. You can access the dataset and other resources from this repository to support your research and development in genomics data analysis.
 
-<img src="imgs/icon.webp" alt="Data Icon" width="200">
+<img src="imgs/benchmark_curation.jpg" alt="Data Icon" width="1000">
 
 ## Download
 
