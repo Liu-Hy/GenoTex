@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f42d40ca-2cc5-439e-9264-44bb0abc9084" name="Changes" comment="update util functions" />
+    <list default="true" id="f42d40ca-2cc5-439e-9264-44bb0abc9084" name="Changes" comment="update figure" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,6 +82,7 @@
       <workItem from="1718225875461" duration="1228000" />
       <workItem from="1718234627043" duration="3976000" />
       <workItem from="1739750023719" duration="320000" />
+      <workItem from="1741899941970" duration="3264000" />
     </task>
     <task id="LOCAL-00001" summary="inital commit">
       <created>1718225127717</created>
@@ -125,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718237615776</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update figure">
+      <option name="closed" value="true" />
+      <created>1741900734649</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741900734649</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +156,7 @@
     <MESSAGE value="add metadata" />
     <MESSAGE value="add dataset document" />
     <MESSAGE value="write datasheet" />
-    <option name="LAST_COMMIT_MESSAGE" value="write datasheet" />
+    <MESSAGE value="update figure" />
+    <option name="LAST_COMMIT_MESSAGE" value="update figure" />
   </component>
 </project>
