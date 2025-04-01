@@ -6,6 +6,10 @@
   <span style="background-color: #f0f7ff; padding: 5px 10px; border-radius: 4px; font-weight: bold;">
     #AI4Science
   </span>
+  <br>
+  <a href="https://creativecommons.org/licenses/by/4.0/">
+    <img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" alt="License: CC BY 4.0">
+  </a>
 </div>
 
 GenoTEX (**Geno**mics Data Au**t**omatic **Ex**ploration Benchmark) is a benchmark dataset for the automated analysis of gene expression data to identify disease-associated genes while considering the influence of other biological factors. It provides annotated code and results for solving a wide range of gene identification problems, encompassing dataset selection, preprocessing, and statistical analysis, in a pipeline that follows computational genomics standards. The benchmark includes expert-curated annotations from bioinformaticians to ensure accuracy and reliability.
@@ -246,8 +250,4 @@ If you use GenoTEX in your research, please cite our paper:
 
 ## License
 
-The GenoTEX dataset is released under a Creative Commons Attribution 4.0 International (CC BY 4.0) license, which allows for broad usage while protecting the rights of the creators. The authors bear full responsibility for ensuring that the dataset adheres to this license and for any potential violations of rights.
-
-Throughout the curation process, we engaged in extensive discussions and consultations to address ethical considerations and legal requirements. We carefully examined each dataset to ensure the absence of personally identifiable information and compliance with all relevant standards. Our approach aims to ensure that GenoTEX meets the highest ethical and legal standards expected in the field of machine learning and computational genomics research.
-
-For more details, see the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/).
+The GenoTEX dataset is released under a Creative Commons Attribution 4.0 International (CC BY 4.0) license, which allows for broad usage while protecting the rights of the creators. The authors bear full responsibility for ensuring that the dataset adheres to this license and for any potential violations of rights. For the full license text, please see the [LICENSE.md](./LICENSE.md) file in this repository.
