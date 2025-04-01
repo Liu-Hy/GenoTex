@@ -1,7 +1,7 @@
 # GenoTEX: A Benchmark for Automated Gene Expression Data Analysis
 
 <div align="center">
-  <img src="./imgs/genotex_logo.webp" alt="GenoTEX Logo" width="150px"/>
+  <img src="./imgs/genotex_logo.png" alt="GenoTEX Logo" width="200px"/>
   <br>
   <span style="background-color: #f0f7ff; padding: 5px 10px; border-radius: 4px; font-weight: bold;">
     #AI4Science
