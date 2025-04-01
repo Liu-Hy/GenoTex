@@ -1,0 +1,41 @@
+2025-01-06 15:20:52,814 - INFO - Found 153 keywords to process
+2025-01-06 15:20:52,814 - INFO - Keywords: ['Breast Cancer', 'Kidney Papillary Cell Carcinoma', 'Kidney Clear Cell Carcinoma', 'Head and Neck Cancer', 'Glioblastoma', 'Esophageal Cancer', 'Endometrioid Cancer', 'Bladder Cancer', 'Retinoblastoma', 'Bile Duct Cancer', 'Adrenocortical Cancer', 'Acute Myeloid Leukemia', 'X-Linked Lymphoproliferative Syndrome', 'Von Hippel Lindau', 'Liver Cancer', 'Lower Grade Glioma', 'Large B-cell Lymphoma', 'Mesothelioma', 'Lung Cancer', 'Uterine Corpus Endometrial Carcinoma', 'Uterine Carcinosarcoma', 'Thymoma', 'Thyroid Cancer', 'Melanoma', 'Stomach Cancer', 'Sarcoma', 'Testicular Cancer', 'Rectal Cancer', 'Prostate Cancer', 'Pheochromocytoma and Paraganglioma', 'Pancreatic Cancer', 'Ovarian Cancer', 'Ocular Melanomas', 'Li-Fraumeni Syndrome', 'Cervical Cancer', 'Colon and Rectal Cancer', 'Kidney Chromophobe', 'lower grade glioma and glioblastoma', 'Atherosclerosis', 'Arrhythmia', 'Congestive heart failure', 'von Willebrand Disease', 'Coronary artery disease', 'Hypertension', 'Atrial Fibrillation', 'High-Density Lipoprotein Deficiency', 'Cardiovascular Disease', 'Essential Thrombocythemia', 'Hypertrophic Cardiomyopathy', 'Creutzfeldt-Jakob Disease', 'Stroke', 'Migraine', 'Epilepsy', "Huntington's Disease", "Parkinson's Disease", 'Autism spectrum disorder (ASD)', 'Amyotrophic Lateral Sclerosis', 'Attention deficit hyperactivity disorder (ADHD)', 'Schizophrenia', 'Bipolar disorder', 'Anxiety disorder', 'Insomnia', 'Multiple sclerosis', "Alzheimer's Disease", 'Substance Use Disorder', 'Obsessive-Compulsive Disorder', 'Charcot-Marie-Tooth Disease', 'Angelman Syndrome', 'Canavan Disease', 'Multiple Chemical Sensitivity', 'Tourette Syndrome', 'Depression', 'Chronic Fatigue Syndrome', 'Post-Traumatic Stress Disorder', 'Anorexia Nervosa', 'Generalized Anxiety Disorder', 'Osteoporosis', 'Chronic kidney disease', 'Hemochromatosis', 'Werner Syndrome', 'Liver cirrhosis', 'Polycystic Kidney Disease', 'Mitochondrial Disorders', 'Glucocorticoid Sensitivity', 'Metabolic Rate', 'Polycystic Ovary Syndrome', 'Type 1 Diabetes Risk', 'Hepatitis', 'Obesity', 'Hypothyroidism', 'Alopecia', 'Gaucher Disease', 'Cystic Fibrosis', 'Sickle Cell Anemia', 'Duchenne Muscular Dystrophy', 'Tuberous Sclerosis', 'Non-Syndromic Hearing Loss', 'Aniridia', 'Hutchinson-Gilford Progeria Syndrome', 'Spinal Muscular Atrophy', 'Multiple Endocrine Neoplasia Type 2', 'DNA Repair Capacity', 'Autoinflammatory Disorders', 'Intellectual Disability', 'Telomere Length', 'Brugada Syndrome', 'Androgen Insensitivity Syndrome', 'DiGeorge Syndrome', 'Craniosynostosis', 'Congenital Adrenal Hyperplasia', 'Inflammatory Disorders', "Crohn's Disease", 'Peptic ulcer disease', 'Celiac Disease', 'Irritable bowel syndrome (IBS)', 'Gastroesophageal reflux disease (GERD)', 'Asthma', 'Chronic obstructive pulmonary disease (COPD)', 'Obstructive sleep apnea', 'COVID-19', 'Osteoarthritis', "Sjögren's Syndrome", 'Psoriatic Arthritis', 'Ankylosing Spondylitis', "Paget's Disease of bone", 'Rheumatoid Arthritis', 'Lupus (Systemic Lupus Erythematosus', 'Eczema', 'Endometriosis', 'Age-Related Macular Degeneration', 'Bone Density', 'Physical Exercise Response', 'Longevity and Aging', 'Fibromyalgia', 'Psoriasis', 'Red Hair', 'Kidney stones', 'Allergies', 'Underweight', 'Heart rate', 'HIV Resistance', 'Lactose Intolerance', 'Poor Metabolizer of Drugs', 'Height', 'Susceptibility to Infections', 'Cognitive Processing', 'Social Behavior', 'Alcohol Flush Reaction', 'Blood Type', 'Vitamin D Levels', 'LDL Cholesterol Levels', 'Pain Sensitivity', 'Language Abilities']
+2025-01-06 15:20:52,814 - ERROR - Error reading checkpoint, starting from beginning: [Errno 2] No such file or directory: './GEO_data_download_Checkpoint.txt'
+Traceback (most recent call last):
+  File "/home/techt/Desktop/GenoAgent/download/download_GEO_data.py", line 51, in checkpoint_read
+    with open(path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './GEO_data_download_Checkpoint.txt'
+
+2025-01-06 15:20:52,816 - INFO - 
+Processing trait (1/153): Breast Cancer
+2025-01-06 15:20:52,816 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Breast Cancer) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-06 15:20:53,265 - INFO - Total results for query: 1316
+2025-01-06 15:20:53,265 - INFO - Fetching batch 1 of 14 (size: 100)
+2025-01-06 15:20:53,574 - INFO - Successfully retrieved 100 IDs in batch 1
+2025-01-06 15:20:54,075 - INFO - Fetching batch 2 of 14 (size: 100)
+2025-01-06 15:20:54,390 - INFO - Successfully retrieved 100 IDs in batch 2
+2025-01-06 15:20:54,890 - INFO - Fetching batch 3 of 14 (size: 100)
+2025-01-06 15:20:55,072 - INFO - Successfully retrieved 100 IDs in batch 3
+2025-01-06 15:20:55,572 - INFO - Fetching batch 4 of 14 (size: 100)
+2025-01-06 15:20:55,753 - INFO - Successfully retrieved 100 IDs in batch 4
+2025-01-06 15:20:56,254 - INFO - Fetching batch 5 of 14 (size: 100)
+2025-01-06 15:20:56,438 - INFO - Successfully retrieved 100 IDs in batch 5
+2025-01-06 15:20:56,938 - INFO - Fetching batch 6 of 14 (size: 100)
+2025-01-06 15:20:57,177 - INFO - Successfully retrieved 100 IDs in batch 6
+2025-01-06 15:20:57,678 - INFO - Fetching batch 7 of 14 (size: 100)
+2025-01-06 15:20:57,858 - INFO - Successfully retrieved 100 IDs in batch 7
+2025-01-06 15:20:58,359 - INFO - Fetching batch 8 of 14 (size: 100)
+2025-01-06 15:20:58,557 - INFO - Successfully retrieved 100 IDs in batch 8
+2025-01-06 15:20:59,058 - INFO - Fetching batch 9 of 14 (size: 100)
+2025-01-06 15:21:00,010 - INFO - Successfully retrieved 100 IDs in batch 9
+2025-01-06 15:21:00,511 - INFO - Fetching batch 10 of 14 (size: 100)
+2025-01-06 15:21:00,957 - INFO - Successfully retrieved 100 IDs in batch 10
+2025-01-06 15:21:01,458 - INFO - Fetching batch 11 of 14 (size: 100)
+2025-01-06 15:21:01,756 - INFO - Successfully retrieved 100 IDs in batch 11
+2025-01-06 15:21:02,257 - INFO - Fetching batch 12 of 14 (size: 100)
+2025-01-06 15:21:02,701 - INFO - Successfully retrieved 100 IDs in batch 12
+2025-01-06 15:21:03,202 - INFO - Fetching batch 13 of 14 (size: 100)
+2025-01-06 15:21:03,908 - INFO - Successfully retrieved 100 IDs in batch 13
+2025-01-06 15:21:04,408 - INFO - Fetching batch 14 of 14 (size: 16)
+2025-01-06 15:21:05,442 - INFO - Successfully retrieved 16 IDs in batch 14
+2025-01-06 15:21:05,442 - INFO - Found 1316 datasets for: Breast Cancer

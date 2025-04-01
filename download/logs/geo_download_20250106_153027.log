@@ -1,0 +1,630 @@
+2025-01-06 15:30:27,828 - INFO - Found 153 keywords to process
+2025-01-06 15:30:27,829 - INFO - Keywords: ['Breast Cancer', 'Kidney Papillary Cell Carcinoma', 'Kidney Clear Cell Carcinoma', 'Head and Neck Cancer', 'Glioblastoma', 'Esophageal Cancer', 'Endometrioid Cancer', 'Bladder Cancer', 'Retinoblastoma', 'Bile Duct Cancer', 'Adrenocortical Cancer', 'Acute Myeloid Leukemia', 'X-Linked Lymphoproliferative Syndrome', 'Von Hippel Lindau', 'Liver Cancer', 'Lower Grade Glioma', 'Large B-cell Lymphoma', 'Mesothelioma', 'Lung Cancer', 'Uterine Corpus Endometrial Carcinoma', 'Uterine Carcinosarcoma', 'Thymoma', 'Thyroid Cancer', 'Melanoma', 'Stomach Cancer', 'Sarcoma', 'Testicular Cancer', 'Rectal Cancer', 'Prostate Cancer', 'Pheochromocytoma and Paraganglioma', 'Pancreatic Cancer', 'Ovarian Cancer', 'Ocular Melanomas', 'Li-Fraumeni Syndrome', 'Cervical Cancer', 'Colon and Rectal Cancer', 'Kidney Chromophobe', 'lower grade glioma and glioblastoma', 'Atherosclerosis', 'Arrhythmia', 'Congestive heart failure', 'von Willebrand Disease', 'Coronary artery disease', 'Hypertension', 'Atrial Fibrillation', 'High-Density Lipoprotein Deficiency', 'Cardiovascular Disease', 'Essential Thrombocythemia', 'Hypertrophic Cardiomyopathy', 'Creutzfeldt-Jakob Disease', 'Stroke', 'Migraine', 'Epilepsy', "Huntington's Disease", "Parkinson's Disease", 'Autism spectrum disorder (ASD)', 'Amyotrophic Lateral Sclerosis', 'Attention deficit hyperactivity disorder (ADHD)', 'Schizophrenia', 'Bipolar disorder', 'Anxiety disorder', 'Insomnia', 'Multiple sclerosis', "Alzheimer's Disease", 'Substance Use Disorder', 'Obsessive-Compulsive Disorder', 'Charcot-Marie-Tooth Disease', 'Angelman Syndrome', 'Canavan Disease', 'Multiple Chemical Sensitivity', 'Tourette Syndrome', 'Depression', 'Chronic Fatigue Syndrome', 'Post-Traumatic Stress Disorder', 'Anorexia Nervosa', 'Generalized Anxiety Disorder', 'Osteoporosis', 'Chronic kidney disease', 'Hemochromatosis', 'Werner Syndrome', 'Liver cirrhosis', 'Polycystic Kidney Disease', 'Mitochondrial Disorders', 'Glucocorticoid Sensitivity', 'Metabolic Rate', 'Polycystic Ovary Syndrome', 'Type 1 Diabetes Risk', 'Hepatitis', 'Obesity', 'Hypothyroidism', 'Alopecia', 'Gaucher Disease', 'Cystic Fibrosis', 'Sickle Cell Anemia', 'Duchenne Muscular Dystrophy', 'Tuberous Sclerosis', 'Non-Syndromic Hearing Loss', 'Aniridia', 'Hutchinson-Gilford Progeria Syndrome', 'Spinal Muscular Atrophy', 'Multiple Endocrine Neoplasia Type 2', 'DNA Repair Capacity', 'Autoinflammatory Disorders', 'Intellectual Disability', 'Telomere Length', 'Brugada Syndrome', 'Androgen Insensitivity Syndrome', 'DiGeorge Syndrome', 'Craniosynostosis', 'Congenital Adrenal Hyperplasia', 'Inflammatory Disorders', "Crohn's Disease", 'Peptic ulcer disease', 'Celiac Disease', 'Irritable bowel syndrome (IBS)', 'Gastroesophageal reflux disease (GERD)', 'Asthma', 'Chronic obstructive pulmonary disease (COPD)', 'Obstructive sleep apnea', 'COVID-19', 'Osteoarthritis', "Sjögren's Syndrome", 'Psoriatic Arthritis', 'Ankylosing Spondylitis', "Paget's Disease of bone", 'Rheumatoid Arthritis', 'Lupus (Systemic Lupus Erythematosus', 'Eczema', 'Endometriosis', 'Age-Related Macular Degeneration', 'Bone Density', 'Physical Exercise Response', 'Longevity and Aging', 'Fibromyalgia', 'Psoriasis', 'Red Hair', 'Kidney stones', 'Allergies', 'Underweight', 'Heart rate', 'HIV Resistance', 'Lactose Intolerance', 'Poor Metabolizer of Drugs', 'Height', 'Susceptibility to Infections', 'Cognitive Processing', 'Social Behavior', 'Alcohol Flush Reaction', 'Blood Type', 'Vitamin D Levels', 'LDL Cholesterol Levels', 'Pain Sensitivity', 'Language Abilities']
+2025-01-06 15:30:27,829 - ERROR - Error reading checkpoint, starting from beginning: [Errno 2] No such file or directory: './GEO_data_download_Checkpoint.txt'
+Traceback (most recent call last):
+  File "/home/techt/Desktop/GenoAgent/download/download_GEO_data.py", line 51, in checkpoint_read
+    with open(path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './GEO_data_download_Checkpoint.txt'
+
+2025-01-06 15:30:27,831 - INFO - 
+Processing trait (1/153): Breast Cancer
+2025-01-06 15:30:27,831 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Breast Cancer) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-06 15:30:28,333 - INFO - Total results for query: 1316
+2025-01-06 15:30:28,333 - INFO - Limiting results to user-specified maximum: 200
+2025-01-06 15:30:28,333 - INFO - Fetching batch 1 of 2 (size: 100)
+2025-01-06 15:30:28,535 - INFO - Successfully retrieved 100 IDs in batch 1
+2025-01-06 15:30:29,036 - INFO - Fetching batch 2 of 2 (size: 100)
+2025-01-06 15:30:29,328 - INFO - Successfully retrieved 100 IDs in batch 2
+2025-01-06 15:30:29,328 - INFO - Found 200 datasets for: Breast Cancer
+2025-01-06 15:31:18,677 - INFO - Successfully processed 200 datasets for: Breast Cancer
+2025-01-06 15:31:19,941 - ERROR - Error reading checkpoint, starting from beginning: [Errno 2] No such file or directory: './GEO_data_download_Checkpoint.txt'
+Traceback (most recent call last):
+  File "/home/techt/Desktop/GenoAgent/download/download_GEO_data.py", line 51, in checkpoint_read
+    with open(path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './GEO_data_download_Checkpoint.txt'
+
+2025-01-06 15:31:20,755 - INFO - Family file GSE285765_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:20,755 - INFO - No suitable gene expression data in series 0 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:21,566 - INFO - Family file GSE253239_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:21,566 - INFO - No suitable gene expression data in series 1 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:22,432 - INFO - Family file GSE268201_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:22,432 - INFO - No suitable gene expression data in series 2 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:23,226 - INFO - Family file GSE243526_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:23,226 - INFO - No suitable gene expression data in series 3 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:24,033 - INFO - Family file GSE237728_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:24,033 - INFO - No suitable gene expression data in series 4 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:24,646 - INFO - Matrix file GSE283522_series_matrix.txt.gz is available with size 0.12 MB
+2025-01-06 15:31:24,939 - INFO - Family file GSE283522_family.soft.gz is available with size 0.26 MB
+2025-01-06 15:31:25,249 - INFO - Successfully downloaded: GSE283522_series_matrix.txt.gz
+2025-01-06 15:31:25,618 - INFO - Successfully downloaded: GSE283522_family.soft.gz
+2025-01-06 15:31:25,618 - INFO - Downloaded: ['GSE283522_series_matrix.txt.gz'] and ['GSE283522_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:31:25,618 - ERROR - Error reading checkpoint, starting from beginning: [Errno 2] No such file or directory: './GEO_data_download_Checkpoint.txt'
+Traceback (most recent call last):
+  File "/home/techt/Desktop/GenoAgent/download/download_GEO_data.py", line 51, in checkpoint_read
+    with open(path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './GEO_data_download_Checkpoint.txt'
+
+2025-01-06 15:31:26,150 - INFO - Matrix file GSE270721_series_matrix.txt.gz is available with size 3.30 MB
+2025-01-06 15:31:26,441 - INFO - Family file GSE270721_family.soft.gz is available with size 22.76 MB
+2025-01-06 15:31:27,021 - INFO - Successfully downloaded: GSE270721_series_matrix.txt.gz
+2025-01-06 15:31:28,604 - INFO - Successfully downloaded: GSE270721_family.soft.gz
+2025-01-06 15:31:28,604 - INFO - Downloaded: ['GSE270721_series_matrix.txt.gz'] and ['GSE270721_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:31:29,466 - INFO - Family file GSE283737_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:29,466 - INFO - No suitable gene expression data in series 7 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:30,344 - INFO - Family file GSE211434_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:30,344 - INFO - No suitable gene expression data in series 8 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:31,166 - INFO - Family file GSE278241_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:31,166 - INFO - No suitable gene expression data in series 9 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:31,973 - INFO - Family file GSE282835_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:31,973 - INFO - No suitable gene expression data in series 10 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:32,779 - INFO - Family file GSE281303_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:32,779 - INFO - No suitable gene expression data in series 11 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:33,642 - INFO - Family file GSE224986_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:33,642 - INFO - No suitable gene expression data in series 12 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:34,428 - INFO - Family file GSE281302_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:34,428 - INFO - No suitable gene expression data in series 13 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:35,233 - INFO - Family file GSE279137_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:35,233 - INFO - No suitable gene expression data in series 14 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:36,016 - INFO - Family file GSE271325_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:36,016 - INFO - No suitable gene expression data in series 15 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:36,890 - INFO - Family file GSE262009_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:36,890 - INFO - No suitable gene expression data in series 16 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:37,777 - INFO - Family file GSE274731_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:37,777 - INFO - No suitable gene expression data in series 17 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:38,584 - INFO - Family file GSE274720_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:38,585 - INFO - No suitable gene expression data in series 18 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:39,474 - INFO - Family file GSE259252_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:39,474 - INFO - No suitable gene expression data in series 19 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:40,334 - INFO - Family file GSE259249_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:40,335 - INFO - No suitable gene expression data in series 20 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:41,175 - INFO - Family file GSE276108_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:41,175 - INFO - No suitable gene expression data in series 21 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:42,039 - INFO - Family file GSE244631_family.soft.gz is available with size 0.17 MB
+2025-01-06 15:31:42,040 - INFO - No suitable gene expression data in series 22 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:42,928 - INFO - Family file GSE268426_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:42,928 - INFO - No suitable gene expression data in series 23 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:43,763 - INFO - Family file GSE277758_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:43,763 - INFO - No suitable gene expression data in series 24 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:44,571 - INFO - Family file GSE278183_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:44,571 - INFO - No suitable gene expression data in series 25 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:45,442 - INFO - Family file GSE246219_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:45,442 - INFO - No suitable gene expression data in series 26 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:46,255 - INFO - Family file GSE246215_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:46,255 - INFO - No suitable gene expression data in series 27 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:47,072 - INFO - Family file GSE245467_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:47,072 - INFO - No suitable gene expression data in series 28 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:48,046 - INFO - No suitable gene expression data in series 29 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:48,877 - INFO - Family file GSE271332_family.soft.gz is available with size 0.03 MB
+2025-01-06 15:31:48,877 - INFO - No suitable gene expression data in series 30 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:49,687 - INFO - Family file GSE255359_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:49,687 - INFO - No suitable gene expression data in series 31 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:50,508 - INFO - Family file GSE245700_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:50,508 - INFO - No suitable gene expression data in series 32 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:51,318 - INFO - Family file GSE234328_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:51,318 - INFO - No suitable gene expression data in series 33 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:52,119 - INFO - Family file GSE234324_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:52,119 - INFO - No suitable gene expression data in series 34 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:53,109 - INFO - Family file GSE195611_family.soft.gz is available with size 0.02 MB
+2025-01-06 15:31:53,109 - INFO - No suitable gene expression data in series 35 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:53,943 - INFO - Family file GSE272455_family.soft.gz is available with size 0.05 MB
+2025-01-06 15:31:53,943 - INFO - No suitable gene expression data in series 36 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:54,800 - INFO - Family file GSE214094_family.soft.gz is available with size 0.02 MB
+2025-01-06 15:31:54,800 - INFO - No suitable gene expression data in series 37 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:55,642 - INFO - Family file GSE214093_family.soft.gz is available with size 0.02 MB
+2025-01-06 15:31:55,642 - INFO - No suitable gene expression data in series 38 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:56,444 - INFO - Family file GSE252145_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:56,445 - INFO - No suitable gene expression data in series 39 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:57,232 - INFO - Family file GSE251710_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:31:57,233 - INFO - No suitable gene expression data in series 40 (200 series for trait Breast Cancer in total)
+2025-01-06 15:31:58,924 - INFO - Family file GSE271080_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:31:58,924 - INFO - No suitable gene expression data in series 41 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:00,577 - INFO - Family file GSE263089_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:00,577 - INFO - No suitable gene expression data in series 42 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:02,435 - INFO - Family file GSE264630_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:02,435 - INFO - No suitable gene expression data in series 43 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:05,715 - INFO - Family file GSE224322_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:05,716 - INFO - No suitable gene expression data in series 44 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:09,240 - INFO - Family file GSE237784_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:09,240 - INFO - No suitable gene expression data in series 45 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:10,470 - INFO - Family file GSE213841_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:10,470 - INFO - No suitable gene expression data in series 46 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:11,314 - INFO - Family file GSE266011_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:11,314 - INFO - No suitable gene expression data in series 47 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:12,135 - INFO - Family file GSE266013_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:12,135 - INFO - No suitable gene expression data in series 48 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:13,209 - INFO - No suitable gene expression data in series 49 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:14,006 - INFO - Family file GSE264120_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:14,006 - INFO - No suitable gene expression data in series 50 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:14,823 - INFO - Family file GSE234519_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:14,824 - INFO - No suitable gene expression data in series 51 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:15,634 - INFO - Family file GSE268514_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:15,634 - INFO - No suitable gene expression data in series 52 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:16,464 - INFO - Family file GSE266932_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:16,464 - INFO - No suitable gene expression data in series 53 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:17,328 - INFO - Family file GSE231483_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:17,328 - INFO - No suitable gene expression data in series 54 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:18,127 - INFO - Family file GSE241309_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:18,127 - INFO - No suitable gene expression data in series 55 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:18,929 - INFO - Family file GSE264252_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:18,930 - INFO - No suitable gene expression data in series 56 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:19,792 - INFO - Family file GSE266408_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:19,792 - INFO - No suitable gene expression data in series 57 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:20,889 - INFO - Family file GSE184731_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:20,889 - INFO - No suitable gene expression data in series 58 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:21,729 - INFO - Family file GSE249574_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:21,729 - INFO - No suitable gene expression data in series 59 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:22,527 - INFO - Family file GSE249573_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:22,527 - INFO - No suitable gene expression data in series 60 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:23,326 - INFO - Family file GSE234185_family.soft.gz is available with size 0.03 MB
+2025-01-06 15:32:23,326 - INFO - No suitable gene expression data in series 61 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:24,126 - INFO - Family file GSE234181_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:24,126 - INFO - No suitable gene expression data in series 62 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:24,915 - INFO - Family file GSE234173_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:24,915 - INFO - No suitable gene expression data in series 63 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:25,744 - INFO - Family file GSE234171_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:25,744 - INFO - No suitable gene expression data in series 64 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:26,535 - INFO - Family file GSE253650_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:26,535 - INFO - No suitable gene expression data in series 65 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:27,329 - INFO - Family file GSE220051_family.soft.gz is available with size 0.03 MB
+2025-01-06 15:32:27,329 - INFO - No suitable gene expression data in series 66 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:28,140 - INFO - Family file GSE243884_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:28,141 - INFO - No suitable gene expression data in series 67 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:28,942 - INFO - Family file GSE227679_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:28,942 - INFO - No suitable gene expression data in series 68 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:29,798 - INFO - Family file GSE255393_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:29,798 - INFO - No suitable gene expression data in series 69 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:30,627 - INFO - Family file GSE262110_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:30,627 - INFO - No suitable gene expression data in series 70 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:31,405 - INFO - Family file GSE260693_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:31,405 - INFO - No suitable gene expression data in series 71 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:32,206 - INFO - Family file GSE235201_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:32,206 - INFO - No suitable gene expression data in series 72 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:33,023 - INFO - Family file GSE243375_family.soft.gz is available with size 0.02 MB
+2025-01-06 15:32:33,023 - INFO - No suitable gene expression data in series 73 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:33,836 - INFO - Family file GSE240671_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:33,836 - INFO - No suitable gene expression data in series 74 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:34,634 - INFO - Family file GSE237607_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:34,634 - INFO - No suitable gene expression data in series 75 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:35,426 - INFO - Family file GSE237606_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:35,426 - INFO - No suitable gene expression data in series 76 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:36,226 - INFO - Family file GSE230362_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:36,226 - INFO - No suitable gene expression data in series 77 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:37,164 - INFO - Family file GSE254034_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:37,164 - INFO - No suitable gene expression data in series 78 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:37,957 - INFO - Family file GSE254461_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:37,957 - INFO - No suitable gene expression data in series 79 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:38,763 - INFO - Family file GSE243674_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:38,763 - INFO - No suitable gene expression data in series 80 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:39,569 - INFO - Family file GSE243122_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:39,569 - INFO - No suitable gene expression data in series 81 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:40,364 - INFO - Family file GSE233242_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:40,364 - INFO - No suitable gene expression data in series 82 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:41,254 - INFO - Matrix file GSE153316_series_matrix.txt.gz is available with size 3.17 MB
+2025-01-06 15:32:41,635 - INFO - Family file GSE153316_family.soft.gz is available with size 16.26 MB
+2025-01-06 15:32:42,921 - INFO - Successfully downloaded: GSE153316_series_matrix.txt.gz
+2025-01-06 15:32:45,980 - INFO - Successfully downloaded: GSE153316_family.soft.gz
+2025-01-06 15:32:45,980 - INFO - Downloaded: ['GSE153316_series_matrix.txt.gz'] and ['GSE153316_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:32:46,763 - INFO - Family file GSE252944_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:46,763 - INFO - No suitable gene expression data in series 84 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:47,625 - INFO - Family file GSE236750_family.soft.gz is available with size 0.02 MB
+2025-01-06 15:32:47,626 - INFO - No suitable gene expression data in series 85 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:48,483 - INFO - Family file GSE236749_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:48,483 - INFO - No suitable gene expression data in series 86 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:49,290 - INFO - Family file GSE235052_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:49,290 - INFO - No suitable gene expression data in series 87 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:50,343 - ERROR - Error processing series 88: 
+Traceback (most recent call last):
+  File "/home/techt/Desktop/GenoAgent/download/download_GEO_data.py", line 321, in download_trait_data
+    family_file_list = ftp.nlst()
+  File "/home/techt/anaconda3/envs/agent/lib/python3.10/ftplib.py", line 553, in nlst
+    self.retrlines(cmd, files.append)
+  File "/home/techt/anaconda3/envs/agent/lib/python3.10/ftplib.py", line 462, in retrlines
+    with self.transfercmd(cmd) as conn, \
+  File "/home/techt/anaconda3/envs/agent/lib/python3.10/ftplib.py", line 393, in transfercmd
+    return self.ntransfercmd(cmd, rest)[0]
+  File "/home/techt/anaconda3/envs/agent/lib/python3.10/ftplib.py", line 359, in ntransfercmd
+    resp = self.sendcmd(cmd)
+  File "/home/techt/anaconda3/envs/agent/lib/python3.10/ftplib.py", line 281, in sendcmd
+    return self.getresp()
+  File "/home/techt/anaconda3/envs/agent/lib/python3.10/ftplib.py", line 244, in getresp
+    resp = self.getmultiline()
+  File "/home/techt/anaconda3/envs/agent/lib/python3.10/ftplib.py", line 230, in getmultiline
+    line = self.getline()
+  File "/home/techt/anaconda3/envs/agent/lib/python3.10/ftplib.py", line 218, in getline
+    raise EOFError
+EOFError
+
+2025-01-06 15:32:51,522 - INFO - Family file GSE246613_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:51,522 - INFO - No suitable gene expression data in series 89 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:52,326 - INFO - Family file GSE245417_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:52,326 - INFO - No suitable gene expression data in series 90 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:53,775 - INFO - Family file GSE201443_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:53,775 - INFO - No suitable gene expression data in series 91 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:54,890 - INFO - Family file GSE176010_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:32:54,891 - INFO - No suitable gene expression data in series 92 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:55,694 - INFO - Family file GSE249723_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:55,694 - INFO - No suitable gene expression data in series 93 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:56,568 - INFO - Family file GSE229062_family.soft.gz is available with size 0.02 MB
+2025-01-06 15:32:56,568 - INFO - No suitable gene expression data in series 94 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:57,078 - INFO - Matrix file GSE249377_series_matrix.txt.gz is available with size 0.36 MB
+2025-01-06 15:32:57,385 - INFO - Family file GSE249377_family.soft.gz is available with size 0.68 MB
+2025-01-06 15:32:57,795 - INFO - Successfully downloaded: GSE249377_series_matrix.txt.gz
+2025-01-06 15:32:58,221 - INFO - Successfully downloaded: GSE249377_family.soft.gz
+2025-01-06 15:32:58,221 - INFO - Downloaded: ['GSE249377_series_matrix.txt.gz'] and ['GSE249377_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:32:58,998 - INFO - Family file GSE216530_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:32:58,999 - INFO - No suitable gene expression data in series 96 (200 series for trait Breast Cancer in total)
+2025-01-06 15:32:59,538 - INFO - Matrix file GSE248830_series_matrix.txt.gz is available with size 0.17 MB
+2025-01-06 15:32:59,822 - INFO - Family file GSE248830_family.soft.gz is available with size 0.23 MB
+2025-01-06 15:33:00,168 - INFO - Successfully downloaded: GSE248830_series_matrix.txt.gz
+2025-01-06 15:33:00,527 - INFO - Successfully downloaded: GSE248830_family.soft.gz
+2025-01-06 15:33:00,527 - INFO - Downloaded: ['GSE248830_series_matrix.txt.gz'] and ['GSE248830_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:33:01,315 - INFO - Family file GSE231364_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:33:01,315 - INFO - No suitable gene expression data in series 98 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:02,129 - INFO - Family file GSE239907_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:33:02,129 - INFO - No suitable gene expression data in series 99 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:03,000 - INFO - Family file GSE224613_family.soft.gz is available with size 0.02 MB
+2025-01-06 15:33:03,000 - INFO - No suitable gene expression data in series 100 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:03,868 - INFO - Family file GSE243154_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:03,868 - INFO - No suitable gene expression data in series 101 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:04,661 - INFO - Family file GSE243150_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:33:04,661 - INFO - No suitable gene expression data in series 102 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:05,648 - INFO - Family file GSE189371_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:05,648 - INFO - No suitable gene expression data in series 103 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:06,541 - INFO - Family file GSE245830_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:06,541 - INFO - No suitable gene expression data in series 104 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:07,373 - INFO - Family file GSE247777_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:07,373 - INFO - No suitable gene expression data in series 105 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:08,169 - INFO - Family file GSE239935_family.soft.gz is available with size 0.03 MB
+2025-01-06 15:33:08,170 - INFO - No suitable gene expression data in series 106 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:08,968 - INFO - Family file GSE239933_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:08,969 - INFO - No suitable gene expression data in series 107 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:10,256 - INFO - No suitable gene expression data in series 108 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:11,192 - INFO - Family file GSE202770_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:33:11,192 - INFO - No suitable gene expression data in series 109 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:12,164 - INFO - Family file GSE202769_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:33:12,164 - INFO - No suitable gene expression data in series 110 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:13,360 - INFO - Family file GSE202923_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:13,360 - INFO - No suitable gene expression data in series 111 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:14,207 - INFO - Family file GSE202922_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:14,207 - INFO - No suitable gene expression data in series 112 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:15,041 - INFO - Family file GSE246889_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:33:15,041 - INFO - No suitable gene expression data in series 113 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:15,839 - INFO - Family file GSE240138_family.soft.gz is available with size 0.02 MB
+2025-01-06 15:33:15,840 - INFO - No suitable gene expression data in series 114 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:16,650 - INFO - Family file GSE230388_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:16,650 - INFO - No suitable gene expression data in series 115 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:17,458 - INFO - Family file GSE232235_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:17,458 - INFO - No suitable gene expression data in series 116 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:18,399 - INFO - Family file GSE225847_family.soft.gz is available with size 81.90 MB
+2025-01-06 15:33:18,399 - INFO - No suitable gene expression data in series 117 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:19,185 - INFO - Family file GSE225846_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:19,185 - INFO - No suitable gene expression data in series 118 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:19,714 - INFO - Matrix file GSE234017_series_matrix.txt.gz is available with size 5.84 MB
+2025-01-06 15:33:20,005 - INFO - Family file GSE234017_family.soft.gz is available with size 8.26 MB
+2025-01-06 15:33:23,514 - INFO - Successfully downloaded: GSE234017_series_matrix.txt.gz
+2025-01-06 15:33:26,368 - INFO - Successfully downloaded: GSE234017_family.soft.gz
+2025-01-06 15:33:26,368 - INFO - Downloaded: ['GSE234017_series_matrix.txt.gz'] and ['GSE234017_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:33:27,364 - INFO - Family file GSE210793_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:27,364 - INFO - No suitable gene expression data in series 120 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:28,494 - INFO - Family file GSE159285_family.soft.gz is available with size 0.03 MB
+2025-01-06 15:33:28,494 - INFO - No suitable gene expression data in series 121 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:29,593 - INFO - Family file GSE159284_family.soft.gz is available with size 0.03 MB
+2025-01-06 15:33:29,593 - INFO - No suitable gene expression data in series 122 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:30,447 - INFO - Family file GSE244283_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:33:30,447 - INFO - No suitable gene expression data in series 123 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:31,259 - INFO - Family file GSE244271_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:33:31,259 - INFO - No suitable gene expression data in series 124 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:32,114 - INFO - Family file GSE234179_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:33:32,114 - INFO - No suitable gene expression data in series 125 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:32,901 - INFO - Family file GSE223183_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:32,901 - INFO - No suitable gene expression data in series 126 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:33,684 - INFO - Family file GSE216137_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:33:33,684 - INFO - No suitable gene expression data in series 127 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:34,493 - INFO - Family file GSE243454_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:34,493 - INFO - No suitable gene expression data in series 128 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:35,358 - INFO - Family file GSE232389_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:35,359 - INFO - No suitable gene expression data in series 129 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:36,243 - INFO - Family file GSE210608_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:33:36,244 - INFO - No suitable gene expression data in series 130 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:36,811 - INFO - Matrix file GSE208102_series_matrix.txt.gz is available with size 22.67 MB
+2025-01-06 15:33:37,520 - INFO - No suitable gene expression data in series 131 (200 series for trait Breast Cancer in total)
+2025-01-06 15:33:38,222 - INFO - Matrix file GSE208101_series_matrix.txt.gz is available with size 10.87 MB
+2025-01-06 15:33:38,778 - INFO - Family file GSE208101_family.soft.gz is available with size 94.78 MB
+2025-01-06 15:33:45,824 - INFO - Successfully downloaded: GSE208101_series_matrix.txt.gz
+2025-01-06 15:33:59,800 - INFO - Successfully downloaded: GSE208101_family.soft.gz
+2025-01-06 15:33:59,800 - INFO - Downloaded: ['GSE208101_series_matrix.txt.gz'] and ['GSE208101_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:34:00,340 - INFO - Matrix file GSE207847_series_matrix.txt.gz is available with size 12.52 MB
+2025-01-06 15:34:00,744 - INFO - Family file GSE207847_family.soft.gz is available with size 99.65 MB
+2025-01-06 15:34:02,890 - INFO - Successfully downloaded: GSE207847_series_matrix.txt.gz
+2025-01-06 15:34:14,285 - INFO - Successfully downloaded: GSE207847_family.soft.gz
+2025-01-06 15:34:14,285 - INFO - Downloaded: ['GSE207847_series_matrix.txt.gz'] and ['GSE207847_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:34:15,078 - INFO - Family file GSE216346_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:15,078 - INFO - No suitable gene expression data in series 134 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:15,885 - INFO - Family file GSE205725_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:15,885 - INFO - No suitable gene expression data in series 135 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:16,667 - INFO - Family file GSE226210_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:34:16,668 - INFO - No suitable gene expression data in series 136 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:17,553 - INFO - Family file GSE241944_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:17,553 - INFO - No suitable gene expression data in series 137 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:18,378 - INFO - Family file GSE241943_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:34:18,378 - INFO - No suitable gene expression data in series 138 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:19,174 - INFO - Family file GSE241764_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:19,174 - INFO - No suitable gene expression data in series 139 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:19,960 - INFO - Family file GSE223348_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:34:19,960 - INFO - No suitable gene expression data in series 140 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:20,876 - INFO - Family file GSE241601_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:20,876 - INFO - No suitable gene expression data in series 141 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:21,701 - INFO - Family file GSE212890_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:34:21,701 - INFO - No suitable gene expression data in series 142 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:22,507 - INFO - Family file GSE235812_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:34:22,507 - INFO - No suitable gene expression data in series 143 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:23,040 - INFO - Matrix file GSE225328-GPL18402_series_matrix.txt.gz is available with size 0.25 MB
+2025-01-06 15:34:23,398 - INFO - Family file GSE225328_family.soft.gz is available with size 1.26 MB
+2025-01-06 15:34:23,745 - INFO - Successfully downloaded: GSE225328-GPL18402_series_matrix.txt.gz
+2025-01-06 15:34:24,199 - INFO - Successfully downloaded: GSE225328_family.soft.gz
+2025-01-06 15:34:24,199 - INFO - Downloaded: ['GSE225328-GPL18402_series_matrix.txt.gz'] and ['GSE225328_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:34:24,987 - INFO - Family file GSE225327_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:24,987 - INFO - No suitable gene expression data in series 145 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:25,846 - INFO - Family file GSE207773_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:25,846 - INFO - No suitable gene expression data in series 146 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:26,700 - INFO - Family file GSE230063_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:26,700 - INFO - No suitable gene expression data in series 147 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:27,469 - INFO - Family file GSE230062_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:34:27,469 - INFO - No suitable gene expression data in series 148 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:28,340 - INFO - Family file GSE237974_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:28,340 - INFO - No suitable gene expression data in series 149 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:29,289 - INFO - Family file GSE235169_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:29,289 - INFO - No suitable gene expression data in series 150 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:30,083 - INFO - Family file GSE235167_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:30,083 - INFO - No suitable gene expression data in series 151 (200 series for trait Breast Cancer in total)
+2025-01-06 15:34:30,587 - INFO - Matrix file GSE236725_series_matrix.txt.gz is available with size 18.04 MB
+2025-01-06 15:34:30,867 - INFO - Family file GSE236725_family.soft.gz is available with size 39.13 MB
+2025-01-06 15:34:32,260 - INFO - Successfully downloaded: GSE236725_series_matrix.txt.gz
+2025-01-06 15:34:34,767 - INFO - Successfully downloaded: GSE236725_family.soft.gz
+2025-01-06 15:34:34,768 - INFO - Downloaded: ['GSE236725_series_matrix.txt.gz'] and ['GSE236725_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:34:34,803 - INFO - 
+Processing trait (2/153): Kidney Papillary Cell Carcinoma
+2025-01-06 15:34:34,803 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Kidney Papillary Cell Carcinoma) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-06 15:34:34,995 - INFO - Total results for query: 29
+2025-01-06 15:34:34,996 - INFO - Fetching batch 1 of 1 (size: 29)
+2025-01-06 15:34:35,175 - INFO - Successfully retrieved 29 IDs in batch 1
+2025-01-06 15:34:35,175 - INFO - Found 29 datasets for: Kidney Papillary Cell Carcinoma
+2025-01-06 15:34:41,478 - INFO - Successfully processed 29 datasets for: Kidney Papillary Cell Carcinoma
+2025-01-06 15:34:41,637 - INFO - Resuming from checkpoint: i=1, j=0
+2025-01-06 15:34:42,475 - INFO - Family file GSE251905_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:42,475 - INFO - No suitable gene expression data in series 0 (29 series for trait Kidney Papillary Cell Carcinoma in total)
+2025-01-06 15:34:43,373 - INFO - Family file GSE180777_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:43,373 - INFO - No suitable gene expression data in series 1 (29 series for trait Kidney Papillary Cell Carcinoma in total)
+2025-01-06 15:34:44,146 - INFO - Family file GSE254461_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:44,146 - INFO - No suitable gene expression data in series 2 (29 series for trait Kidney Papillary Cell Carcinoma in total)
+2025-01-06 15:34:44,972 - INFO - Family file GSE244957_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:44,972 - INFO - No suitable gene expression data in series 3 (29 series for trait Kidney Papillary Cell Carcinoma in total)
+2025-01-06 15:34:45,957 - INFO - Family file GSE188486_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:45,957 - INFO - No suitable gene expression data in series 4 (29 series for trait Kidney Papillary Cell Carcinoma in total)
+2025-01-06 15:34:46,878 - INFO - Family file GSE151419_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:34:46,878 - INFO - No suitable gene expression data in series 5 (29 series for trait Kidney Papillary Cell Carcinoma in total)
+2025-01-06 15:34:47,476 - INFO - Matrix file GSE95425_series_matrix.txt.gz is available with size 4.44 MB
+2025-01-06 15:34:47,754 - INFO - Family file GSE95425_family.soft.gz is available with size 25.07 MB
+2025-01-06 15:34:48,797 - INFO - Successfully downloaded: GSE95425_series_matrix.txt.gz
+2025-01-06 15:34:52,418 - INFO - Successfully downloaded: GSE95425_family.soft.gz
+2025-01-06 15:34:52,419 - INFO - Downloaded: ['GSE95425_series_matrix.txt.gz'] and ['GSE95425_family.soft.gz'] for trait Kidney Papillary Cell Carcinoma
+2025-01-06 15:34:53,195 - INFO - Matrix file GSE85258_series_matrix.txt.gz is available with size 9.07 MB
+2025-01-06 15:34:53,496 - INFO - Family file GSE85258_family.soft.gz is available with size 25.00 MB
+2025-01-06 15:34:54,735 - INFO - Successfully downloaded: GSE85258_series_matrix.txt.gz
+2025-01-06 15:35:01,569 - INFO - Successfully downloaded: GSE85258_family.soft.gz
+2025-01-06 15:35:01,569 - INFO - Downloaded: ['GSE85258_series_matrix.txt.gz'] and ['GSE85258_family.soft.gz'] for trait Kidney Papillary Cell Carcinoma
+2025-01-06 15:35:02,073 - INFO - Matrix file GSE48352_series_matrix.txt.gz is available with size 3.27 MB
+2025-01-06 15:35:02,355 - INFO - Family file GSE48352_family.soft.gz is available with size 5.18 MB
+2025-01-06 15:35:05,117 - INFO - Successfully downloaded: GSE48352_series_matrix.txt.gz
+2025-01-06 15:35:07,687 - INFO - Successfully downloaded: GSE48352_family.soft.gz
+2025-01-06 15:35:07,687 - INFO - Downloaded: ['GSE48352_series_matrix.txt.gz'] and ['GSE48352_family.soft.gz'] for trait Kidney Papillary Cell Carcinoma
+2025-01-06 15:35:08,566 - INFO - Matrix file GSE68950_series_matrix.txt.gz is available with size 32.19 MB
+2025-01-06 15:35:08,844 - INFO - Family file GSE68950_family.soft.gz is available with size 83.51 MB
+2025-01-06 15:35:14,998 - INFO - Successfully downloaded: GSE68950_series_matrix.txt.gz
+2025-01-06 15:35:22,445 - INFO - Successfully downloaded: GSE68950_family.soft.gz
+2025-01-06 15:35:22,445 - INFO - Downloaded: ['GSE68950_series_matrix.txt.gz'] and ['GSE68950_family.soft.gz'] for trait Kidney Papillary Cell Carcinoma
+2025-01-06 15:35:22,980 - INFO - Matrix file GSE68606_series_matrix.txt.gz is available with size 10.50 MB
+2025-01-06 15:35:23,254 - INFO - Family file GSE68606_family.soft.gz is available with size 31.17 MB
+2025-01-06 15:35:24,576 - INFO - Successfully downloaded: GSE68606_series_matrix.txt.gz
+2025-01-06 15:35:27,556 - INFO - Successfully downloaded: GSE68606_family.soft.gz
+2025-01-06 15:35:27,556 - INFO - Downloaded: ['GSE68606_series_matrix.txt.gz'] and ['GSE68606_family.soft.gz'] for trait Kidney Papillary Cell Carcinoma
+2025-01-06 15:35:28,352 - INFO - No suitable gene expression data in series 11 (29 series for trait Kidney Papillary Cell Carcinoma in total)
+2025-01-06 15:35:28,877 - INFO - Matrix file GSE40914-GPL3985_series_matrix.txt.gz is available with size 0.87 MB
+2025-01-06 15:35:28,943 - INFO - Matrix file GSE40914-GPL4051_series_matrix.txt.gz is available with size 0.67 MB
+2025-01-06 15:35:29,220 - INFO - Family file GSE40914_family.soft.gz is available with size 4.55 MB
+2025-01-06 15:35:30,579 - INFO - Successfully downloaded: GSE40914-GPL3985_series_matrix.txt.gz
+2025-01-06 15:35:31,617 - INFO - Successfully downloaded: GSE40914-GPL4051_series_matrix.txt.gz
+2025-01-06 15:35:34,495 - INFO - Successfully downloaded: GSE40914_family.soft.gz
+2025-01-06 15:35:34,496 - INFO - Downloaded: ['GSE40914-GPL3985_series_matrix.txt.gz', 'GSE40914-GPL4051_series_matrix.txt.gz'] and ['GSE40914_family.soft.gz'] for trait Kidney Papillary Cell Carcinoma
+2025-01-06 15:35:35,002 - INFO - Matrix file GSE40912_series_matrix.txt.gz is available with size 0.35 MB
+2025-01-06 15:35:35,272 - INFO - Family file GSE40912_family.soft.gz is available with size 1.37 MB
+2025-01-06 15:35:35,718 - INFO - Successfully downloaded: GSE40912_series_matrix.txt.gz
+2025-01-06 15:35:36,706 - INFO - Successfully downloaded: GSE40912_family.soft.gz
+2025-01-06 15:35:36,706 - INFO - Downloaded: ['GSE40912_series_matrix.txt.gz'] and ['GSE40912_family.soft.gz'] for trait Kidney Papillary Cell Carcinoma
+2025-01-06 15:35:37,198 - INFO - Matrix file GSE40911_series_matrix.txt.gz is available with size 0.45 MB
+2025-01-06 15:35:37,467 - INFO - Family file GSE40911_family.soft.gz is available with size 1.60 MB
+2025-01-06 15:35:38,010 - INFO - Successfully downloaded: GSE40911_series_matrix.txt.gz
+2025-01-06 15:35:39,069 - INFO - Successfully downloaded: GSE40911_family.soft.gz
+2025-01-06 15:35:39,069 - INFO - Downloaded: ['GSE40911_series_matrix.txt.gz'] and ['GSE40911_family.soft.gz'] for trait Kidney Papillary Cell Carcinoma
+2025-01-06 15:35:39,843 - INFO - No suitable gene expression data in series 15 (29 series for trait Kidney Papillary Cell Carcinoma in total)
+2025-01-06 15:35:40,340 - INFO - Matrix file GSE42977_series_matrix.txt.gz is available with size 27.81 MB
+2025-01-06 15:35:40,618 - INFO - Family file GSE42977_family.soft.gz is available with size 46.23 MB
+2025-01-06 15:35:46,548 - INFO - Successfully downloaded: GSE42977_series_matrix.txt.gz
+2025-01-06 15:35:54,563 - INFO - Successfully downloaded: GSE42977_family.soft.gz
+2025-01-06 15:35:54,563 - INFO - Downloaded: ['GSE42977_series_matrix.txt.gz'] and ['GSE42977_family.soft.gz'] for trait Kidney Papillary Cell Carcinoma
+2025-01-06 15:35:55,373 - INFO - Family file GSE28866_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:35:55,373 - INFO - No suitable gene expression data in series 17 (29 series for trait Kidney Papillary Cell Carcinoma in total)
+2025-01-06 15:35:55,868 - INFO - Matrix file GSE19949-GPL3921_series_matrix.txt.gz is available with size 26.02 MB
+2025-01-06 15:35:56,221 - INFO - Family file GSE19949_family.soft.gz is available with size 70.87 MB
+2025-01-06 15:35:59,521 - INFO - Successfully downloaded: GSE19949-GPL3921_series_matrix.txt.gz
+2025-01-06 15:36:05,832 - INFO - Successfully downloaded: GSE19949_family.soft.gz
+2025-01-06 15:36:05,833 - INFO - Downloaded: ['GSE19949-GPL3921_series_matrix.txt.gz'] and ['GSE19949_family.soft.gz'] for trait Kidney Papillary Cell Carcinoma
+2025-01-06 15:36:05,868 - INFO - 
+Processing trait (3/153): Kidney Clear Cell Carcinoma
+2025-01-06 15:36:05,868 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Kidney Clear Cell Carcinoma) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-06 15:36:06,076 - INFO - Total results for query: 149
+2025-01-06 15:36:06,076 - INFO - Fetching batch 1 of 2 (size: 100)
+2025-01-06 15:36:06,244 - INFO - Successfully retrieved 100 IDs in batch 1
+2025-01-06 15:36:06,745 - INFO - Fetching batch 2 of 2 (size: 49)
+2025-01-06 15:36:06,912 - INFO - Successfully retrieved 49 IDs in batch 2
+2025-01-06 15:36:06,912 - INFO - Found 149 datasets for: Kidney Clear Cell Carcinoma
+2025-01-06 15:36:37,708 - INFO - Successfully processed 149 datasets for: Kidney Clear Cell Carcinoma
+2025-01-06 15:36:37,990 - INFO - Resuming from checkpoint: i=2, j=0
+2025-01-06 15:36:38,868 - INFO - Family file GSE216495_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:36:38,868 - INFO - No suitable gene expression data in series 0 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:39,681 - INFO - Family file GSE273036_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:39,681 - INFO - No suitable gene expression data in series 1 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:40,630 - INFO - Family file GSE245087_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:40,630 - INFO - No suitable gene expression data in series 2 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:41,431 - INFO - Family file GSE278174_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:36:41,431 - INFO - No suitable gene expression data in series 3 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:42,201 - INFO - Family file GSE245467_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:42,201 - INFO - No suitable gene expression data in series 4 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:42,970 - INFO - Family file GSE251905_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:42,970 - INFO - No suitable gene expression data in series 5 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:43,784 - INFO - Family file GSE242299_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:43,785 - INFO - No suitable gene expression data in series 6 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:44,677 - INFO - Family file GSE239889_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:44,677 - INFO - No suitable gene expression data in series 7 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:45,465 - INFO - Family file GSE252630_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:36:45,465 - INFO - No suitable gene expression data in series 8 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:46,269 - INFO - Family file GSE254566_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:46,269 - INFO - No suitable gene expression data in series 9 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:47,064 - INFO - Family file GSE226969_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:36:47,064 - INFO - No suitable gene expression data in series 10 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:48,205 - INFO - Family file GSE228565_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:48,205 - INFO - No suitable gene expression data in series 11 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:48,959 - INFO - Family file GSE254461_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:48,959 - INFO - No suitable gene expression data in series 12 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:49,484 - INFO - Matrix file GSE245862_series_matrix.txt.gz is available with size 6.41 MB
+2025-01-06 15:36:49,775 - INFO - Family file GSE245862_family.soft.gz is available with size 17.40 MB
+2025-01-06 15:36:50,508 - INFO - Successfully downloaded: GSE245862_series_matrix.txt.gz
+2025-01-06 15:36:51,768 - INFO - Successfully downloaded: GSE245862_family.soft.gz
+2025-01-06 15:36:51,768 - INFO - Downloaded: ['GSE245862_series_matrix.txt.gz'] and ['GSE245862_family.soft.gz'] for trait Kidney Clear Cell Carcinoma
+2025-01-06 15:36:52,589 - INFO - Family file GSE223893_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:36:52,589 - INFO - No suitable gene expression data in series 14 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:53,362 - INFO - Family file GSE212890_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:36:53,363 - INFO - No suitable gene expression data in series 15 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:54,150 - INFO - Family file GSE240822_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:54,150 - INFO - No suitable gene expression data in series 16 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:55,030 - INFO - Family file GSE202813_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:36:55,031 - INFO - No suitable gene expression data in series 17 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:55,824 - INFO - Family file GSE216679_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:55,824 - INFO - No suitable gene expression data in series 18 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:56,618 - INFO - Family file GSE227898_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:56,618 - INFO - No suitable gene expression data in series 19 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:57,710 - INFO - Family file GSE193321_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:57,710 - INFO - No suitable gene expression data in series 20 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:58,864 - INFO - Family file GSE181001_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:36:58,864 - INFO - No suitable gene expression data in series 21 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:36:59,846 - INFO - Family file GSE213912_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:36:59,846 - INFO - No suitable gene expression data in series 22 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:00,714 - INFO - Family file GSE223809_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:00,714 - INFO - No suitable gene expression data in series 23 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:01,497 - INFO - Family file GSE223806_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:01,498 - INFO - No suitable gene expression data in series 24 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:03,839 - INFO - Family file GSE198670_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:03,839 - INFO - No suitable gene expression data in series 25 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:05,549 - INFO - Family file GSE206029_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:05,549 - INFO - No suitable gene expression data in series 26 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:06,597 - INFO - Family file GSE207493_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:06,598 - INFO - No suitable gene expression data in series 27 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:07,934 - INFO - Family file GSE181294_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:07,934 - INFO - No suitable gene expression data in series 28 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:09,099 - INFO - Family file GSE199825_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:09,099 - INFO - No suitable gene expression data in series 29 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:09,869 - INFO - Family file GSE188486_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:09,869 - INFO - No suitable gene expression data in series 30 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:10,685 - INFO - Family file GSE215286_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:37:10,685 - INFO - No suitable gene expression data in series 31 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:11,718 - INFO - Family file GSE213857_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:37:11,718 - INFO - No suitable gene expression data in series 32 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:12,854 - INFO - Family file GSE213324_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:37:12,854 - INFO - No suitable gene expression data in series 33 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:13,683 - INFO - Family file GSE212525_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:37:13,683 - INFO - No suitable gene expression data in series 34 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:14,730 - INFO - Family file GSE203612_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:14,730 - INFO - No suitable gene expression data in series 35 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:15,961 - INFO - Family file GSE183635_family.soft.gz is available with size 0.14 MB
+2025-01-06 15:37:15,961 - INFO - No suitable gene expression data in series 36 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:16,894 - INFO - Family file GSE207574_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:16,894 - INFO - No suitable gene expression data in series 37 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:17,828 - INFO - Family file GSE207575_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:17,828 - INFO - No suitable gene expression data in series 38 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:19,144 - INFO - Family file GSE163001_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:19,144 - INFO - No suitable gene expression data in series 39 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:20,224 - INFO - Family file GSE163000_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:20,224 - INFO - No suitable gene expression data in series 40 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:21,098 - INFO - Family file GSE162948_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:37:21,098 - INFO - No suitable gene expression data in series 41 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:21,969 - INFO - Family file GSE181064_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:21,969 - INFO - No suitable gene expression data in series 42 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:23,013 - INFO - Family file GSE181061_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:23,013 - INFO - No suitable gene expression data in series 43 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:24,053 - INFO - Family file GSE146583_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:24,053 - INFO - No suitable gene expression data in series 44 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:25,076 - INFO - Family file GSE159702_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:25,077 - INFO - No suitable gene expression data in series 45 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:26,188 - INFO - Family file GSE183140_family.soft.gz is available with size 66.57 MB
+2025-01-06 15:37:26,188 - INFO - No suitable gene expression data in series 46 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:27,436 - INFO - Family file GSE167573_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:27,436 - INFO - No suitable gene expression data in series 47 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:28,226 - INFO - Matrix file GSE127136_series_matrix.txt.gz is available with size 0.19 MB
+2025-01-06 15:37:28,592 - INFO - Family file GSE127136_family.soft.gz is available with size 0.25 MB
+2025-01-06 15:37:29,003 - INFO - Successfully downloaded: GSE127136_series_matrix.txt.gz
+2025-01-06 15:37:29,816 - INFO - Successfully downloaded: GSE127136_family.soft.gz
+2025-01-06 15:37:29,816 - INFO - Downloaded: ['GSE127136_series_matrix.txt.gz'] and ['GSE127136_family.soft.gz'] for trait Kidney Clear Cell Carcinoma
+2025-01-06 15:37:30,877 - INFO - Family file GSE167093_family.soft.gz is available with size 14.44 MB
+2025-01-06 15:37:30,877 - INFO - No suitable gene expression data in series 49 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:31,992 - INFO - Family file GSE151428_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:31,992 - INFO - No suitable gene expression data in series 50 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:32,768 - INFO - Family file GSE151419_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:32,769 - INFO - No suitable gene expression data in series 51 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:33,447 - INFO - Matrix file GSE117230_series_matrix.txt.gz is available with size 9.21 MB
+2025-01-06 15:37:33,792 - INFO - Family file GSE117230_family.soft.gz is available with size 31.30 MB
+2025-01-06 15:37:35,450 - INFO - Successfully downloaded: GSE117230_series_matrix.txt.gz
+2025-01-06 15:37:38,560 - INFO - Successfully downloaded: GSE117230_family.soft.gz
+2025-01-06 15:37:38,560 - INFO - Downloaded: ['GSE117230_series_matrix.txt.gz'] and ['GSE117230_family.soft.gz'] for trait Kidney Clear Cell Carcinoma
+2025-01-06 15:37:39,638 - INFO - Family file GSE155210_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:39,638 - INFO - No suitable gene expression data in series 53 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:40,476 - INFO - Family file GSE143630_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:37:40,476 - INFO - No suitable gene expression data in series 54 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:42,001 - INFO - Family file GSE85356_family.soft.gz is available with size 0.03 MB
+2025-01-06 15:37:42,001 - INFO - No suitable gene expression data in series 55 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:43,620 - INFO - Family file GSE85353_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:37:43,621 - INFO - No suitable gene expression data in series 56 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:44,650 - INFO - Family file GSE150474_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:37:44,650 - INFO - No suitable gene expression data in series 57 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:37:45,168 - INFO - Matrix file GSE150404_series_matrix.txt.gz is available with size 10.44 MB
+2025-01-06 15:37:45,483 - INFO - Family file GSE150404_family.soft.gz is available with size 50.08 MB
+2025-01-06 15:37:46,949 - INFO - Successfully downloaded: GSE150404_series_matrix.txt.gz
+2025-01-06 15:37:58,389 - INFO - Successfully downloaded: GSE150404_family.soft.gz
+2025-01-06 15:37:58,390 - INFO - Downloaded: ['GSE150404_series_matrix.txt.gz'] and ['GSE150404_family.soft.gz'] for trait Kidney Clear Cell Carcinoma
+2025-01-06 15:37:59,335 - INFO - Family file GSE126964_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:37:59,335 - INFO - No suitable gene expression data in series 59 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:38:00,232 - INFO - Family file GSE110680_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:38:00,232 - INFO - No suitable gene expression data in series 60 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:38:01,098 - INFO - Family file GSE139555_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:38:01,098 - INFO - No suitable gene expression data in series 61 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:38:01,616 - INFO - Matrix file GSE106757_series_matrix.txt.gz is available with size 2.23 MB
+2025-01-06 15:38:01,907 - INFO - Family file GSE106757_family.soft.gz is available with size 7.84 MB
+2025-01-06 15:38:03,083 - INFO - Successfully downloaded: GSE106757_series_matrix.txt.gz
+2025-01-06 15:38:04,524 - INFO - Successfully downloaded: GSE106757_family.soft.gz
+2025-01-06 15:38:04,524 - INFO - Downloaded: ['GSE106757_series_matrix.txt.gz'] and ['GSE106757_family.soft.gz'] for trait Kidney Clear Cell Carcinoma
+2025-01-06 15:38:05,053 - INFO - Matrix file GSE131027_series_matrix.txt.gz is available with size 26.32 MB
+2025-01-06 15:38:05,476 - INFO - Family file GSE131027_family.soft.gz is available with size 52.04 MB
+2025-01-06 15:38:10,031 - INFO - Successfully downloaded: GSE131027_series_matrix.txt.gz
+2025-01-06 15:38:16,143 - INFO - Successfully downloaded: GSE131027_family.soft.gz
+2025-01-06 15:38:16,143 - INFO - Downloaded: ['GSE131027_series_matrix.txt.gz'] and ['GSE131027_family.soft.gz'] for trait Kidney Clear Cell Carcinoma
+2025-01-06 15:38:16,818 - INFO - Matrix file GSE105288-GPL10558_series_matrix.txt.gz is available with size 10.74 MB
+2025-01-06 15:38:17,537 - INFO - No suitable gene expression data in series 64 (149 series for trait Kidney Clear Cell Carcinoma in total)
+2025-01-06 15:38:18,101 - INFO - Matrix file GSE119958_series_matrix.txt.gz is available with size 24.96 MB
+2025-01-06 15:38:18,485 - INFO - Family file GSE119958_family.soft.gz is available with size 57.98 MB
+2025-01-06 15:38:25,463 - INFO - Successfully downloaded: GSE119958_series_matrix.txt.gz
+2025-01-06 15:38:27,259 - INFO - 
+Processing trait (4/153): Head and Neck Cancer
+2025-01-06 15:38:27,259 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Head and Neck Cancer) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-06 15:38:27,446 - INFO - Total results for query: 198
+2025-01-06 15:38:27,446 - INFO - Fetching batch 1 of 2 (size: 100)
+2025-01-06 15:38:27,623 - INFO - Successfully retrieved 100 IDs in batch 1
+2025-01-06 15:38:28,124 - INFO - Fetching batch 2 of 2 (size: 98)

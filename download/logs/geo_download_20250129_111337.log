@@ -1,0 +1,374 @@
+2025-01-29 11:13:37,977 - INFO - Found 3 keywords to process
+2025-01-29 11:13:37,977 - INFO - Keywords: ['Longevity', 'Type_1_Diabetes', 'Type_2_Diabetes']
+2025-01-29 11:13:37,977 - INFO - Resuming from checkpoint: i=0, j=0
+2025-01-29 11:13:37,979 - INFO - 
+Processing trait (1/3): Longevity
+2025-01-29 11:13:37,979 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Longevity) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-29 11:13:38,385 - INFO - Total results for query: 10
+2025-01-29 11:13:38,385 - INFO - Fetching batch 1 of 1 (size: 10)
+2025-01-29 11:13:38,782 - INFO - Successfully retrieved 10 IDs in batch 1
+2025-01-29 11:13:38,782 - INFO - Found 10 datasets for: Longevity
+2025-01-29 11:13:44,239 - INFO - Successfully processed 10 datasets for: Longevity
+2025-01-29 11:13:44,470 - INFO - Resuming from checkpoint: i=0, j=0
+2025-01-29 11:13:45,220 - INFO - Family file GSE262072_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:13:45,220 - INFO - No suitable gene expression data in series 0 (10 series for trait Longevity in total)
+2025-01-29 11:13:45,930 - INFO - Family file GSE235658_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:13:45,930 - INFO - No suitable gene expression data in series 1 (10 series for trait Longevity in total)
+2025-01-29 11:13:46,999 - INFO - Family file GSE102537_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:13:46,999 - INFO - No suitable gene expression data in series 2 (10 series for trait Longevity in total)
+2025-01-29 11:13:47,791 - INFO - Family file GSE205101_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:13:47,791 - INFO - No suitable gene expression data in series 3 (10 series for trait Longevity in total)
+2025-01-29 11:13:48,659 - INFO - Family file GSE131616_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:13:48,659 - INFO - No suitable gene expression data in series 4 (10 series for trait Longevity in total)
+2025-01-29 11:13:49,417 - INFO - Family file GSE116277_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:13:49,417 - INFO - No suitable gene expression data in series 5 (10 series for trait Longevity in total)
+2025-01-29 11:13:50,150 - INFO - Family file GSE107894_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:13:50,150 - INFO - No suitable gene expression data in series 6 (10 series for trait Longevity in total)
+2025-01-29 11:13:50,616 - INFO - Matrix file GSE48264_series_matrix.txt.gz is available with size 6.46 MB
+2025-01-29 11:13:50,887 - INFO - Family file GSE48264_family.soft.gz is available with size 26.48 MB
+2025-01-29 11:13:52,237 - INFO - Successfully downloaded: GSE48264_series_matrix.txt.gz
+2025-01-29 11:13:54,414 - INFO - Successfully downloaded: GSE48264_family.soft.gz
+2025-01-29 11:13:54,414 - INFO - Downloaded: ['GSE48264_series_matrix.txt.gz'] and ['GSE48264_family.soft.gz'] for trait Longevity
+2025-01-29 11:13:54,893 - INFO - Matrix file GSE44147-GPL5175_series_matrix.txt.gz is available with size 2.75 MB
+2025-01-29 11:13:54,957 - INFO - Matrix file GSE44147-GPL6246_series_matrix.txt.gz is available with size 0.87 MB
+2025-01-29 11:13:55,233 - INFO - Family file GSE44147_family.soft.gz is available with size 29.80 MB
+2025-01-29 11:13:55,835 - INFO - Successfully downloaded: GSE44147-GPL5175_series_matrix.txt.gz
+2025-01-29 11:13:56,250 - INFO - Successfully downloaded: GSE44147-GPL6246_series_matrix.txt.gz
+2025-01-29 11:13:58,659 - INFO - Successfully downloaded: GSE44147_family.soft.gz
+2025-01-29 11:13:58,660 - INFO - Downloaded: ['GSE44147-GPL5175_series_matrix.txt.gz', 'GSE44147-GPL6246_series_matrix.txt.gz'] and ['GSE44147_family.soft.gz'] for trait Longevity
+2025-01-29 11:13:59,136 - INFO - Matrix file GSE16717_series_matrix.txt.gz is available with size 40.69 MB
+2025-01-29 11:13:59,402 - INFO - Family file GSE16717_family.soft.gz is available with size 61.60 MB
+2025-01-29 11:14:01,874 - INFO - Successfully downloaded: GSE16717_series_matrix.txt.gz
+2025-01-29 11:14:05,360 - INFO - Successfully downloaded: GSE16717_family.soft.gz
+2025-01-29 11:14:05,360 - INFO - Downloaded: ['GSE16717_series_matrix.txt.gz'] and ['GSE16717_family.soft.gz'] for trait Longevity
+2025-01-29 11:14:05,393 - INFO - 
+Processing trait (2/3): Type_1_Diabetes
+2025-01-29 11:14:05,393 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Type_1_Diabetes) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-29 11:14:05,555 - INFO - Total results for query: 101
+2025-01-29 11:14:05,555 - INFO - Fetching batch 1 of 2 (size: 100)
+2025-01-29 11:14:05,733 - INFO - Successfully retrieved 100 IDs in batch 1
+2025-01-29 11:14:06,234 - INFO - Fetching batch 2 of 2 (size: 1)
+2025-01-29 11:14:06,407 - INFO - Successfully retrieved 1 IDs in batch 2
+2025-01-29 11:14:06,407 - INFO - Found 101 datasets for: Type_1_Diabetes
+2025-01-29 11:14:28,020 - INFO - Successfully processed 101 datasets for: Type_1_Diabetes
+2025-01-29 11:14:28,168 - INFO - Resuming from checkpoint: i=1, j=0
+2025-01-29 11:14:29,217 - INFO - Family file GSE287275_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:29,217 - INFO - No suitable gene expression data in series 0 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:30,279 - INFO - Family file GSE270220_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:30,279 - INFO - No suitable gene expression data in series 1 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:31,045 - INFO - Matrix file GSE284772_series_matrix.txt.gz is available with size 43.04 MB
+2025-01-29 11:14:31,381 - INFO - No suitable gene expression data in series 2 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:32,489 - INFO - Family file GSE279086_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:32,489 - INFO - No suitable gene expression data in series 3 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:33,528 - INFO - Family file GSE262828_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:33,528 - INFO - No suitable gene expression data in series 4 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:34,471 - INFO - Family file GSE256479_family.soft.gz is available with size 0.06 MB
+2025-01-29 11:14:34,471 - INFO - No suitable gene expression data in series 5 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:35,391 - INFO - Family file GSE255400_family.soft.gz is available with size 0.03 MB
+2025-01-29 11:14:35,391 - INFO - No suitable gene expression data in series 6 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:36,428 - INFO - Family file GSE243278_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:36,428 - INFO - No suitable gene expression data in series 7 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:37,325 - INFO - Family file GSE243270_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:37,325 - INFO - No suitable gene expression data in series 8 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:38,295 - INFO - Family file GSE237218_family.soft.gz is available with size 0.03 MB
+2025-01-29 11:14:38,295 - INFO - No suitable gene expression data in series 9 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:39,022 - INFO - Matrix file GSE232310_series_matrix.txt.gz is available with size 10.97 MB
+2025-01-29 11:14:39,370 - INFO - Family file GSE232310_family.soft.gz is available with size 31.64 MB
+2025-01-29 11:14:40,413 - INFO - Successfully downloaded: GSE232310_series_matrix.txt.gz
+2025-01-29 11:14:42,542 - INFO - Successfully downloaded: GSE232310_family.soft.gz
+2025-01-29 11:14:42,542 - INFO - Downloaded: ['GSE232310_series_matrix.txt.gz'] and ['GSE232310_family.soft.gz'] for trait Type_1_Diabetes
+2025-01-29 11:14:43,460 - INFO - Family file GSE228267_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:43,460 - INFO - No suitable gene expression data in series 11 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:44,451 - INFO - Family file GSE202923_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:44,451 - INFO - No suitable gene expression data in series 12 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:45,177 - INFO - Family file GSE202922_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:45,177 - INFO - No suitable gene expression data in series 13 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:46,175 - INFO - Family file GSE216679_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:46,175 - INFO - No suitable gene expression data in series 14 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:47,081 - INFO - Family file GSE216678_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:47,081 - INFO - No suitable gene expression data in series 15 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:48,067 - INFO - Family file GSE230370_family.soft.gz is available with size 0.03 MB
+2025-01-29 11:14:48,067 - INFO - No suitable gene expression data in series 16 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:49,113 - INFO - Family file GSE225336_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:49,113 - INFO - No suitable gene expression data in series 17 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:50,255 - INFO - Family file GSE144304_family.soft.gz is available with size 0.02 MB
+2025-01-29 11:14:50,255 - INFO - No suitable gene expression data in series 18 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:51,369 - INFO - Family file GSE221787_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:51,369 - INFO - No suitable gene expression data in series 19 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:52,168 - INFO - Family file GSE205853_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:52,168 - INFO - No suitable gene expression data in series 20 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:52,900 - INFO - Family file GSE202852_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:52,900 - INFO - No suitable gene expression data in series 21 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:53,789 - INFO - Family file GSE185191_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:53,789 - INFO - No suitable gene expression data in series 22 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:54,607 - INFO - Family file GSE185190_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:54,607 - INFO - No suitable gene expression data in series 23 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:55,124 - INFO - Matrix file GSE162622_series_matrix.txt.gz is available with size 8.89 MB
+2025-01-29 11:14:55,399 - INFO - Family file GSE162622_family.soft.gz is available with size 27.64 MB
+2025-01-29 11:14:56,394 - INFO - Successfully downloaded: GSE162622_series_matrix.txt.gz
+2025-01-29 11:14:58,151 - INFO - Successfully downloaded: GSE162622_family.soft.gz
+2025-01-29 11:14:58,151 - INFO - Downloaded: ['GSE162622_series_matrix.txt.gz'] and ['GSE162622_family.soft.gz'] for trait Type_1_Diabetes
+2025-01-29 11:14:58,903 - INFO - Family file GSE176230_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:14:58,903 - INFO - No suitable gene expression data in series 25 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:14:59,777 - INFO - Family file GSE176171_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:14:59,777 - INFO - No suitable gene expression data in series 26 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:00,331 - INFO - Matrix file GSE193273_series_matrix.txt.gz is available with size 18.10 MB
+2025-01-29 11:15:00,594 - INFO - Family file GSE193273_family.soft.gz is available with size 34.28 MB
+2025-01-29 11:15:01,983 - INFO - Successfully downloaded: GSE193273_series_matrix.txt.gz
+2025-01-29 11:15:04,348 - INFO - Successfully downloaded: GSE193273_family.soft.gz
+2025-01-29 11:15:04,348 - INFO - Downloaded: ['GSE193273_series_matrix.txt.gz'] and ['GSE193273_family.soft.gz'] for trait Type_1_Diabetes
+2025-01-29 11:15:04,850 - INFO - Matrix file GSE156035_series_matrix.txt.gz is available with size 18.10 MB
+2025-01-29 11:15:05,121 - INFO - Family file GSE156035_family.soft.gz is available with size 34.24 MB
+2025-01-29 11:15:06,449 - INFO - Successfully downloaded: GSE156035_series_matrix.txt.gz
+2025-01-29 11:15:08,766 - INFO - Successfully downloaded: GSE156035_family.soft.gz
+2025-01-29 11:15:08,766 - INFO - Downloaded: ['GSE156035_series_matrix.txt.gz'] and ['GSE156035_family.soft.gz'] for trait Type_1_Diabetes
+2025-01-29 11:15:09,246 - INFO - Matrix file GSE182870_series_matrix.txt.gz is available with size 0.11 MB
+2025-01-29 11:15:09,522 - INFO - Family file GSE182870_family.soft.gz is available with size 0.15 MB
+2025-01-29 11:15:09,895 - INFO - Successfully downloaded: GSE182870_series_matrix.txt.gz
+2025-01-29 11:15:10,303 - INFO - Successfully downloaded: GSE182870_family.soft.gz
+2025-01-29 11:15:10,303 - INFO - Downloaded: ['GSE182870_series_matrix.txt.gz'] and ['GSE182870_family.soft.gz'] for trait Type_1_Diabetes
+2025-01-29 11:15:10,809 - INFO - Matrix file GSE123088_series_matrix.txt.gz is available with size 23.69 MB
+2025-01-29 11:15:11,081 - INFO - Family file GSE123088_family.soft.gz is available with size 32.94 MB
+2025-01-29 11:15:16,927 - INFO - Successfully downloaded: GSE123088_series_matrix.txt.gz
+2025-01-29 11:15:21,117 - INFO - Successfully downloaded: GSE123088_family.soft.gz
+2025-01-29 11:15:21,117 - INFO - Downloaded: ['GSE123088_series_matrix.txt.gz'] and ['GSE123088_family.soft.gz'] for trait Type_1_Diabetes
+2025-01-29 11:15:21,611 - INFO - Matrix file GSE123086_series_matrix.txt.gz is available with size 19.02 MB
+2025-01-29 11:15:21,974 - INFO - Family file GSE123086_family.soft.gz is available with size 26.45 MB
+2025-01-29 11:15:24,842 - INFO - Successfully downloaded: GSE123086_series_matrix.txt.gz
+2025-01-29 11:15:28,369 - INFO - Successfully downloaded: GSE123086_family.soft.gz
+2025-01-29 11:15:28,369 - INFO - Downloaded: ['GSE123086_series_matrix.txt.gz'] and ['GSE123086_family.soft.gz'] for trait Type_1_Diabetes
+2025-01-29 11:15:29,127 - INFO - Family file GSE178991_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:29,127 - INFO - No suitable gene expression data in series 32 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:29,901 - INFO - Family file GSE183701_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:29,901 - INFO - No suitable gene expression data in series 33 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:30,670 - INFO - Family file GSE156411_family.soft.gz is available with size 25.50 MB
+2025-01-29 11:15:30,670 - INFO - No suitable gene expression data in series 34 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:31,504 - INFO - Family file GSE160310_family.soft.gz is available with size 0.04 MB
+2025-01-29 11:15:31,504 - INFO - No suitable gene expression data in series 35 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:32,255 - INFO - Family file GSE160306_family.soft.gz is available with size 0.02 MB
+2025-01-29 11:15:32,256 - INFO - No suitable gene expression data in series 36 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:33,051 - INFO - Family file GSE162689_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:33,051 - INFO - No suitable gene expression data in series 37 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:33,860 - INFO - Family file GSE163732_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:33,860 - INFO - No suitable gene expression data in series 38 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:34,641 - INFO - Family file GSE158292_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:34,641 - INFO - No suitable gene expression data in series 39 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:35,381 - INFO - Family file GSE102485_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:15:35,381 - INFO - No suitable gene expression data in series 40 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:36,200 - INFO - Family file GSE123658_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:36,200 - INFO - No suitable gene expression data in series 41 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:37,044 - INFO - Family file GSE146338_family.soft.gz is available with size 0.08 MB
+2025-01-29 11:15:37,044 - INFO - No suitable gene expression data in series 42 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:37,846 - INFO - Family file GSE148058_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:37,846 - INFO - No suitable gene expression data in series 43 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:38,665 - INFO - Family file GSE133218_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:38,665 - INFO - No suitable gene expression data in series 44 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:39,491 - INFO - Family file GSE124742_family.soft.gz is available with size 0.24 MB
+2025-01-29 11:15:39,491 - INFO - No suitable gene expression data in series 45 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:40,068 - INFO - Matrix file GSE131528-GPL570_series_matrix.txt.gz is available with size 11.05 MB
+2025-01-29 11:15:40,395 - INFO - Family file GSE131528_family.soft.gz is available with size 31.76 MB
+2025-01-29 11:15:42,475 - INFO - Successfully downloaded: GSE131528-GPL570_series_matrix.txt.gz
+2025-01-29 11:15:49,331 - INFO - Successfully downloaded: GSE131528_family.soft.gz
+2025-01-29 11:15:49,331 - INFO - Downloaded: ['GSE131528-GPL570_series_matrix.txt.gz'] and ['GSE131528_family.soft.gz'] for trait Type_1_Diabetes
+2025-01-29 11:15:50,171 - INFO - Family file GSE143143_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:15:50,171 - INFO - No suitable gene expression data in series 47 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:51,190 - INFO - Family file GSE139073_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:51,190 - INFO - No suitable gene expression data in series 48 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:52,385 - INFO - Family file GSE131320_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:52,385 - INFO - No suitable gene expression data in series 49 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:53,145 - INFO - Family file GSE129112_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:53,146 - INFO - No suitable gene expression data in series 50 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:53,955 - INFO - Family file GSE114412_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:53,955 - INFO - No suitable gene expression data in series 51 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:54,725 - INFO - Family file GSE112342_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:15:54,725 - INFO - No suitable gene expression data in series 52 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:55,535 - INFO - Family file GSE124400_family.soft.gz is available with size 0.04 MB
+2025-01-29 11:15:55,535 - INFO - No suitable gene expression data in series 53 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:56,443 - INFO - Family file GSE124284_family.soft.gz is available with size 0.02 MB
+2025-01-29 11:15:56,443 - INFO - No suitable gene expression data in series 54 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:15:57,158 - INFO - Matrix file GSE71799_series_matrix.txt.gz is available with size 23.20 MB
+2025-01-29 11:15:57,482 - INFO - Family file GSE71799_family.soft.gz is available with size 55.50 MB
+2025-01-29 11:16:00,730 - INFO - Successfully downloaded: GSE71799_series_matrix.txt.gz
+2025-01-29 11:16:06,352 - INFO - Successfully downloaded: GSE71799_family.soft.gz
+2025-01-29 11:16:06,352 - INFO - Downloaded: ['GSE71799_series_matrix.txt.gz'] and ['GSE71799_family.soft.gz'] for trait Type_1_Diabetes
+2025-01-29 11:16:07,084 - INFO - Family file GSE112594_family.soft.gz is available with size 0.02 MB
+2025-01-29 11:16:07,084 - INFO - No suitable gene expression data in series 56 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:16:07,841 - INFO - Family file GSE110914_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:16:07,841 - INFO - No suitable gene expression data in series 57 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:16:08,633 - INFO - Family file GSE120904_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:16:08,633 - INFO - No suitable gene expression data in series 58 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:16:09,137 - INFO - Matrix file GSE102234_series_matrix.txt.gz is available with size 54.70 MB
+2025-01-29 11:16:09,403 - INFO - No suitable gene expression data in series 59 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:16:10,167 - INFO - Family file GSE111876_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:16:10,167 - INFO - No suitable gene expression data in series 60 (101 series for trait Type_1_Diabetes in total)
+2025-01-29 11:16:10,980 - INFO - Matrix file GSE75062_series_matrix.txt.gz is available with size 6.98 MB
+2025-01-29 11:16:11,297 - INFO - Family file GSE75062_family.soft.gz is available with size 26.94 MB
+2025-01-29 11:16:12,425 - INFO - Successfully downloaded: GSE75062_series_matrix.txt.gz
+2025-01-29 11:16:15,393 - INFO - Successfully downloaded: GSE75062_family.soft.gz
+2025-01-29 11:16:15,393 - INFO - Downloaded: ['GSE75062_series_matrix.txt.gz'] and ['GSE75062_family.soft.gz'] for trait Type_1_Diabetes
+2025-01-29 11:16:15,426 - INFO - 
+Processing trait (3/3): Type_2_Diabetes
+2025-01-29 11:16:15,426 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Type_2_Diabetes) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-29 11:16:15,623 - INFO - Total results for query: 184
+2025-01-29 11:16:15,623 - INFO - Fetching batch 1 of 2 (size: 100)
+2025-01-29 11:16:15,791 - INFO - Successfully retrieved 100 IDs in batch 1
+2025-01-29 11:16:16,292 - INFO - Fetching batch 2 of 2 (size: 84)
+2025-01-29 11:16:16,469 - INFO - Successfully retrieved 84 IDs in batch 2
+2025-01-29 11:16:16,470 - INFO - Found 184 datasets for: Type_2_Diabetes
+2025-01-29 11:16:57,463 - INFO - Successfully processed 184 datasets for: Type_2_Diabetes
+2025-01-29 11:16:57,631 - INFO - Resuming from checkpoint: i=2, j=0
+2025-01-29 11:16:58,395 - INFO - Family file GSE254732_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:16:58,395 - INFO - No suitable gene expression data in series 0 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:16:59,088 - INFO - Family file GSE280267_family.soft.gz is available with size 0.02 MB
+2025-01-29 11:16:59,089 - INFO - No suitable gene expression data in series 1 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:16:59,556 - INFO - Matrix file GSE281144_series_matrix.txt.gz is available with size 9.23 MB
+2025-01-29 11:16:59,810 - INFO - Family file GSE281144_family.soft.gz is available with size 30.21 MB
+2025-01-29 11:17:00,729 - INFO - Successfully downloaded: GSE281144_series_matrix.txt.gz
+2025-01-29 11:17:02,609 - INFO - Successfully downloaded: GSE281144_family.soft.gz
+2025-01-29 11:17:02,609 - INFO - Downloaded: ['GSE281144_series_matrix.txt.gz'] and ['GSE281144_family.soft.gz'] for trait Type_2_Diabetes
+2025-01-29 11:17:03,352 - INFO - Family file GSE245948_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:03,353 - INFO - No suitable gene expression data in series 3 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:04,227 - INFO - Family file GSE246318_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:04,228 - INFO - No suitable gene expression data in series 4 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:04,960 - INFO - Family file GSE276594_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:04,960 - INFO - No suitable gene expression data in series 5 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:05,699 - INFO - Family file GSE247407_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:17:05,699 - INFO - No suitable gene expression data in series 6 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:06,481 - INFO - Family file GSE272831_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:06,481 - INFO - No suitable gene expression data in series 7 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:07,291 - INFO - Family file GSE262484_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:07,291 - INFO - No suitable gene expression data in series 8 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:08,032 - INFO - Family file GSE272133_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:17:08,032 - INFO - No suitable gene expression data in series 9 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:08,550 - INFO - Matrix file GSE271700_series_matrix.txt.gz is available with size 3.90 MB
+2025-01-29 11:17:08,810 - INFO - Family file GSE271700_family.soft.gz is available with size 8.94 MB
+2025-01-29 11:17:09,417 - INFO - Successfully downloaded: GSE271700_series_matrix.txt.gz
+2025-01-29 11:17:10,227 - INFO - Successfully downloaded: GSE271700_family.soft.gz
+2025-01-29 11:17:10,227 - INFO - Downloaded: ['GSE271700_series_matrix.txt.gz'] and ['GSE271700_family.soft.gz'] for trait Type_2_Diabetes
+2025-01-29 11:17:10,939 - INFO - Family file GSE263644_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:10,939 - INFO - No suitable gene expression data in series 11 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:11,711 - INFO - Family file GSE246221_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:11,711 - INFO - No suitable gene expression data in series 12 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:12,454 - INFO - Family file GSE268210_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:17:12,454 - INFO - No suitable gene expression data in series 13 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:13,185 - INFO - Family file GSE210555_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:17:13,185 - INFO - No suitable gene expression data in series 14 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:13,912 - INFO - Family file GSE262398_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:17:13,912 - INFO - No suitable gene expression data in series 15 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:14,403 - INFO - Matrix file GSE250283_series_matrix.txt.gz is available with size 9.80 MB
+2025-01-29 11:17:14,685 - INFO - Family file GSE250283_family.soft.gz is available with size 27.84 MB
+2025-01-29 11:17:15,551 - INFO - Successfully downloaded: GSE250283_series_matrix.txt.gz
+2025-01-29 11:17:21,981 - INFO - Successfully downloaded: GSE250283_family.soft.gz
+2025-01-29 11:17:21,981 - INFO - Downloaded: ['GSE250283_series_matrix.txt.gz'] and ['GSE250283_family.soft.gz'] for trait Type_2_Diabetes
+2025-01-29 11:17:22,720 - INFO - Family file GSE253502_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:17:22,720 - INFO - No suitable gene expression data in series 17 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:23,490 - INFO - Family file GSE251913_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:23,490 - INFO - No suitable gene expression data in series 18 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:24,204 - INFO - Family file GSE251911_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:24,204 - INFO - No suitable gene expression data in series 19 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:24,934 - INFO - Family file GSE249089_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:17:24,935 - INFO - No suitable gene expression data in series 20 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:25,665 - INFO - Family file GSE201087_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:25,665 - INFO - No suitable gene expression data in series 21 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:26,465 - INFO - Family file GSE250471_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:26,465 - INFO - No suitable gene expression data in series 22 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:27,237 - INFO - Family file GSE198922_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:27,237 - INFO - No suitable gene expression data in series 23 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:28,172 - INFO - Family file GSE202923_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:28,172 - INFO - No suitable gene expression data in series 24 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:28,892 - INFO - Family file GSE202922_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:28,892 - INFO - No suitable gene expression data in series 25 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:29,633 - INFO - Family file GSE228662_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:17:29,633 - INFO - No suitable gene expression data in series 26 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:30,434 - INFO - Family file GSE228665_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:30,434 - INFO - No suitable gene expression data in series 27 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:31,173 - INFO - Family file GSE203264_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:31,173 - INFO - No suitable gene expression data in series 28 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:31,919 - INFO - Family file GSE202206_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:31,919 - INFO - No suitable gene expression data in series 29 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:32,709 - INFO - Family file GSE189005_family.soft.gz is available with size 66.56 MB
+2025-01-29 11:17:32,709 - INFO - No suitable gene expression data in series 30 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:33,183 - INFO - Matrix file GSE227080_series_matrix.txt.gz is available with size 0.14 MB
+2025-01-29 11:17:33,447 - INFO - Family file GSE227080_family.soft.gz is available with size 0.29 MB
+2025-01-29 11:17:33,772 - INFO - Successfully downloaded: GSE227080_series_matrix.txt.gz
+2025-01-29 11:17:34,401 - INFO - Successfully downloaded: GSE227080_family.soft.gz
+2025-01-29 11:17:34,402 - INFO - Downloaded: ['GSE227080_series_matrix.txt.gz'] and ['GSE227080_family.soft.gz'] for trait Type_2_Diabetes
+2025-01-29 11:17:35,130 - INFO - Family file GSE231509_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:35,130 - INFO - No suitable gene expression data in series 32 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:35,910 - INFO - Family file GSE168705_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:35,910 - INFO - No suitable gene expression data in series 33 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:36,672 - INFO - Family file GSE226084_family.soft.gz is available with size 21.93 MB
+2025-01-29 11:17:36,672 - INFO - No suitable gene expression data in series 34 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:37,407 - INFO - Family file GSE221156_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:17:37,407 - INFO - No suitable gene expression data in series 35 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:17:37,922 - INFO - Matrix file GSE180395_series_matrix.txt.gz is available with size 16.12 MB
+2025-01-29 11:17:38,307 - INFO - Family file GSE180395_family.soft.gz is available with size 24.96 MB
+2025-01-29 11:17:43,130 - INFO - Successfully downloaded: GSE180395_series_matrix.txt.gz
+2025-01-29 11:17:47,365 - INFO - Successfully downloaded: GSE180395_family.soft.gz
+2025-01-29 11:17:47,365 - INFO - Downloaded: ['GSE180395_series_matrix.txt.gz'] and ['GSE180395_family.soft.gz'] for trait Type_2_Diabetes
+2025-01-29 11:17:47,870 - INFO - Matrix file GSE180394_series_matrix.txt.gz is available with size 7.90 MB
+2025-01-29 11:17:48,146 - INFO - Family file GSE180394_family.soft.gz is available with size 12.20 MB
+2025-01-29 11:17:52,157 - INFO - Successfully downloaded: GSE180394_series_matrix.txt.gz
+2025-01-29 11:17:56,458 - INFO - Successfully downloaded: GSE180394_family.soft.gz
+2025-01-29 11:17:56,458 - INFO - Downloaded: ['GSE180394_series_matrix.txt.gz'] and ['GSE180394_family.soft.gz'] for trait Type_2_Diabetes
+2025-01-29 11:17:57,526 - INFO - Matrix file GSE180393_series_matrix.txt.gz is available with size 8.34 MB
+2025-01-29 11:17:57,964 - INFO - Family file GSE180393_family.soft.gz is available with size 12.89 MB
+2025-01-29 11:18:01,093 - INFO - Successfully downloaded: GSE180393_series_matrix.txt.gz
+2025-01-29 11:18:03,811 - INFO - Successfully downloaded: GSE180393_family.soft.gz
+2025-01-29 11:18:03,812 - INFO - Downloaded: ['GSE180393_series_matrix.txt.gz'] and ['GSE180393_family.soft.gz'] for trait Type_2_Diabetes
+2025-01-29 11:18:04,763 - INFO - Family file GSE134901_family.soft.gz is available with size 0.02 MB
+2025-01-29 11:18:04,764 - INFO - No suitable gene expression data in series 39 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:05,510 - INFO - Family file GSE200044_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:18:05,510 - INFO - No suitable gene expression data in series 40 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:06,348 - INFO - Family file GSE171153_family.soft.gz is available with size 25.51 MB
+2025-01-29 11:18:06,348 - INFO - No suitable gene expression data in series 41 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:07,149 - INFO - Family file GSE197399_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:18:07,149 - INFO - No suitable gene expression data in series 42 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:07,965 - INFO - Family file GSE217113_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:18:07,965 - INFO - No suitable gene expression data in series 43 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:08,700 - INFO - Family file GSE205891_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:18:08,700 - INFO - No suitable gene expression data in series 44 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:09,523 - INFO - Family file GSE136892_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:18:09,523 - INFO - No suitable gene expression data in series 45 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:10,489 - INFO - Family file GSE176216_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:18:10,490 - INFO - No suitable gene expression data in series 46 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:11,222 - INFO - Family file GSE202295_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:18:11,222 - INFO - No suitable gene expression data in series 47 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:11,953 - INFO - Family file GSE153315_family.soft.gz is available with size 0.00 MB
+2025-01-29 11:18:11,953 - INFO - No suitable gene expression data in series 48 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:12,702 - INFO - Family file GSE198520_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:18:12,702 - INFO - No suitable gene expression data in series 49 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:13,424 - INFO - Family file GSE203346_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:18:13,425 - INFO - No suitable gene expression data in series 50 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:14,238 - INFO - Family file GSE176171_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:18:14,238 - INFO - No suitable gene expression data in series 51 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:15,004 - INFO - Family file GSE174475_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:18:15,004 - INFO - No suitable gene expression data in series 52 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:15,898 - INFO - Family file GSE189007_family.soft.gz is available with size 83.75 MB
+2025-01-29 11:18:15,898 - INFO - No suitable gene expression data in series 53 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:16,391 - INFO - Matrix file GSE98887_series_matrix.txt.gz is available with size 0.20 MB
+2025-01-29 11:18:16,748 - INFO - Family file GSE98887_family.soft.gz is available with size 0.32 MB
+2025-01-29 11:18:17,039 - INFO - Successfully downloaded: GSE98887_series_matrix.txt.gz
+2025-01-29 11:18:17,383 - INFO - Successfully downloaded: GSE98887_family.soft.gz
+2025-01-29 11:18:17,384 - INFO - Downloaded: ['GSE98887_series_matrix.txt.gz'] and ['GSE98887_family.soft.gz'] for trait Type_2_Diabetes
+2025-01-29 11:18:18,215 - INFO - Family file GSE184050_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:18:18,215 - INFO - No suitable gene expression data in series 55 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:19,096 - INFO - Family file GSE165709_family.soft.gz is available with size 0.02 MB
+2025-01-29 11:18:19,096 - INFO - No suitable gene expression data in series 56 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:19,921 - INFO - Family file GSE165708_family.soft.gz is available with size 0.01 MB
+2025-01-29 11:18:19,921 - INFO - No suitable gene expression data in series 57 (184 series for trait Type_2_Diabetes in total)
+2025-01-29 11:18:20,412 - INFO - Matrix file GSE182121-GPL17586_series_matrix.txt.gz is available with size 17.95 MB
+2025-01-29 11:18:20,757 - INFO - Family file GSE182121_family.soft.gz is available with size 42.49 MB
+2025-01-29 11:18:23,805 - INFO - Successfully downloaded: GSE182121-GPL17586_series_matrix.txt.gz
+2025-01-29 11:18:29,346 - INFO - Successfully downloaded: GSE182121_family.soft.gz
+2025-01-29 11:18:29,346 - INFO - Downloaded: ['GSE182121-GPL17586_series_matrix.txt.gz'] and ['GSE182121_family.soft.gz'] for trait Type_2_Diabetes
+2025-01-29 11:18:29,841 - INFO - Matrix file GSE182120_series_matrix.txt.gz is available with size 17.95 MB
+2025-01-29 11:18:30,108 - INFO - Family file GSE182120_family.soft.gz is available with size 42.47 MB
+2025-01-29 11:18:32,546 - INFO - Successfully downloaded: GSE182120_series_matrix.txt.gz
+2025-01-29 11:18:37,074 - INFO - Successfully downloaded: GSE182120_family.soft.gz
+2025-01-29 11:18:37,074 - INFO - Downloaded: ['GSE182120_series_matrix.txt.gz'] and ['GSE182120_family.soft.gz'] for trait Type_2_Diabetes
+2025-01-29 11:18:37,108 - INFO - 
+Final Statistics:
+2025-01-29 11:18:37,108 - INFO - Mean samples: 655.04
+2025-01-29 11:18:37,109 - INFO - Std dev: 2019.16
+2025-01-29 11:18:37,109 - INFO - Total datasets: 23

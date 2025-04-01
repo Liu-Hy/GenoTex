@@ -1,0 +1,86 @@
+2025-01-06 15:45:21,961 - INFO - Found 153 keywords to process
+2025-01-06 15:45:21,961 - INFO - Keywords: ['Breast Cancer', 'Kidney Papillary Cell Carcinoma', 'Kidney Clear Cell Carcinoma', 'Head and Neck Cancer', 'Glioblastoma', 'Esophageal Cancer', 'Endometrioid Cancer', 'Bladder Cancer', 'Retinoblastoma', 'Bile Duct Cancer', 'Adrenocortical Cancer', 'Acute Myeloid Leukemia', 'X-Linked Lymphoproliferative Syndrome', 'Von Hippel Lindau', 'Liver Cancer', 'Lower Grade Glioma', 'Large B-cell Lymphoma', 'Mesothelioma', 'Lung Cancer', 'Uterine Corpus Endometrial Carcinoma', 'Uterine Carcinosarcoma', 'Thymoma', 'Thyroid Cancer', 'Melanoma', 'Stomach Cancer', 'Sarcoma', 'Testicular Cancer', 'Rectal Cancer', 'Prostate Cancer', 'Pheochromocytoma and Paraganglioma', 'Pancreatic Cancer', 'Ovarian Cancer', 'Ocular Melanomas', 'Li-Fraumeni Syndrome', 'Cervical Cancer', 'Colon and Rectal Cancer', 'Kidney Chromophobe', 'lower grade glioma and glioblastoma', 'Atherosclerosis', 'Arrhythmia', 'Congestive heart failure', 'von Willebrand Disease', 'Coronary artery disease', 'Hypertension', 'Atrial Fibrillation', 'High-Density Lipoprotein Deficiency', 'Cardiovascular Disease', 'Essential Thrombocythemia', 'Hypertrophic Cardiomyopathy', 'Creutzfeldt-Jakob Disease', 'Stroke', 'Migraine', 'Epilepsy', "Huntington's Disease", "Parkinson's Disease", 'Autism spectrum disorder (ASD)', 'Amyotrophic Lateral Sclerosis', 'Attention deficit hyperactivity disorder (ADHD)', 'Schizophrenia', 'Bipolar disorder', 'Anxiety disorder', 'Insomnia', 'Multiple sclerosis', "Alzheimer's Disease", 'Substance Use Disorder', 'Obsessive-Compulsive Disorder', 'Charcot-Marie-Tooth Disease', 'Angelman Syndrome', 'Canavan Disease', 'Multiple Chemical Sensitivity', 'Tourette Syndrome', 'Depression', 'Chronic Fatigue Syndrome', 'Post-Traumatic Stress Disorder', 'Anorexia Nervosa', 'Generalized Anxiety Disorder', 'Osteoporosis', 'Chronic kidney disease', 'Hemochromatosis', 'Werner Syndrome', 'Liver cirrhosis', 'Polycystic Kidney Disease', 'Mitochondrial Disorders', 'Glucocorticoid Sensitivity', 'Metabolic Rate', 'Polycystic Ovary Syndrome', 'Type 1 Diabetes Risk', 'Hepatitis', 'Obesity', 'Hypothyroidism', 'Alopecia', 'Gaucher Disease', 'Cystic Fibrosis', 'Sickle Cell Anemia', 'Duchenne Muscular Dystrophy', 'Tuberous Sclerosis', 'Non-Syndromic Hearing Loss', 'Aniridia', 'Hutchinson-Gilford Progeria Syndrome', 'Spinal Muscular Atrophy', 'Multiple Endocrine Neoplasia Type 2', 'DNA Repair Capacity', 'Autoinflammatory Disorders', 'Intellectual Disability', 'Telomere Length', 'Brugada Syndrome', 'Androgen Insensitivity Syndrome', 'DiGeorge Syndrome', 'Craniosynostosis', 'Congenital Adrenal Hyperplasia', 'Inflammatory Disorders', "Crohn's Disease", 'Peptic ulcer disease', 'Celiac Disease', 'Irritable bowel syndrome (IBS)', 'Gastroesophageal reflux disease (GERD)', 'Asthma', 'Chronic obstructive pulmonary disease (COPD)', 'Obstructive sleep apnea', 'COVID-19', 'Osteoarthritis', "Sjögren's Syndrome", 'Psoriatic Arthritis', 'Ankylosing Spondylitis', "Paget's Disease of bone", 'Rheumatoid Arthritis', 'Lupus (Systemic Lupus Erythematosus', 'Eczema', 'Endometriosis', 'Age-Related Macular Degeneration', 'Bone Density', 'Physical Exercise Response', 'Longevity and Aging', 'Fibromyalgia', 'Psoriasis', 'Red Hair', 'Kidney stones', 'Allergies', 'Underweight', 'Heart rate', 'HIV Resistance', 'Lactose Intolerance', 'Poor Metabolizer of Drugs', 'Height', 'Susceptibility to Infections', 'Cognitive Processing', 'Social Behavior', 'Alcohol Flush Reaction', 'Blood Type', 'Vitamin D Levels', 'LDL Cholesterol Levels', 'Pain Sensitivity', 'Language Abilities']
+2025-01-06 15:45:21,961 - INFO - No checkpoint found, starting from beginning
+2025-01-06 15:45:21,963 - INFO - 
+Processing trait (1/153): Breast Cancer
+2025-01-06 15:45:21,963 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Breast Cancer) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-06 15:45:22,413 - INFO - Total results for query: 1316
+2025-01-06 15:45:22,413 - INFO - Limiting results to user-specified maximum: 200
+2025-01-06 15:45:22,413 - INFO - Fetching batch 1 of 2 (size: 100)
+2025-01-06 15:45:23,335 - INFO - Successfully retrieved 100 IDs in batch 1
+2025-01-06 15:45:23,835 - INFO - Fetching batch 2 of 2 (size: 100)
+2025-01-06 15:45:24,302 - INFO - Successfully retrieved 100 IDs in batch 2
+2025-01-06 15:45:24,302 - INFO - Found 200 datasets for: Breast Cancer
+2025-01-06 15:46:05,636 - INFO - Successfully processed 200 datasets for: Breast Cancer
+2025-01-06 15:46:05,793 - INFO - Resuming from checkpoint: i=0, j=0
+2025-01-06 15:46:06,600 - INFO - Family file GSE285765_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:46:06,600 - INFO - No suitable gene expression data in series 0 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:07,386 - INFO - Family file GSE253239_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:46:07,386 - INFO - No suitable gene expression data in series 1 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:08,257 - INFO - Family file GSE268201_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:46:08,257 - INFO - No suitable gene expression data in series 2 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:09,082 - INFO - Family file GSE243526_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:09,083 - INFO - No suitable gene expression data in series 3 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:10,005 - INFO - Family file GSE237728_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:10,005 - INFO - No suitable gene expression data in series 4 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:10,549 - INFO - Matrix file GSE283522_series_matrix.txt.gz is available with size 0.12 MB
+2025-01-06 15:46:10,823 - INFO - Family file GSE283522_family.soft.gz is available with size 0.26 MB
+2025-01-06 15:46:11,126 - INFO - Successfully downloaded: GSE283522_series_matrix.txt.gz
+2025-01-06 15:46:11,466 - INFO - Successfully downloaded: GSE283522_family.soft.gz
+2025-01-06 15:46:11,466 - INFO - Downloaded: ['GSE283522_series_matrix.txt.gz'] and ['GSE283522_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:46:11,963 - INFO - Matrix file GSE270721_series_matrix.txt.gz is available with size 3.30 MB
+2025-01-06 15:46:12,237 - INFO - Family file GSE270721_family.soft.gz is available with size 22.76 MB
+2025-01-06 15:46:12,799 - INFO - Successfully downloaded: GSE270721_series_matrix.txt.gz
+2025-01-06 15:46:14,431 - INFO - Successfully downloaded: GSE270721_family.soft.gz
+2025-01-06 15:46:14,431 - INFO - Downloaded: ['GSE270721_series_matrix.txt.gz'] and ['GSE270721_family.soft.gz'] for trait Breast Cancer
+2025-01-06 15:46:15,289 - INFO - Family file GSE283737_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:15,289 - INFO - No suitable gene expression data in series 7 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:16,053 - INFO - Family file GSE211434_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:16,053 - INFO - No suitable gene expression data in series 8 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:16,816 - INFO - Family file GSE278241_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:46:16,816 - INFO - No suitable gene expression data in series 9 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:17,624 - INFO - Family file GSE282835_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:46:17,624 - INFO - No suitable gene expression data in series 10 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:18,507 - INFO - Family file GSE281303_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:18,508 - INFO - No suitable gene expression data in series 11 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:19,389 - INFO - Family file GSE224986_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:19,389 - INFO - No suitable gene expression data in series 12 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:20,182 - INFO - Family file GSE281302_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:46:20,182 - INFO - No suitable gene expression data in series 13 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:20,946 - INFO - Family file GSE279137_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:20,946 - INFO - No suitable gene expression data in series 14 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:21,688 - INFO - Family file GSE271325_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:21,689 - INFO - No suitable gene expression data in series 15 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:22,620 - INFO - Family file GSE262009_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:22,620 - INFO - No suitable gene expression data in series 16 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:23,447 - INFO - Family file GSE274731_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:23,447 - INFO - No suitable gene expression data in series 17 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:24,234 - INFO - Family file GSE274720_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:46:24,235 - INFO - No suitable gene expression data in series 18 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:25,054 - INFO - Family file GSE259252_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:25,054 - INFO - No suitable gene expression data in series 19 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:25,873 - INFO - Family file GSE259249_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:25,873 - INFO - No suitable gene expression data in series 20 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:26,703 - INFO - Family file GSE276108_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:26,703 - INFO - No suitable gene expression data in series 21 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:27,470 - INFO - Family file GSE244631_family.soft.gz is available with size 0.17 MB
+2025-01-06 15:46:27,470 - INFO - No suitable gene expression data in series 22 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:28,307 - INFO - Family file GSE268426_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:46:28,307 - INFO - No suitable gene expression data in series 23 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:29,070 - INFO - Family file GSE277758_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:46:29,070 - INFO - No suitable gene expression data in series 24 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:29,825 - INFO - Family file GSE278183_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:46:29,825 - INFO - No suitable gene expression data in series 25 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:30,721 - INFO - Family file GSE246219_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:30,722 - INFO - No suitable gene expression data in series 26 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:31,516 - INFO - Family file GSE246215_family.soft.gz is available with size 0.00 MB
+2025-01-06 15:46:31,516 - INFO - No suitable gene expression data in series 27 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:32,269 - INFO - Family file GSE245467_family.soft.gz is available with size 0.01 MB
+2025-01-06 15:46:32,269 - INFO - No suitable gene expression data in series 28 (200 series for trait Breast Cancer in total)
+2025-01-06 15:46:35,819 - INFO - 
+Processing trait (2/153): Kidney Papillary Cell Carcinoma
+2025-01-06 15:46:35,820 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Kidney Papillary Cell Carcinoma) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-06 15:46:36,405 - INFO - Total results for query: 29
+2025-01-06 15:46:36,405 - INFO - Fetching batch 1 of 1 (size: 29)
+2025-01-06 15:46:36,857 - INFO - Successfully retrieved 29 IDs in batch 1
+2025-01-06 15:46:36,857 - INFO - Found 29 datasets for: Kidney Papillary Cell Carcinoma

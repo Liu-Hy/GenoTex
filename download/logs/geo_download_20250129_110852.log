@@ -1,0 +1,20 @@
+2025-01-29 11:08:52,274 - INFO - Found 3 keywords to process
+2025-01-29 11:08:52,274 - INFO - Keywords: ['Longevity', 'Type_1_Diabetes', 'Type_2_Diabetes']
+2025-01-29 11:08:52,274 - INFO - Resuming from checkpoint: i=0, j=0
+2025-01-29 11:08:52,276 - INFO - 
+Processing trait (1/3): Longevity
+2025-01-29 11:08:52,276 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Longevity) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-29 11:08:52,433 - INFO - Total results for query: 10
+2025-01-29 11:08:52,434 - INFO - Fetching batch 1 of 1 (size: 10)
+2025-01-29 11:08:52,636 - INFO - Successfully retrieved 10 IDs in batch 1
+2025-01-29 11:08:52,637 - INFO - Found 10 datasets for: Longevity
+2025-01-29 11:08:54,555 - INFO - Successfully processed 10 datasets for: Longevity
+2025-01-29 11:08:54,925 - INFO - 
+Processing trait (2/3): Type_1_Diabetes
+2025-01-29 11:08:54,925 - INFO - Search query: (30:10000[Number of Samples]) AND ("Homo sapiens"[Organism]) AND (2010:2025[Publication Date]) AND (Type_1_Diabetes) AND ("expression profiling by array"[DataSet Type] OR "expression profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by high throughput sequencing"[DataSet Type] OR "genome variation profiling by snp array"[DataSet Type] OR "snp genotyping by snp array"[DataSet Type] OR "third party reanalysis"[DataSet Type])
+2025-01-29 11:08:55,092 - INFO - Total results for query: 101
+2025-01-29 11:08:55,092 - INFO - Fetching batch 1 of 2 (size: 100)
+2025-01-29 11:08:55,257 - INFO - Successfully retrieved 100 IDs in batch 1
+2025-01-29 11:08:55,757 - INFO - Fetching batch 2 of 2 (size: 1)
+2025-01-29 11:08:55,921 - INFO - Successfully retrieved 1 IDs in batch 2
+2025-01-29 11:08:55,921 - INFO - Found 101 datasets for: Type_1_Diabetes
