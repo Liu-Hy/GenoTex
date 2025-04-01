@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f42d40ca-2cc5-439e-9264-44bb0abc9084" name="Changes" comment="update license">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f42d40ca-2cc5-439e-9264-44bb0abc9084" name="Changes" comment="update icon" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,6 +97,7 @@
       <workItem from="1743108609184" duration="1228000" />
       <workItem from="1743296019386" duration="2381000" />
       <workItem from="1743475063927" duration="3866000" />
+      <workItem from="1743482737360" duration="1305000" />
     </task>
     <task id="LOCAL-00001" summary="inital commit">
       <created>1718225127717</created>
@@ -174,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743477806088</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update icon">
+      <option name="closed" value="true" />
+      <created>1743482839005</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1743482839005</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +207,7 @@
     <MESSAGE value="update file" />
     <MESSAGE value="update files" />
     <MESSAGE value="update license" />
-    <option name="LAST_COMMIT_MESSAGE" value="update license" />
+    <MESSAGE value="update icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="update icon" />
   </component>
 </project>
