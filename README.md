@@ -22,12 +22,12 @@ The below figure illustrates our benchmark curation process. For detailed inform
 
 ## Table of Contents
 
-- [Dataset Overview](#dataset-overview)
-- [Dataset Structure](#dataset-structure)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Citation](#citation)
-- [License](#license)
+- [Dataset Overview](#📊-dataset-overview)
+- [Dataset Structure](#🗂️-dataset-structure)
+- [Installation](#📥-installation)
+- [Usage](#💻-usage)
+- [Citation](#📝-citation)
+- [License](#⚖️-license)
 
 ## 📊 Dataset Overview
 
@@ -183,9 +183,7 @@ The code part of the benchmark includes:
 
 - **Documentation files**: `datasheet.md` provides the [Datasheets for Datasets](https://arxiv.org/abs/1803.09010) documentation of our benchmark, and `metadata.json` provides [the Croissant metadata](https://github.com/mlcommons/croissant) in [JSON-LD](https://json-ld.org/) format.
 
-## 🚀 Getting Started
-
-### Installation
+## 📥 Installation
 
 1. Clone this repository:
    ```bash
