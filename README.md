@@ -110,9 +110,9 @@ The data is organized into three main directories:
 
 2. **Input Data Structure**:
    
-   - **GEO folder**: Organized by our predefined trait names. Each trait directory holds 1-11 cohort datasets related to this trait, which were programmatically searched under specific criteria and downloaded from the GEO database using Entrez Utilities. Each cohort dataset is stored as a folder named after the GEO Series (GSE) number, such as 'GSE98578'. Each cohort folder contains `.gz` files, typically one SOFT file and one matrix file, though occasionally there are multiple SOFT files or matrix files.
+   - **GEO folder**: Organized by our predefined trait names. Each trait directory holds 1-11 cohort datasets related to this trait, which were programmatically searched under specific criteria and downloaded from [the GEO database](https://www.ncbi.nlm.nih.gov/geo/) using [Entrez Utilities](https://www.ncbi.nlm.nih.gov/books/NBK25501/). Each cohort dataset is stored as a folder named after the GEO Series (GSE) number, such as 'GSE98578'. Each cohort folder contains `.gz` files, typically one SOFT file and one matrix file, though occasionally there are multiple SOFT files or matrix files.
 
-   - **TCGA folder**: Directly downloaded from the TCGA Hub of the UCSC Xena platform, organized by different types of cancer. We preserve the original folder names from the website, without strictly matching our predefined trait names. Each trait (cancer) folder contains a clinicalMatrix file storing sample clinical features, and a PANCAN.gz file storing gene expression data.
+   - **TCGA folder**: Directly downloaded from [the TCGA Hub](https://xenabrowser.net/datapages/?host=https%3A%2F%2Ftcga.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443) of [the UCSC Xena platform](https://xena.ucsc.edu/), organized by different types of cancer. We preserve the original folder names from the website, without strictly matching our predefined trait names. Each trait (cancer) folder contains a clinicalMatrix file storing sample clinical features, and a PANCAN.gz file storing gene expression data.
 
 3. **Preprocessed Data Structure**:
    
@@ -146,10 +146,10 @@ The data is organized into three main directories:
 5. **Metadata Structure**:
    
    - `task_info.json`: Contains full specifications for the gene identification problems in our benchmark, and domain knowledge about gene-trait associations. For each trait, it includes:
-     - `related_genes`: A list of genes known to be associated with the trait, sourced from the Open Targets Platform
+     - `related_genes`: A list of genes known to be associated with the trait, sourced from [the Open Targets Platform](https://platform.opentargets.org/downloads)
      - `conditions`: The list of conditions paired with the trait to form gene identification problems in our benchmark
    
-   - `gene_synonym.json`: Stores the mapping from common acronyms of human gene symbols to their standard symbols, sourced from the NCBI Gene databases. This is useful for normalizing gene symbols during preprocessing to prevent inaccuracies arising from different gene naming conventions.
+   - `gene_synonym.json`: Stores the mapping from common acronyms of human gene symbols to their standard symbols, sourced from [the NCBI Gene FTP Site](https://ftp.ncbi.nlm.nih.gov/gene/DATA/). This is useful for normalizing gene symbols during preprocessing to prevent inaccuracies arising from different gene naming conventions.
 
 ### Code (In This Repository)
 
@@ -181,7 +181,7 @@ The code part of the benchmark includes:
 
 - **download/**: Contains the scripts for programmatically searching and downloading input gene expression datasets, and acquiring domain knowledge files from public repositories. It also includes the script for selecting important trait-condition pairs to form our gene identification problems.
 
-- **Documentation files**: `datasheet.md` provides the Datasheets for Datasets documentation of our benchmark, and `metadata.json` provides the Croissant metadata in JSON-LD format.
+- **Documentation files**: `datasheet.md` provides the [Datasheets for Datasets](https://arxiv.org/abs/1803.09010) documentation of our benchmark, and `metadata.json` provides [the Croissant metadata](https://github.com/mlcommons/croissant) in [JSON-LD](https://json-ld.org/) format.
 
 ## 🚀 Getting Started
 
@@ -237,7 +237,7 @@ The script will detect non-conformance in format, but you will need to correct a
 If you use GenoTEX in your research, please cite our paper:
 
 ```bibtex
-@misc{liu2025genotexbenchmarkautomatedgene,
+@misc{liu2025genotex,
       title={GenoTEX: A Benchmark for Automated Gene Expression Data Analysis in Alignment with Bioinformaticians}, 
       author={Haoyang Liu and Shuyu Chen and Ye Zhang and Haohan Wang},
       year={2025},
