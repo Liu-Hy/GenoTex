@@ -8,38 +8,39 @@ The GenoTEX dataset was created to support the evaluation and development of aut
 
 **Who created the dataset (e.g., which team, research group) and on behalf of which entity (e.g., company, institution, organization)?**
 
-The dataset was created by a team of researchers led by Haoyang Liu, Shuyu Chen, Ye Zhang, and Haohan Wang. The project was conducted as part of their research in AI4Science, specifically focusing on computational genomics and machine learning for genomic data analysis.
+The dataset was created by a team of researchers led by Haohan Wang from the UIUC DREAM Lab, with core members including Haoyang Liu, Shuyu Chen, and Ye Zhang. The project was conducted as part of their research in AI4Science, specifically focusing on AI-driven methods for biomedical data analysis.
 
 **Who funded the creation of the dataset?** 
 
-Information about specific funding sources is not explicitly provided in the available materials.
+This research was supported by the National AI Research Resource (NAIRR) under grant number 240283. An initial version of this work was supported by the Accelerate Foundation Models Research (AFMR) initiative from Microsoft Research.
 
 ## Composition
 
 **What do the instances that comprise the dataset represent?**
 
-The dataset represents gene identification problems, each involving the analysis of gene expression data to identify significant genes associated with specific traits (e.g., diseases) while considering the influence of some condition (e.g., age, gender, or a co-existing trait). Each problem includes input data (raw gene expression datasets), analysis code, and expected outcomes (identified significant genes).
+The dataset represents 1,384 gene identification problems, each uniquely identified by a (trait, condition) pair. Each problem represents a scientific inquiry to identify significant genes associated with a specific trait (e.g., a disease) while accounting for the influence of a condition (e.g., age, gender, or another trait). The condition is either another trait, or 'Age', 'Gender', or 'None' for unconditional problems.
 
 **How many instances are there in total (of each type, if appropriate)?**
 
 The dataset includes:
 - 1,384 gene identification problems (132 unconditional problems and 1,252 conditional problems)
-- 911 input datasets (cohort datasets from GEO and TCGA)
+- 911 input datasets from GEO and TCGA related to 132 traits
 - 41.5 GB of input data with 152,415 total samples (average of 167 samples per dataset)
 - 237,907 lines of analysis code (average 261 lines per dataset)
 
 **Does the dataset contain all possible instances or is it a sample from a larger set?**
 
-The dataset contains a carefully selected subset of possible gene identification problems. From the 17,556 possible trait-condition pairs that could form conditional gene identification problems, the creators selected the most scientifically valuable ones based on both domain expertise and data-driven approaches. The selection involved manually designed rules determining which pairs to include or exclude based on trait categories, and for undecided pairs, measuring trait-condition association by calculating Jaccard similarity between gene sets related to each trait and condition.
+The dataset is a sample from a larger set. Our [sampling strategy](#sampling-strategy) is answered in a following question.
 
 **What data does each instance consist of?**
 
-Each gene identification problem consists of:
-1. Input data: Raw gene expression datasets from public databases (GEO and TCGA)
-2. Analysis code: Annotated code for preprocessing the data and identifying significant genes
-3. Output data: Preprocessed datasets and the results of statistical analyses identifying significant genes
+For each problem, the dataset contains:
 
-The raw gene expression data typically includes gene expression measurements across multiple samples, along with clinical information about these samples.
+1. Input data: Raw gene expression datasets from public databases (GEO and TCGA) associated with the relevant trait (and condition, if applicable). The raw data includes gene expression measurements from multiple samples, along with clinical information about these samples.
+2. Analysis code: Annotated code for data preprocessing and statistical analysis
+3. Output data: Preprocessed datasets and the significant genes identified from statistical analyses
+
+Note that each gene identification problem reuses datasets related to its trait and condition. For example, if problem_1 is (trait_A, trait_B) and problem_2 is (trait_A, trait_C), then both problems use the preprocessed datasets for trait_A. 
 
 **Is there a label or target associated with each instance?**
 
@@ -55,7 +56,7 @@ Yes, relationships between problems, conditions, and traits are explicitly docum
 
 **Are there recommended data splits?**
 
-The dataset does not explicitly specify training/validation/testing splits, as it is primarily designed as a benchmark for evaluating methods against expert-curated analyses.
+No, GenoTEX does not specify training/validation/testing splits. The benchmark evaluates automated methods for gene expression data analysis, which typically employ agents that leverage the reasoning and programming capabilities of foundation models, either with or without additional fine-tuning. Since these methods do not rely on supervised learning from the benchmark itself, traditional data splits are unnecessary.
 
 **Are there any errors, sources of noise, or redundancies in the dataset?**
 
@@ -99,9 +100,20 @@ The input datasets were programmatically searched and downloaded from the GEO da
 
 For the analysis part, a team of 4 researchers designed the problem list and developed example code for solving gene identification problems. They extracted common patterns from these examples to develop guidelines for the entire benchmark. Then, a team of 9 bioinformaticians was assembled and trained to analyze the complete set of problems following these guidelines. They submitted their analysis code and results weekly over a period of 20 weeks.
 
-**If the dataset is a sample from a larger set, what was the sampling strategy?**
+<a id="sampling-strategy"></a>**If the dataset is a sample from a larger set, what was the sampling strategy?**
 
-The sampling strategy for selecting trait-condition pairs involved both domain expertise and data-driven approaches. The researchers applied manually designed rules to determine which pairs to include or exclude based on trait categories. For undecided pairs, they measured trait-condition association by calculating Jaccard similarity between gene sets related to each trait and condition, using data from the Open Targets Platform. They selected pairs with Jaccard similarity exceeding 0.1, as these likely share underlying genetic mechanisms, offering valuable insights into complex trait-condition interactions.
+The sampling strategy involved two aspects:
+
+1. **Problem selection**: The selection of trait-condition pairs involved both domain expertise and data-driven approaches. The researchers applied manually designed rules to determine which pairs to include or exclude based on trait categories. For undecided pairs, they measured trait-condition association by calculating Jaccard similarity between gene sets related to each trait and condition, using data from the Open Targets Platform. They selected pairs with Jaccard similarity exceeding 0.1, as these likely share underlying genetic mechanisms, offering valuable insights into complex trait-condition interactions.
+
+2. **Dataset collection**: For each trait, the researchers selectively downloaded gene expression datasets:
+   - **GEO data**: For each trait, only the top 10 cohort datasets that satisfied specific criteria were downloaded, using GEO's default ranking that considers recency and quality. The search was limited to GEO's manually curated subset (GEO DataSets) with the following criteria:
+     - Sample size: 30-10,000
+     - Organism: Human
+     - Publication year: 2010-2025
+     - Data types: "expression profiling by array", "expression profiling by high throughput sequencing", "genome variation profiling by high throughput sequencing", "genome variation profiling by snp array", "snp genotyping by snp array", "third party reanalysis"
+     - Technical requirements: Must have both a matrix file (>0.1MB, <100MB) and a family file (<100MB)
+   - **TCGA data**: All available data from the UCSC Xena Data Hubs were included due to their reasonable size and high quality.
 
 **Who was involved in the data collection process and how were they compensated?**
 
@@ -109,11 +121,11 @@ The data collection and analysis involved a core team of 4 researchers who desig
 
 **Over what timeframe was the data collected?**
 
-The analysis code and results were developed and submitted by bioinformaticians weekly over a period of 20 weeks. The specific calendar dates are not mentioned in the available materials.
+The analysis code and results were developed and submitted by bioinformaticians over two phases totaling 20 weeks: the main development phase from February to May 2024, and a supplementary phase in January 2025 to incorporate more recent data.
 
 **Were any ethical review processes conducted?**
 
-The authors mention engaging in extensive discussions and consultations to address ethical considerations and legal requirements throughout the curation process. They carefully examined each dataset to ensure the absence of personally identifiable information and compliance with all relevant standards. However, specific details about formal ethical review processes are not provided in the available materials.
+The authors mention engaging in extensive discussions and consultations to address ethical considerations and legal requirements throughout the curation process. They carefully examined each dataset to ensure the absence of personally identifiable information and compliance with all relevant standards.
 
 ## Preprocessing/cleaning/labeling
 
@@ -143,7 +155,7 @@ Yes, the code used for preprocessing is available in the 'code/' directory of th
 
 **Has the dataset been used for any tasks already?**
 
-Yes, the dataset has been used to evaluate GenoAgent, a team of LLM-based agents proposed by the authors as a baseline method for automating gene expression data analysis. The evaluation assessed performance on three tasks: dataset selection, data preprocessing, and statistical analysis.
+Yes, GenoTEX has been used to evaluate GenoAgent, a team of LLM-based agents proposed by the authors as a baseline method for automating gene expression data analysis. The evaluation assessed performance on three tasks: dataset selection, data preprocessing, and statistical analysis.
 
 **Is there a repository that links to any or all papers or systems that use the dataset?**
 
@@ -151,7 +163,7 @@ The GitHub repository (https://github.com/Liu-Hy/GenoTEX) serves as the primary 
 
 **What (other) tasks could the dataset be used for?**
 
-The dataset could be used for:
+GenoTEX could be used for:
 1. Developing and evaluating automated methods for gene expression data analysis
 2. Training machine learning models to identify disease-associated genes
 3. Studying the influence of conditions on gene-trait relationships
@@ -160,14 +172,11 @@ The dataset could be used for:
 
 **Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses?**
 
-The dataset focuses on a specific approach to gene expression analysis (using Lasso regression for gene identification), which aligns with common practices in the genetic community. However, users should be aware that:
-1. Despite the popularity of deep learning methods, the genetic community typically prefers linear methods due to their interpretability and lower sample-size requirements.
-2. The set of selected genes is sensitive to specific choices made during cohort-specific feature encoding, where multiple reasonable approaches often exist.
-3. The benchmark includes expert-curated annotations, but inherent ambiguity in gene selection should be considered when evaluating methods against this benchmark.
+GenoTEX includes expert-curated annotations following best practices in the bioinformatics community. However, the set of selected genes is sensitive to specific choices made during cohort-specific feature encoding, where multiple reasonable approaches often exist. This inherent ambiguity in gene selection should be considered when evaluating methods against this benchmark.
 
 **Are there tasks for which the dataset should not be used?**
 
-The dataset should NOT be used for:
+GenoTEX should NOT be used for:
 1. Making clinical decisions without additional validation through biological experiments or clinical trials
 2. Claiming definitive "ground truth" about gene-disease relationships, as these analyses provide valuable insights but must ultimately be combined with interventional biological experiments or clinical trials to confirm the significance of identified genes
 3. Developing methods that ignore the inherent complexity and ambiguity in gene expression analysis
@@ -176,19 +185,19 @@ The dataset should NOT be used for:
 
 **Will the dataset be distributed to third parties outside of the entity on behalf of which the dataset was created?**
 
-Yes, the dataset is publicly available for research purposes.
+Yes, GenoTEX is publicly available for research purposes.
 
 **How will the dataset will be distributed?**
 
-The dataset is distributed through GitHub (https://github.com/Liu-Hy/GenoTEX) for the code and documentation, with the data part accessible through Google Drive and Baidu Cloud Disk links provided in the repository.
+GenoTEX is distributed through GitHub (https://github.com/Liu-Hy/GenoTEX) for the code and documentation, with the data part accessible through Google Drive and Baidu Cloud Disk links provided in the repository.
 
 **When will the dataset be distributed?**
 
-The dataset has already been distributed, as indicated by the availability of the GitHub repository and the publication of the associated paper on arXiv.
+GenoTEX has already been distributed, as indicated by the availability of the GitHub repository and the publication of the associated paper on arXiv.
 
 **Will the dataset be distributed under a copyright or other intellectual property (IP) license, and/or under applicable terms of use (ToU)?**
 
-Yes, the GenoTEX dataset is released under a Creative Commons Attribution 4.0 International (CC BY 4.0) license, which allows for broad usage while protecting the rights of the creators.
+Yes, GenoTEX is released under a Creative Commons Attribution 4.0 International (CC BY 4.0) license, which allows for broad usage while protecting the rights of the creators.
 
 **Have any third parties imposed IP-based or other restrictions on the data associated with the instances?**
 
@@ -196,14 +205,13 @@ The original data sources (GEO, TCGA, Open Targets Platform, NCBI Genes database
 
 **Do any export controls or other regulatory restrictions apply to the dataset or to individual instances?**
 
-No information about export controls or other regulatory restrictions is mentioned in the available materials.
-
+No, there are no export controls or other regulatory restrictions that apply to GenoTEX. The dataset consists of publicly available gene expression data and analysis code, which are not subject to special regulatory controls.
 
 ## Maintenance
 
 **Who will be supporting/hosting/maintaining the dataset?**
 
-The dataset is hosted on GitHub and maintained by Haoyang Liu (the first author) and other researchers from the UIUC DREAM Lab.
+GenoTEX is hosted on GitHub and maintained by Haoyang Liu (the first author) and other researchers from the UIUC DREAM Lab.
 
 **How can the owner/curator/manager of the dataset be contacted?**
 
@@ -219,7 +227,7 @@ Yes, we will continue to update GenoTEX based on feedback from the community and
 
 **If the dataset relates to people, are there applicable limits on the retention of the data associated with the instances?**
 
-The dataset contains anonymized data from public repositories with no personally identifiable information. We have not set specific retention limits as this data is already publicly available.
+GenoTEX contains anonymized data from public repositories with no personally identifiable information. We have not set specific retention limits as this data is already publicly available.
 
 **If others want to extend/augment/build on/contribute to the dataset, is there a mechanism for them to do so?**
 

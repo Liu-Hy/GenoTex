@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f42d40ca-2cc5-439e-9264-44bb0abc9084" name="Changes" comment="update icon" />
+    <list default="true" id="f42d40ca-2cc5-439e-9264-44bb0abc9084" name="Changes" comment="minor update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="1d9abe68f84d99350399932f9fdca58fe2977e16" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,6 +100,8 @@
       <workItem from="1743296019386" duration="2381000" />
       <workItem from="1743475063927" duration="3866000" />
       <workItem from="1743482737360" duration="1305000" />
+      <workItem from="1743702794787" duration="46000" />
+      <workItem from="1743702845057" duration="478000" />
     </task>
     <task id="LOCAL-00001" summary="inital commit">
       <created>1718225127717</created>
@@ -181,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743482839005</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="minor update">
+      <option name="closed" value="true" />
+      <created>1743692251806</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1743692251806</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +220,7 @@
     <MESSAGE value="update files" />
     <MESSAGE value="update license" />
     <MESSAGE value="update icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="update icon" />
+    <MESSAGE value="minor update" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor update" />
   </component>
 </project>
