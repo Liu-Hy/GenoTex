@@ -7,9 +7,15 @@
   <a href="https://creativecommons.org/licenses/by/4.0/">
     <img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" alt="License: CC BY 4.0">
   </a>
-  <img src="https://img.shields.io/badge/AI4Science-blue.svg" alt="AI4Science">
-  <img src="https://img.shields.io/badge/LLM%20Agent-orange.svg" alt="LLM Agent">
-  <img src="https://img.shields.io/badge/Computational%20Genomics-green.svg" alt="Computational Genomics">
+  <a href="https://github.com/topics/ai4science">
+    <img src="https://img.shields.io/badge/AI4Science-blue.svg" alt="AI4Science">
+  </a>
+  <a href="https://github.com/topics/llm-agent">
+    <img src="https://img.shields.io/badge/LLM%20Agent-orange.svg" alt="LLM Agent">
+  </a>
+  <a href="https://github.com/topics/computational-genomics">
+    <img src="https://img.shields.io/badge/Computational%20Genomics-green.svg" alt="Computational Genomics">
+  </a>
 </div>
 
 GenoTEX (**Geno**mics Data Au**t**omatic **Ex**ploration Benchmark) is a benchmark dataset for the automated analysis of gene expression data to identify disease-associated genes while considering the influence of other biological factors. It provides annotated code and results for solving a wide range of gene identification problems, encompassing dataset selection, preprocessing, and statistical analysis, in a pipeline that follows computational genomics standards. The benchmark includes expert-curated annotations from bioinformaticians to ensure accuracy and reliability.
@@ -22,13 +28,14 @@ The below figure illustrates our benchmark curation process. For detailed inform
 
 ## Table of Contents
 
-- [Dataset Overview](#📊-dataset-overview)
-- [Dataset Structure](#🗂️-dataset-structure)
-- [Installation](#📥-installation)
-- [Usage](#💻-usage)
-- [Citation](#📝-citation)
-- [License](#⚖️-license)
+- [Dataset Overview](#dataset-overview)
+- [Dataset Structure](#dataset-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Citation](#citation)
+- [License](#license)
 
+<a id="dataset-overview"></a>
 ## 📊 Dataset Overview
 
 GenoTEX provides a benchmark for evaluating automated methods for gene expression data analysis, particularly for LLM-based agents. In biomedical research, gene expression analysis is crucial for understanding biological mechanisms and advancing clinical applications such as disease marker identification and personalized medicine. However, these analyses are often repetitive, labor-intensive, and prone to errors, leading to significant time and financial burdens on research teams.
@@ -44,6 +51,7 @@ Key features of the benchmark include:
 
 Each problem in the benchmark involves identifying genes associated with a specific trait (e.g., a disease) while optionally considering the influence of some condition (e.g., age, gender, or a co-existing trait). This approach mimics real-life research scenarios where key genes linked to traits often vary based on the diverse physical conditions of patients.
 
+<a id="dataset-structure"></a>
 ## 🗂️ Dataset Structure
 
 The complete dataset consists of code hosted directly in this repository and data accessible through cloud storage. This structure allows for efficient access to the analysis methods while keeping the large data files separate.
@@ -183,6 +191,7 @@ The code part of the benchmark includes:
 
 - **Documentation files**: `datasheet.md` provides the [Datasheets for Datasets](https://arxiv.org/abs/1803.09010) documentation of our benchmark, and `metadata.json` provides [the Croissant metadata](https://github.com/mlcommons/croissant) in [JSON-LD](https://json-ld.org/) format.
 
+<a id="installation"></a>
 ## 📥 Installation
 
 1. Clone this repository:
@@ -200,6 +209,7 @@ The code part of the benchmark includes:
    pip install -r requirements.txt
    ```
 
+<a id="usage"></a>
 ## 💻 Usage
 
 ### Exploring the Benchmark
@@ -230,6 +240,7 @@ The script will evaluate your method on the three tasks defined in our benchmark
 
 The script will detect non-conformance in format, but you will need to correct any formatting issues detected to ensure accurate evaluation.
 
+<a id="citation"></a>
 ## 📝 Citation
 
 If you use GenoTEX in your research, please cite our paper:
@@ -246,6 +257,7 @@ If you use GenoTEX in your research, please cite our paper:
 }
 ```
 
+<a id="license"></a>
 ## ⚖️ License
 
 The GenoTEX dataset is released under a Creative Commons Attribution 4.0 International (CC BY 4.0) license, which allows for broad usage while protecting the rights of the creators. The authors bear full responsibility for ensuring that the dataset adheres to this license and for any potential violations of rights. For the full license text, please see the [LICENSE.md](./LICENSE.md) file in this repository.
