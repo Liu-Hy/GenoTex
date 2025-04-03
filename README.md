@@ -3,18 +3,18 @@
 <div align="center">
   <img src="./imgs/genotex_logo.png" alt="GenoTEX Logo" width="200px"/>
   <br>
+  <span style="background-color: #f0f7ff; padding: 5px 10px; border-radius: 4px; font-weight: bold;">
+    #AI4Science
+  </span>
   <br>
   <a href="https://creativecommons.org/licenses/by/4.0/">
     <img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" alt="License: CC BY 4.0">
   </a>
-  <img src="https://img.shields.io/badge/AI4Science-blue.svg" alt="AI4Science">
-  <img src="https://img.shields.io/badge/LLM%20Agent-orange.svg" alt="LLM Agent">
-  <img src="https://img.shields.io/badge/Computational%20Genomics-green.svg" alt="Computational Genomics">
 </div>
 
 GenoTEX (**Geno**mics Data Au**t**omatic **Ex**ploration Benchmark) is a benchmark dataset for the automated analysis of gene expression data to identify disease-associated genes while considering the influence of other biological factors. It provides annotated code and results for solving a wide range of gene identification problems, encompassing dataset selection, preprocessing, and statistical analysis, in a pipeline that follows computational genomics standards. The benchmark includes expert-curated annotations from bioinformaticians to ensure accuracy and reliability.
 
-The below figure illustrates our benchmark curation process. For detailed information, please refer to our [paper on arXiv](https://arxiv.org/abs/2406.15341).
+For detailed information, please refer to our [paper on arXiv](https://arxiv.org/abs/2406.15341).
 
 <div align="center">
   <img src="./imgs/benchmark_pipeline.jpg" alt="Benchmark Pipeline" width="90%"/>
@@ -29,7 +29,7 @@ The below figure illustrates our benchmark curation process. For detailed inform
 - [Citation](#citation)
 - [License](#license)
 
-## 📊 Dataset Overview
+## Dataset Overview
 
 GenoTEX provides a benchmark for evaluating automated methods for gene expression data analysis, particularly for LLM-based agents. In biomedical research, gene expression analysis is crucial for understanding biological mechanisms and advancing clinical applications such as disease marker identification and personalized medicine. However, these analyses are often repetitive, labor-intensive, and prone to errors, leading to significant time and financial burdens on research teams.
 
@@ -42,9 +42,9 @@ Key features of the benchmark include:
 - **Comprehensive gene features**: Average of 18,530 normalized gene features per dataset
 - **Significant gene discoveries**: Significant genes identified per problem
 
-Each problem in the benchmark involves identifying genes associated with a specific trait (e.g., a disease) while optionally considering the influence of some condition (e.g., age, gender, or a co-existing trait). This approach mimics real-life research scenarios where key genes linked to traits often vary based on the diverse physical conditions of patients.
+Each problem in the benchmark involves identifying genes associated with a specific trait (e.g., a disease) while considering the influence of some condition (e.g., age, gender, or a co-existing trait). This approach mimics real-life research scenarios where key genes linked to traits often vary based on the diverse physical conditions of patients.
 
-## 🗂️ Dataset Structure
+## Dataset Structure
 
 The complete dataset consists of code hosted directly in this repository and data accessible through cloud storage. This structure allows for efficient access to the analysis methods while keeping the large data files separate.
 
@@ -53,8 +53,6 @@ The complete dataset consists of code hosted directly in this repository and dat
 The data part is accessible through:
 - [Google Drive Link](https://drive.google.com/drive/folders/1ZQ8AflAecW61SrNclaMby-6x9GLCpJoW)
 - [Baidu Cloud Disk Link](https://pan.baidu.com/s/1mKfBRiBNY0GUK6LRLnn7UA?pwd=1234)
-
-Total data size: 82.0 GB — Please ensure you have sufficient disk space before downloading.
 
 Download these files and place them in the root directory of this repository.
 
@@ -81,16 +79,13 @@ The data is organized into three main directories:
 │   │   ├── Trait_1/
 │   │   │   ├── clinical_data/
 │   │   │   │   ├── GSE12345.csv
-│   │   │   │   ├── Xena.csv
-│   │   │   │   └── ...
+│   │   │   │   └── Xena.csv
 │   │   │   ├── gene_data/
 │   │   │   │   ├── GSE12345.csv
-│   │   │   │   ├── Xena.csv
-│   │   │   │   └── ...
+│   │   │   │   └── Xena.csv
 │   │   │   ├── cohort_info.json
 │   │   │   ├── GSE12345.csv
-│   │   │   ├── Xena.csv
-│   │   │   └── ...
+│   │   │   └── Xena.csv
 │   │   └── ...
 │   └── regress/         # Regression analysis results
 │       ├── Trait_1/
@@ -100,7 +95,7 @@ The data is organized into three main directories:
 │       └── ...
 │
 └── metadata/            # Problem specifications and domain knowledge
-    ├── task_info.json   # Gene identification problems; known gene-trait associations
+    ├── task_info.json   # Gene identification problem specifications
     └── gene_synonym.json # Gene symbol mapping
 ```
 
@@ -141,7 +136,7 @@ The data is organized into three main directories:
      - `Coefficient`: The corresponding coefficients in the trained regression model
      - `Absolute Coefficient`: The absolute values of these coefficients
    
-   The gene symbols are ranked by importance (absolute coefficient in Lasso models). The `cv_performance` part is used mainly for model validation and diagnostics, not part of our benchmark evaluation.
+   The gene symbols are ranked by importance (absolute coefficient in Lasso models). The `cv_performance` part is included for model validation purposes.
 
 5. **Metadata Structure**:
    
@@ -149,7 +144,7 @@ The data is organized into three main directories:
      - `related_genes`: A list of genes known to be associated with the trait, sourced from the Open Targets Platform
      - `conditions`: The list of conditions paired with the trait to form gene identification problems in our benchmark
    
-   - `gene_synonym.json`: Stores the mapping from common acronyms of human gene symbols to their standard symbols, sourced from the NCBI Gene databases. This is useful for normalizing gene symbols during preprocessing to prevent inaccuracies arising from different gene naming conventions.
+   - `gene_synonym.json`: Stores the mapping from common acronyms of human gene symbols to their standard symbols, sourced from the NCBI Gene databases. This is essential for normalizing gene symbols during preprocessing to prevent inaccuracies arising from different gene naming conventions.
 
 ### Code (In This Repository)
 
@@ -157,8 +152,8 @@ The data is organized into three main directories:
 ./
 ├── code/                # Analysis code
 │   ├── Trait_1/
-│   │   ├── GSE12345.ipynb
-│   │   ├── Xena.ipynb
+│   │   ├── GSE12345.py
+│   │   ├── Xena.py
 │   │   └── ...
 │   ├── ...
 │   └── regress.py       # Regression analysis implementation
@@ -173,7 +168,7 @@ The data is organized into three main directories:
 
 The code part of the benchmark includes:
 
-- **code/**: Contains our code for gene expression data analysis. The main part is the code for preprocessing each cohort dataset, organized by predefined trait names. We provide the code as Jupyter Notebook files with the name '{cohort_ID}.ipynb', showing the output of each step to facilitate interactive analysis. `regress.py` implements our regression analysis method in fixed logic, for solving the gene identification problems in our benchmark.
+- **code/**: Contains our code for gene expression data analysis. The main part is the code for preprocessing each cohort dataset, organized by predefined trait names. We provide the code as Python files with the name '{cohort_ID}.py'. `regress.py` implements our regression analysis method in fixed logic, for solving the gene identification problems in our benchmark.
 
 - **tools/**: Contains the function tools that are accessible to both human bioinformaticians and LLM agents for gene expression data analysis.
 
@@ -183,7 +178,12 @@ The code part of the benchmark includes:
 
 - **Documentation files**: `datasheet.md` provides the Datasheets for Datasets documentation of our benchmark, and `metadata.json` provides the Croissant metadata in JSON-LD format.
 
-## 🚀 Getting Started
+## Getting Started
+
+### Prerequisites
+
+- Python 3.10 or higher
+- Internet connection to download dataset files
 
 ### Installation
 
@@ -202,17 +202,17 @@ The code part of the benchmark includes:
    pip install -r requirements.txt
    ```
 
-## 💻 Usage
+## Usage
 
 ### Exploring the Benchmark
 
-You can run the Python code in the "./code/" directory to explore the data analysis process. These files implement the data analysis following our standardized pipeline, which involves:
+You can run the Python code in the "./code/" directory to explore the data analysis process. These files demonstrate the standardized pipeline for analyzing gene expression datasets, which involves:
 
-1. **Dataset filtering**: Filtering out datasets irrelevant to our association studies
+1. **Dataset filtering and selection**: Filtering out irrelevant datasets and selecting the best dataset for each gene identification problem
 2. **Gene expression data preprocessing**: Preparing a gene expression data table with normalized gene symbols
 3. **Trait data extraction**: Preparing a data table with phenotypic trait and demographic information
 4. **Data linking**: Integrating gene and trait data for the same samples
-5. **Dataset selection and statistical analysis**: Selecting the best dataset for the problem, and identifying significant genes through regression analysis
+5. **Statistical analysis**: Identifying significant genes through regression analysis with confounding factor correction
 
 ### Evaluating Your Own Methods
 
@@ -230,9 +230,9 @@ The script will evaluate your method on the three tasks defined in our benchmark
 - **Preprocessing**: Measures how well the method processes and integrates data from different sources
 - **Statistical analysis**: Assesses the accuracy of identifying significant genes related to traits
 
-The script will detect non-conformance in format, but you will need to correct any formatting issues detected to ensure accurate evaluation.
+The script will detect non-conformance in format, but you will need to correct any formatting issues to ensure accurate evaluation.
 
-## 📝 Citation
+## Citation
 
 If you use GenoTEX in your research, please cite our paper:
 
@@ -248,6 +248,6 @@ If you use GenoTEX in your research, please cite our paper:
 }
 ```
 
-## ⚖️ License
+## License
 
 The GenoTEX dataset is released under a Creative Commons Attribution 4.0 International (CC BY 4.0) license, which allows for broad usage while protecting the rights of the creators. The authors bear full responsibility for ensuring that the dataset adheres to this license and for any potential violations of rights. For the full license text, please see the [LICENSE.md](./LICENSE.md) file in this repository.
