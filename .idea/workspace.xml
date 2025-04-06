@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f42d40ca-2cc5-439e-9264-44bb0abc9084" name="Changes" comment="fix hyperlinks">
+    <list default="true" id="f42d40ca-2cc5-439e-9264-44bb0abc9084" name="Changes" comment="enrich document">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +102,9 @@
       <workItem from="1743475063927" duration="3866000" />
       <workItem from="1743482737360" duration="1305000" />
       <workItem from="1743702794787" duration="46000" />
-      <workItem from="1743702845057" duration="5785000" />
+      <workItem from="1743702845057" duration="8669000" />
+      <workItem from="1743818269776" duration="1618000" />
+      <workItem from="1743906611587" duration="4192000" />
     </task>
     <task id="LOCAL-00001" summary="inital commit">
       <created>1718225127717</created>
@@ -218,7 +220,23 @@
       <option name="project" value="LOCAL" />
       <updated>1743713447506</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix hyperlinks2">
+      <option name="closed" value="true" />
+      <created>1743714290115</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1743714290115</updated>
+    </task>
+    <task id="LOCAL-00017" summary="enrich document">
+      <option name="closed" value="true" />
+      <created>1743909079839</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1743909079840</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +267,8 @@
     <MESSAGE value="update datasheet" />
     <MESSAGE value="update document" />
     <MESSAGE value="fix hyperlinks" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix hyperlinks" />
+    <MESSAGE value="fix hyperlinks2" />
+    <MESSAGE value="enrich document" />
+    <option name="LAST_COMMIT_MESSAGE" value="enrich document" />
   </component>
 </project>

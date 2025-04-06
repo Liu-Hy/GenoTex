@@ -196,7 +196,7 @@ This file contains outputs of dataset filtering (initial filtering and quality v
    
    The 'output/regress/' folder is also organized by predefined trait names. It holds the regression analysis outputs for all NGS analysis problems in our benchmark that involve the same trait. These problems are uniquely identified by a trait-condition pair.
    
-   The analysis output for each problem is stored in a file named "significant_genes_condition_{condition name}.json", where the condition name is either a predefined trait name, or 'Age', 'Gender', or 'None'. A 'None' condition represents an unconditional problem: "What are the significant genes related to this trait," without considering the influence of any conditions.
+   The analysis output for each problem is stored in a file named "significant_genes_condition_{condition name}.json", where the condition name is either a predefined trait name, or 'Age', 'Gender', or 'None'. A 'None' condition represents an unconditional problem—"What are the significant genes related to this trait?"—without considering the influence of any conditions.
    
    Each JSON file contains:
    

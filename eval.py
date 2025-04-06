@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
+from utils.utils import get_question_pairs
 from utils.evaluation import evaluate_gene_selection
 
 
@@ -24,9 +25,218 @@ def average_metrics(metrics_list):
 
 
 def evaluate_dataset_selection(pred_dir, ref_dir):
-    """Placeholder for dataset selection evaluation."""
-    print("Dataset selection evaluation is not implemented yet.")
-    return {"placeholder": "Dataset selection evaluation not implemented"}
+    """
+    Evaluate dataset filtering and selection by comparing predicted and reference cohort info files.
+    
+    This function evaluates two aspects:
+    1. Dataset Filtering (DF): Binary classification of dataset availability (is_available)
+    2. Dataset Selection (DS): Accuracy in selecting the best dataset(s) for each problem
+    
+    Args:
+        pred_dir: Path to prediction directory
+        ref_dir: Path to reference directory
+        
+    Returns:
+        Dictionary of evaluation metrics for dataset filtering and selection
+    """
+    
+    
+    # Initialize metrics
+    filtering_metrics = {'tp': 0, 'fp': 0, 'tn': 0, 'fn': 0}
+    selection_metrics = {'correct': 0, 'total': 0}
+    
+    # Get all trait-condition pairs from the metadata directory (which is at the top level)
+    # Fix the path to task_info.json - it's in ./metadata/, not in ./output/metadata/
+    task_info_file = './metadata/task_info.json'
+    
+    print(f"Looking for task info at: {task_info_file}")
+    
+    all_pairs = get_question_pairs(task_info_file)
+    
+    # Process each trait-condition pair
+    with tqdm(total=len(all_pairs), desc="Evaluating dataset selection") as pbar:
+        for trait, condition in all_pairs:
+            # Determine if this is a two-step problem
+            is_two_step = condition is not None and condition.lower() not in ['age', 'gender', 'none']
+            
+            # Get reference cohort info - use the correct directory structure based on README
+            ref_trait_dir = os.path.join(ref_dir, 'preprocess', trait)
+            ref_cohort_info_path = os.path.join(ref_trait_dir, 'cohort_info.json')
+            
+            # Get predicted cohort info - use the correct directory structure
+            pred_trait_dir = os.path.join(pred_dir, 'preprocess', trait)
+            pred_cohort_info_path = os.path.join(pred_trait_dir, 'cohort_info.json')
+            
+            if not os.path.exists(ref_cohort_info_path):
+                print(f"Warning: Reference cohort info not found at '{ref_cohort_info_path}'")
+                pbar.update(1)
+                continue
+                
+            if not os.path.exists(pred_cohort_info_path):
+                print(f"Warning: Prediction cohort info not found at '{pred_cohort_info_path}'")
+                pbar.update(1)
+                continue
+            
+            try:
+                # Load reference and prediction cohort info
+                with open(ref_cohort_info_path, 'r') as f:
+                    ref_cohort_info = json.load(f)
+                    
+                with open(pred_cohort_info_path, 'r') as f:
+                    pred_cohort_info = json.load(f)
+                
+                # Evaluate dataset filtering based on is_available attribute
+                for cohort_id in set(ref_cohort_info.keys()).union(set(pred_cohort_info.keys())):
+                    ref_available = ref_cohort_info.get(cohort_id, {}).get('is_available', False)
+                    pred_available = pred_cohort_info.get(cohort_id, {}).get('is_available', False)
+                    
+                    if ref_available and pred_available:
+                        filtering_metrics['tp'] += 1
+                    elif ref_available and not pred_available:
+                        filtering_metrics['fn'] += 1
+                    elif not ref_available and pred_available:
+                        filtering_metrics['fp'] += 1
+                    else:  # not ref_available and not pred_available
+                        filtering_metrics['tn'] += 1
+                
+                # Evaluate dataset selection
+                if is_two_step:
+                    # Two-step problem: need to evaluate the selection of a dataset pair
+                    ref_cond_dir = os.path.join(ref_dir, 'preprocess', condition)
+                    pred_cond_dir = os.path.join(pred_dir, 'preprocess', condition)
+                    ref_cond_info_path = os.path.join(ref_cond_dir, 'cohort_info.json')
+                    pred_cond_info_path = os.path.join(pred_cond_dir, 'cohort_info.json')
+                    
+                    if not os.path.exists(ref_cond_info_path) or not os.path.exists(pred_cond_info_path):
+                        print(f"Warning: Condition cohort info not found for '{condition}'")
+                        pbar.update(1)
+                        continue
+                    
+                    with open(ref_cond_info_path, 'r') as f:
+                        ref_cond_info = json.load(f)
+                    
+                    with open(pred_cond_info_path, 'r') as f:
+                        pred_cond_info = json.load(f)
+                    
+                    # Select best dataset pair using the reference logic
+                    ref_pair = select_best_dataset_pair(ref_cohort_info, ref_cond_info)
+                    pred_pair = select_best_dataset_pair(pred_cohort_info, pred_cond_info)
+                    
+                    if ref_pair == pred_pair:
+                        selection_metrics['correct'] += 1
+                else:
+                    # One-step problem: select a single dataset with the largest sample size
+                    ref_cohort = select_best_dataset(ref_cohort_info, condition)
+                    pred_cohort = select_best_dataset(pred_cohort_info, condition)
+                    
+                    if ref_cohort == pred_cohort:
+                        selection_metrics['correct'] += 1
+                
+                selection_metrics['total'] += 1
+                
+            except Exception as e:
+                print(f"Error evaluating {trait}-{condition}: {str(e)}")
+                print(traceback.format_exc())
+            
+            pbar.update(1)
+    
+    # Calculate F1 score for filtering
+    tp = filtering_metrics['tp']
+    fp = filtering_metrics['fp']
+    fn = filtering_metrics['fn']
+    
+    precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+    recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
+    
+    # Calculate accuracy for selection
+    accuracy = selection_metrics['correct'] / selection_metrics['total'] if selection_metrics['total'] > 0 else 0.0
+    
+    return {
+        'filtering_f1': round(f1, 2),
+        'selection_accuracy': round(accuracy, 2)
+    }
+
+
+def select_best_dataset(cohort_info, condition=None):
+    """
+    Select the best dataset for a given condition based on sample size.
+    
+    For Age/Gender conditions, only consider datasets with that information.
+    For normal conditions, just select the dataset with the largest sample size.
+    
+    Args:
+        cohort_info: Dictionary containing dataset information
+        condition: Optional condition (Age, Gender, or None)
+    
+    Returns:
+        Selected cohort ID or None if no suitable dataset found
+    """
+    # Filter usable datasets
+    usable_cohorts = {
+        cohort_id: info for cohort_id, info in cohort_info.items()
+        if info.get('is_usable', False)
+    }
+    
+    if not usable_cohorts:
+        return None
+    
+    # For Age/Gender conditions, filter datasets with that information
+    if condition == 'Age':
+        usable_cohorts = {
+            cohort_id: info for cohort_id, info in usable_cohorts.items()
+            if info.get('has_age', False)
+        }
+    elif condition == 'Gender':
+        usable_cohorts = {
+            cohort_id: info for cohort_id, info in usable_cohorts.items()
+            if info.get('has_gender', False)
+        }
+    
+    if not usable_cohorts:
+        return None
+    
+    # Select dataset with largest sample size
+    return max(usable_cohorts.items(), key=lambda x: x[1].get('sample_size', 0))[0]
+
+
+def select_best_dataset_pair(trait_info, condition_info):
+    """
+    Select the best pair of datasets for a two-step problem based on product of sample sizes.
+    
+    Args:
+        trait_info: Dictionary containing trait dataset information
+        condition_info: Dictionary containing condition dataset information
+    
+    Returns:
+        Tuple of (trait_cohort_id, condition_cohort_id) or (None, None) if no suitable pair found
+    """
+    # Filter usable datasets
+    usable_trait_cohorts = {
+        cohort_id: info for cohort_id, info in trait_info.items()
+        if info.get('is_usable', False)
+    }
+    
+    usable_condition_cohorts = {
+        cohort_id: info for cohort_id, info in condition_info.items()
+        if info.get('is_usable', False)
+    }
+    
+    if not usable_trait_cohorts or not usable_condition_cohorts:
+        return (None, None)
+    
+    # Find pair with largest product of sample sizes
+    best_pair = (None, None)
+    max_product = 0
+    
+    for trait_id, trait_data in usable_trait_cohorts.items():
+        for cond_id, cond_data in usable_condition_cohorts.items():
+            product = trait_data.get('sample_size', 0) * cond_data.get('sample_size', 0)
+            if product > max_product:
+                max_product = product
+                best_pair = (trait_id, cond_id)
+    
+    return best_pair
 
 
 def calculate_jaccard(set1, set2):
@@ -182,6 +392,7 @@ def evaluate_dataset_preprocessing(pred_dir, ref_dir, subtasks=None):
             if os.path.isdir(ref_trait_dir):
                 trait_dirs.append(t)
         
+        # trait_dirs = trait_dirs[:5]
         # Process each trait directory with progress bar
         with tqdm(total=len(trait_dirs), desc=f"Evaluating {subtask} data preprocessing") as pbar:
             for trait in trait_dirs:
