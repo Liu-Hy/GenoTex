@@ -18,7 +18,7 @@
   </a>
 </div>
 
-GenoTEX (**Geno**mics Data Au**t**omatic **Ex**ploration Benchmark) is a benchmark dataset for the automated analysis of gene expression data to identify disease-associated genes while considering the influence of other biological factors. It provides annotated code and results for solving a wide range of gene identification problems, encompassing dataset selection, preprocessing, and statistical analysis, in a pipeline that follows computational genomics standards. The benchmark includes expert-curated annotations from bioinformaticians to ensure accuracy and reliability.
+GenoTEX (**Geno**mics Data Au**t**omatic **Ex**ploration Benchmark) is a benchmark dataset for the automated analysis of gene expression data to identify disease-associated genes while considering the influence of other biological factors. It provides annotated code and results for solving a wide range of NGS analysis problems, encompassing dataset selection, preprocessing, and statistical analysis, in a pipeline that follows computational genomics standards. The benchmark includes expert-curated annotations from bioinformaticians to ensure accuracy and reliability.
 
 The below figure illustrates our benchmark curation process. For detailed information, please refer to our [paper on arXiv](https://arxiv.org/abs/2406.15341).
 
@@ -42,7 +42,7 @@ GenoTEX provides a benchmark for evaluating automated methods for gene expressio
 
 Key features of the benchmark include:
 
-- **1,384 gene identification problems**: 132 unconditional problems and 1,252 conditional problems
+- **1,384 NGS analysis problems**: 132 unconditional problems and 1,252 conditional problems
 - **41.5 GB of input data**: 911 datasets with an average of 167 samples per dataset (152,415 total samples)
 - **237,907 lines of analysis code**: Carefully curated by bioinformatics experts (average 261 lines per dataset)
 - **Three evaluation tasks**: Dataset selection, data preprocessing, and statistical analysis
@@ -108,41 +108,108 @@ The data is organized into three main directories:
 │       └── ...
 │
 └── metadata/            # Problem specifications and domain knowledge
-    ├── task_info.json   # Gene identification problems; known gene-trait associations
+    ├── task_info.json   # NGS analysis problems; known gene-trait associations
     └── gene_synonym.json # Gene symbol mapping
 ```
 
-#### Notes on Data Organization:
+### Notes on Data Organization:
 
-1. **Trait Name Normalization**: To make path operations safer, trait names are normalized by removing apostrophes (') and replacing spaces with underscores (_). For example, "Crohn's Disease" becomes "Crohns_Disease", and "Large B-cell Lymphoma" becomes "Large_B-cell_Lymphoma". This consistent formatting helps prevent path-related errors when working with the dataset.
+**1. Trait Name Normalization**: To make path operations safer, trait names are normalized by removing apostrophes (') and replacing spaces with underscores (_). For example, "Crohn's Disease" becomes "Crohns_Disease", and "Large B-cell Lymphoma" becomes "Large_B-cell_Lymphoma". This consistent formatting helps prevent path-related errors when working with the dataset.
 
-2. **Input Data Structure**:
+**2. Input Data Structure**:
    
    - **GEO folder**: Organized by our predefined trait names. Each trait directory holds 1-11 cohort datasets related to this trait, which were programmatically searched under specific criteria and downloaded from [the GEO database](https://www.ncbi.nlm.nih.gov/geo/) using [Entrez Utilities](https://www.ncbi.nlm.nih.gov/books/NBK25501/). Each cohort dataset is stored as a folder named after the GEO Series (GSE) number, such as 'GSE98578'. Each cohort folder contains `.gz` files, typically one SOFT file and one matrix file, though occasionally there are multiple SOFT files or matrix files.
 
    - **TCGA folder**: Directly downloaded from [the TCGA Hub](https://xenabrowser.net/datapages/?host=https%3A%2F%2Ftcga.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443) of [the UCSC Xena platform](https://xena.ucsc.edu/), organized by different types of cancer. We preserve the original folder names from the website, without strictly matching our predefined trait names. Each trait (cancer) folder contains a clinicalMatrix file storing sample clinical features, and a PANCAN.gz file storing gene expression data.
 
-3. **Preprocessed Data Structure**:
+<a id="preprocessing-results-structure"></a>
+**3. Preprocessing Results Structure**:
    
-   The 'preprocess' folder is organized by predefined trait names. For each trait, it holds the clinical data, gene expression data, and the final linked data that are successfully preprocessed for each cohort into 3 separate CSV files. These CSV files are saved in '{trait_name}/clinical_data/', '{trait_name}/gene_data/', and '{trait_name}/' respectively, with the same filename '{cohort_ID}.csv'. 
-   
+   The 'output/preprocess/' folder is organized by predefined trait names. For each trait, it holds the clinical data, gene expression data, and the final linked data that are successfully preprocessed for each cohort into 3 separate CSV files. These CSV files are saved in '{trait_name}/clinical_data/', '{trait_name}/gene_data/', and '{trait_name}/' respectively, with the same filename '{cohort_ID}.csv'. 
    For GEO cohorts, the cohort ID is the Series number (GSE); for TCGA, since there is at most one TCGA cohort related to each trait, we directly use 'Xena' as the cohort ID.
+
+   Additionally, each trait subfolder contains a JSON file, which stores metadata about dataset filtering and preprocessing outcomes of all related cohorts.
+
    
-   The `cohort_info.json` stores metadata about the preprocessing outcomes of each cohort related to the trait with the following fields:
+
+   #### Example Data Formats:
    
+   **a. Gene Expression Data** (stored in `{trait_name}/gene_data/{cohort_ID}.csv`):
+   
+   This file contains gene expression values with gene symbols as rows and sample IDs as columns:
+   
+   ```
+            GSM7920782  GSM7920783  GSM7920784  ...  GSM7920825
+   A2M          13.210      13.238      14.729  ...       7.359
+   ACVR1C        5.128       5.337       5.611  ...       8.151
+   ADAM12        9.807      12.374       9.953  ...       9.266
+   ...             ...         ...         ...  ...         ...
+   ZEB2          9.534      10.488      10.553  ...       8.151
+   ```
+   
+   **b. Clinical Data** (stored in `{trait_name}/clinical_data/{cohort_ID}.csv`):
+   
+   This file contains clinical information with trait names as rows and sample IDs as columns:
+   
+   ```
+                 GSM7920782  GSM7920783  ...  GSM7920825
+   Breast_Cancer        1.0         1.0  ...         0.0
+   Age                 49.0        44.0  ...        74.0
+   Gender               0.0         0.0  ...         1.0
+   ```
+   
+   **c. Linked Dataset** (stored in `{trait_name}/{cohort_ID}.csv`):
+   
+   This file combines clinical and gene expression data with samples as rows and all features (clinical and gene) as columns:
+   
+   ```
+              Breast_Cancer    Age  Gender     A2M    ACVR1C    ADAM12  ...     ZEB2
+   GSM7920782           1.0   49.0     0.0  13.210     5.128     9.807   ...   9.534
+   GSM7920783           1.0   44.0     0.0  13.238     5.337    12.374   ...  10.488
+   ...                   ...   ...     ...     ...       ...       ...   ...     ...
+   GSM7920825           0.0   74.0     1.0   7.359     8.151     9.266   ...   8.151
+   ```
+   
+   **d. Cohort Information** (stored in `{trait_name}/cohort_info.json`):
+   
+This file contains outputs of dataset filtering (initial filtering and quality verification), and metadata about the preprocessing outcomes of each cohort related to the trait:
+   
+   ```json
+   {
+   "GSE207847": 
+     {"is_usable": true, "is_gene_available": true, "is_trait_available": true, "is_available": true, "is_biased": false, "has_age": false, "has_gender": false, "sample_size": 60},
+   "GSE153316":
+     {...},
+   ...
+   }
+   ```
+   
+   Each cohort entry contains the following fields:
    - `is_gene_available` and `is_trait_available`: Indicate whether the dataset has the relevant gene expression and trait information, respectively. `is_available` is true if both are available.
    - `is_biased`: Indicates whether the trait distribution is severely biased. For example, if a dataset about breast cancer treatment only contains positive samples, it would be considered biased and not usable for trait-gene association studies.
    - `is_usable`: True if `is_available` is true and `is_biased` is false.
    - `has_age` and `has_gender`: Indicate whether the dataset contains the samples' age and gender information, respectively.
    - `sample_size`: Records the number of samples in the final linked dataset, after discarding samples with too many missing features.
 
-4. **Regression Results Structure**:
+<a id="regression-results-structure"></a>
+**4. Regression Results Structure**:
    
-   The 'regress' folder is also organized by predefined trait names. It holds the regression analysis outputs for all gene identification problems in our benchmark that involve the same trait. These problems are uniquely identified by a trait-condition pair.
+   The 'output/regress/' folder is also organized by predefined trait names. It holds the regression analysis outputs for all NGS analysis problems in our benchmark that involve the same trait. These problems are uniquely identified by a trait-condition pair.
    
    The analysis output for each problem is stored in a file named "significant_genes_condition_{condition name}.json", where the condition name is either a predefined trait name, or 'Age', 'Gender', or 'None'. A 'None' condition represents an unconditional problem: "What are the significant genes related to this trait," without considering the influence of any conditions.
    
    Each JSON file contains:
+   
+   ```json
+   {
+       "significant_genes": {
+           "Variable": ["TRIB1", "MTMR14", "ANKFY1", ...],
+           "Coefficient": [-3.6007, 2.7751, -2.5880, ...],
+           "Absolute Coefficient": [3.6007, 2.7751, 2.5880, ...]
+       },
+       "cv_performance": {...}
+   }
+   ```
    
    - `significant_genes`: A dictionary with three keys:
      - `Variable`: List of gene symbols identified as significant
@@ -151,13 +218,37 @@ The data is organized into three main directories:
    
    The gene symbols are ranked by importance (absolute coefficient in Lasso models). The `cv_performance` part is used mainly for model validation and diagnostics, not part of our benchmark evaluation.
 
-5. **Metadata Structure**:
+**5. Metadata Structure**:
    
-   - `task_info.json`: Contains full specifications for the gene identification problems in our benchmark, and domain knowledge about gene-trait associations. For each trait, it includes:
+   - `task_info.json`: Contains full specifications for the NGS analysis problems in our benchmark, and domain knowledge about gene-trait associations. For each trait, it includes:
+   
+      ```json
+      {
+          "Acute_Myeloid_Leukemia": 
+          {
+              "related_genes": ["DNMT3A", "FLT3", "CEBPA", "TET2", "KIT", ... ],
+              "conditions": ["Age", "Gender", "Eczema", ... ]    
+          },
+          "Adrenocortical_Cancer": {
+              ...
+          }
+      }
+      ```
+   
      - `related_genes`: A list of genes known to be associated with the trait, sourced from [the Open Targets Platform](https://platform.opentargets.org/downloads)
-     - `conditions`: The list of conditions paired with the trait to form gene identification problems in our benchmark
+     - `conditions`: The list of conditions paired with the trait to form the NGS analysis problems in our benchmark
    
-   - `gene_synonym.json`: Stores the mapping from common acronyms of human gene symbols to their standard symbols, sourced from [the NCBI Gene FTP Site](https://ftp.ncbi.nlm.nih.gov/gene/DATA/). This is useful for normalizing gene symbols during preprocessing to prevent inaccuracies arising from different gene naming conventions.
+   - `gene_synonym.json`: Stores the mapping from common acronyms of human gene symbols to their standard symbols, sourced from [the NCBI Gene FTP Site](https://ftp.ncbi.nlm.nih.gov/gene/DATA/). This is useful for normalizing gene symbols during preprocessing to prevent inaccuracies arising from different gene naming conventions. Standard symbols are mapped to themselves.
+   
+      ```json
+      {
+          "Acronym_1": "Standard_Symbol",
+          "Acronym_2": "Standard_Symbol",
+          "Standard_Symbol": "Standard_Symbol",
+          ...
+      }
+      ```
+   
 
 ### Code (In This Repository)
 
@@ -181,13 +272,13 @@ The data is organized into three main directories:
 
 The code part of the benchmark includes:
 
-- **code/**: Contains our code for gene expression data analysis. The main part is the code for preprocessing each cohort dataset, organized by predefined trait names. We provide the code as Jupyter Notebook files with the name '{cohort_ID}.ipynb', showing the output of each step to facilitate interactive analysis. `regress.py` implements our regression analysis method in fixed logic, for solving the gene identification problems in our benchmark.
+- **code/**: Contains our code for gene expression data analysis. The main part is the code for preprocessing each cohort dataset, organized by predefined trait names. We provide the code as Jupyter Notebook files with the name '{cohort_ID}.ipynb', showing the output of each step to facilitate interactive analysis. `regress.py` implements our regression analysis method in fixed logic, for solving the NGS analysis problems in our benchmark.
 
 - **tools/**: Contains the function tools that are accessible to both human bioinformaticians and LLM agents for gene expression data analysis.
 
 - **utils/**: Contains the helper functions used for this project outside of the data analysis tasks, e.g., experiment logging, evaluation metrics, etc.
 
-- **download/**: Contains the scripts for programmatically searching and downloading input gene expression datasets, and acquiring domain knowledge files from public repositories. It also includes the script for selecting important trait-condition pairs to form our gene identification problems.
+- **download/**: Contains the scripts for programmatically searching and downloading input gene expression datasets, and acquiring domain knowledge files from public repositories. It also includes the script for selecting important trait-condition pairs to form our NGS analysis problems.
 
 - **Documentation files**: `datasheet.md` provides the [Datasheets for Datasets](https://arxiv.org/abs/1803.09010) documentation of our benchmark, and `metadata.json` provides [the Croissant metadata](https://github.com/mlcommons/croissant) in [JSON-LD](https://json-ld.org/) format.
 
@@ -226,7 +317,11 @@ You can run the Python code in the "./code/" directory to explore the data analy
 
 After developing your automated method for gene expression data analysis, you can evaluate it against our benchmark:
 
-1. Make sure your method produces output following the same format as our benchmark.
+1. Ensure your method produces output following the same format as our benchmark. Your output should be organized in the same structure as our `./output` directory, with:
+
+   - Preprocessed datasets and JSON files in the same folder structure and file format as described in [Preprocessing Results Structure](#preprocessing-results-structure)
+   - Regression results with gene lists ranked by importance, in the same JSON format as described in [Regression Results Structure](#regression-results-structure)
+
 2. Run the evaluation script:
    ```bash
    python eval.py -p {prediction_directory} -r {output}
@@ -238,7 +333,7 @@ The script will evaluate your method on the three tasks defined in our benchmark
 - **Preprocessing**: Measures how well the method processes and integrates data from different sources
 - **Statistical analysis**: Assesses the accuracy of identifying significant genes related to traits
 
-The script will detect non-conformance in format, but you will need to correct any formatting issues detected to ensure accurate evaluation.
+The script will detect non-conformance in format, but you will need to correct any formatting issues to ensure accurate evaluation.
 
 <a id="citation"></a>
 ## 📝 Citation
