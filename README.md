@@ -130,9 +130,7 @@ The data is organized into three main directories:
 
    Additionally, each trait subfolder contains a JSON file, which stores metadata about dataset filtering and preprocessing outcomes of all related cohorts.
 
-   
-
-   #### Example Data Formats:
+#### Example Data Formats:
    
    **a. Gene Expression Data** (stored in `{trait_name}/gene_data/{cohort_ID}.csv`):
    
