@@ -305,13 +305,11 @@ The code part of the benchmark includes:
 
 ### Exploring the Benchmark
 
-You can run the Python code in the "./code/" directory to explore the data analysis process. These files implement the data analysis following our standardized pipeline, which involves:
+The GenoTEX benchmark code is organized into two complementary components. First, you'll find Jupyter notebooks in the `./code/{trait_name}/` directories that handle dataset-specific preprocessing. These notebooks prepare individual datasets by cleaning, standardizing, and integrating the data, but they don't perform the actual association studies.
 
-1. **Dataset filtering**: Filtering out datasets irrelevant to our association studies
-2. **Gene expression data preprocessing**: Preparing a gene expression data table with normalized gene symbols
-3. **Trait data extraction**: Preparing a data table with phenotypic trait and demographic information
-4. **Data linking**: Integrating gene and trait data for the same samples
-5. **Dataset selection and statistical analysis**: Selecting the best dataset for the problem, and identifying significant genes through regression analysis
+The statistical analysis that identifies genes associated with traits is centralized in the `./code/regress.py` script. This script automatically selects the optimal cohort(s) from all preprocessed datasets for each problem, applies appropriate statistical models, and performs hyperparameter tuning to identify significant genes.
+
+This design separates data preparation from statistical modeling, enabling consistent methodology across all analyses while maximizing statistical power through automatic cohort selection. To run the complete pipeline, first execute the preprocessing notebooks for individual datasets, then run the regress.py script to perform association studies across all problems.
 
 ### Evaluating Your Own Methods
 
@@ -324,16 +322,22 @@ After developing your automated method for gene expression data analysis, you ca
 
 2. Run the evaluation script:
    ```bash
-   python eval.py -p {prediction_directory} -r {output}
+   python eval.py -p {prediction_directory} -r {reference_directory} -t selection preprocessing analysis -s gene clinical linked
    ```
 
-The script will evaluate your method on the three tasks defined in our benchmark:
+   Where:
+   - `-p`, `--pred-dir`: Path to the directory containing your prediction results, required.
+   - `-r`, `--ref-dir`: Path to the directory containing reference benchmark results (default: "./output")
+   - `-t`, `--tasks`: Specific tasks to evaluate: "selection" (dataset filtering and selection), "preprocessing" (data preprocessing), "analysis" (statistical analysis) - omit to evaluate all tasks
+   - `-s`, `--preprocess-subtasks`: Specific preprocessing aspects to evaluate: "gene" (expression data), "clinical" (trait data), "linked" (final linked data) - omit to evaluate all subtasks
+
+The evaluation produces metrics for each task:
 
 - **Dataset selection and filtering**: Evaluates the ability to identify useful datasets and select the optimal ones for analysis
-- **Preprocessing**: Measures how well the method processes and integrates data from different sources
+- **Data preprocessing**: Measures how well the method processes and integrates data from different sources
 - **Statistical analysis**: Assesses the accuracy of identifying significant genes related to traits
 
-The script will detect non-conformance in format, but you will need to correct any formatting issues to ensure accurate evaluation.
+The script will report errors arising from non-conformance in format, but you will need to correct any formatting issues to ensure accurate evaluation.
 
 <a id="citation"></a>
 ## 📝 Citation
