@@ -2,14 +2,13 @@ import argparse
 import json
 import os
 import traceback
-from typing import Dict, List, Optional, Tuple, Union
 
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
 from utils.utils import get_question_pairs
-from utils.evaluation import evaluate_gene_selection
+from utils.metrics import evaluate_gene_selection
 from tools.statistics import get_gene_regressors
 
 def average_metrics(metrics_list):
@@ -44,6 +43,9 @@ def evaluate_dataset_selection(pred_dir, ref_dir):
     filtering_metrics_list = []
     selection_metrics_list = []
     
+    # Track traits we've already evaluated for dataset filtering
+    seen_traits = set()
+    
     # Get all trait-condition pairs from the metadata directory
     task_info_file = './metadata/task_info.json'
     all_pairs = get_question_pairs(task_info_file)
@@ -51,9 +53,9 @@ def evaluate_dataset_selection(pred_dir, ref_dir):
     # Process each trait-condition pair
     with tqdm(total=len(all_pairs), desc="Evaluating dataset filtering and selection") as pbar:
         for i, (trait, condition) in enumerate(all_pairs):
-            # Initialize per-trait metrics
+            # Initialize metrics
             trait_filtering_metrics = {'tp': 0, 'fp': 0, 'tn': 0, 'fn': 0}
-            trait_selection_metrics = {'correct': 0, 'total': 0}
+            problem_selection_metrics = {'accuracy': 0.0}
             
             # Get trait cohort info paths
             ref_trait_dir = os.path.join(ref_dir, 'preprocess', trait)
@@ -79,93 +81,61 @@ def evaluate_dataset_selection(pred_dir, ref_dir):
                 with open(pred_trait_info_path, 'r') as f:
                     pred_trait_info = json.load(f)
                 
-                # Evaluate dataset filtering based on is_available attribute
-                for cohort_id in set(ref_trait_info.keys()).union(set(pred_trait_info.keys())):
-                    ref_available = ref_trait_info.get(cohort_id, {}).get('is_available', False)
-                    pred_available = pred_trait_info.get(cohort_id, {}).get('is_available', False)
+                # Only evaluate trait filtering metrics if we haven't seen this trait before
+                if trait not in seen_traits:
+                    # Evaluate dataset filtering based on is_available attribute
+                    for cohort_id in set(ref_trait_info.keys()).union(set(pred_trait_info.keys())):
+                        ref_available = ref_trait_info.get(cohort_id, {}).get('is_available', False)
+                        pred_available = pred_trait_info.get(cohort_id, {}).get('is_available', False)
+                        
+                        if ref_available and pred_available:
+                            trait_filtering_metrics['tp'] += 1
+                        elif ref_available and not pred_available:
+                            trait_filtering_metrics['fn'] += 1
+                        elif not ref_available and pred_available:
+                            trait_filtering_metrics['fp'] += 1
+                        else:  # not ref_available and not pred_available
+                            trait_filtering_metrics['tn'] += 1
                     
-                    if ref_available and pred_available:
-                        trait_filtering_metrics['tp'] += 1
-                    elif ref_available and not pred_available:
-                        trait_filtering_metrics['fn'] += 1
-                    elif not ref_available and pred_available:
-                        trait_filtering_metrics['fp'] += 1
-                    else:  # not ref_available and not pred_available
-                        trait_filtering_metrics['tn'] += 1
-                
-                # For two-step problems, we need to load condition cohort info
-                ref_condition_info = None
-                pred_condition_info = None
-                
-                # Only load condition info if it's not a simple condition (Age, Gender, None)
-                if condition is not None and condition.lower() not in ['age', 'gender', 'none']:
-                    ref_condition_dir = os.path.join(ref_dir, 'preprocess', condition)
-                    pred_condition_dir = os.path.join(pred_dir, 'preprocess', condition)
-                    ref_condition_info_path = os.path.join(ref_condition_dir, 'cohort_info.json')
-                    pred_condition_info_path = os.path.join(pred_condition_dir, 'cohort_info.json')
+                    # Calculate metrics for this trait
+                    filtering_result = calculate_metrics_from_confusion(
+                        trait_filtering_metrics['tp'],
+                        trait_filtering_metrics['fp'],
+                        trait_filtering_metrics['tn'],
+                        trait_filtering_metrics['fn']
+                    )
                     
-                    if not os.path.exists(ref_condition_info_path) or not os.path.exists(pred_condition_info_path):
-                        print(f"Warning: Condition cohort info not found for '{condition}'")
-                        pbar.update(1)
-                        continue
+                    # Store trait name as part of the metrics
+                    filtering_result['trait'] = trait
                     
-                    with open(ref_condition_info_path, 'r') as f:
-                        ref_condition_info = json.load(f)
+                    # Add to the filtering metrics list
+                    filtering_metrics_list.append(filtering_result)
                     
-                    with open(pred_condition_info_path, 'r') as f:
-                        pred_condition_info = json.load(f)
+                    # Mark this trait as seen
+                    seen_traits.add(trait)
                 
-                # Determine condition directory for cohort selection
-                ref_condition_dir = os.path.join(ref_dir, 'preprocess', condition) if condition is not None and condition.lower() not in ['age', 'gender', 'none'] else None
-                pred_condition_dir = os.path.join(pred_dir, 'preprocess', condition) if condition is not None and condition.lower() not in ['age', 'gender', 'none'] else None
-                
-                # Select best dataset(s) using the same function for both one-step and two-step
+                # Select best dataset(s) using the refactored function
                 ref_selection = select_cohorts(
-                    trait_info=ref_trait_info,
-                    condition_info=ref_condition_info,
-                    trait_dir=ref_trait_dir,
-                    condition_dir=ref_condition_dir,
+                    root_dir=ref_dir,
                     trait=trait,
                     condition=condition
                 )
                 
                 pred_selection = select_cohorts(
-                    trait_info=pred_trait_info,
-                    condition_info=pred_condition_info,
-                    trait_dir=pred_trait_dir,
-                    condition_dir=pred_condition_dir,
+                    root_dir=pred_dir,
                     trait=trait,
                     condition=condition
                 )
                 
                 # Check if selections match
                 if ref_selection == pred_selection:
-                    trait_selection_metrics['correct'] = 1
-                else:
-                    trait_selection_metrics['correct'] = 0
+                    problem_selection_metrics['accuracy'] = 100.0
                 
-                trait_selection_metrics['total'] = 1
+                # Store trait and condition names as part of the metrics
+                problem_selection_metrics['trait'] = trait
+                problem_selection_metrics['condition'] = condition
                 
-                # Calculate metrics for this trait and append to lists
-                filtering_result = calculate_metrics_from_confusion(
-                    trait_filtering_metrics['tp'],
-                    trait_filtering_metrics['fp'],
-                    trait_filtering_metrics['tn'],
-                    trait_filtering_metrics['fn']
-                )
-                
-                # Add selection accuracy to metrics
-                selection_accuracy = trait_selection_metrics['correct'] / trait_selection_metrics['total']
-                selection_result = {'accuracy': round(selection_accuracy, 2), 'match': trait_selection_metrics['correct'] == 1}
-                
-                # Store trait name as part of the metrics
-                filtering_result['trait'] = trait
-                filtering_result['condition'] = condition
-                selection_result['trait'] = trait
-                selection_result['condition'] = condition
-                
-                filtering_metrics_list.append(filtering_result)
-                selection_metrics_list.append(selection_result)
+                selection_metrics_list.append(problem_selection_metrics)
                 
                 # Update running average more frequently - every 5 iterations or at start/end
                 if (i + 1) % 5 == 0 or i == 0 or i == len(all_pairs) - 1:
@@ -196,29 +166,40 @@ def evaluate_dataset_selection(pred_dir, ref_dir):
             'average': avg_filtering_metrics
         },
         'selection_metrics': {
-            'per_trait': selection_metrics_list,
+            'per_problem': selection_metrics_list,
             'average': avg_selection_metrics
         }
     }
 
 
-def select_cohorts(trait_info, condition_info=None, trait_dir=None, condition_dir=None, trait=None, condition=None):
+def select_cohorts(root_dir, trait, condition=None, gene_info_path='./metadata/task_info.json'):
     """
     Select the best cohort or cohort pair for analysis.
     Unified function that handles both one-step and two-step dataset selection.
     
     Args:
-        trait_info: Dictionary containing trait dataset information
-        condition_info: Optional dictionary containing condition dataset information
-        trait_dir: Directory containing trait data files
-        condition_dir: Directory containing condition data files
+        root_dir: Base directory containing output data
         trait: Name of the trait
-        condition: Name of the condition
+        condition: Name of the condition (optional)
+        gene_info_path: Path to gene info metadata file (default: './metadata/task_info.json')
     
     Returns:
         For one-step: Selected cohort ID or None if no suitable cohort found
-        For two-step: Tuple of (trait_cohort_id, condition_cohort_id) or (None, None) if no suitable pair found
+        For two-step: Tuple of (trait_cohort_id, condition_cohort_id) or None if no suitable pair found
     """
+    # Set up necessary paths
+    trait_dir = os.path.join(root_dir, 'preprocess', trait)
+    trait_info_path = os.path.join(trait_dir, 'cohort_info.json')
+    
+    # Check if trait directory and info exist
+    if not os.path.exists(trait_info_path):
+        print(f"Warning: Trait cohort info not found for '{trait}'")
+        return None
+    
+    # Load trait info
+    with open(trait_info_path, 'r') as f:
+        trait_info = json.load(f)
+        
     # One-step problem (only trait, or trait with Age/Gender condition)
     if condition is None or condition.lower() in ['age', 'gender', 'none']:
         # Filter usable cohorts
@@ -240,19 +221,32 @@ def select_cohorts(trait_info, condition_info=None, trait_dir=None, condition_di
     
     # Two-step problem (trait with another non-basic condition)
     else:
+        # Set up condition paths
+        condition_dir = os.path.join(root_dir, 'preprocess', condition)
+        condition_info_path = os.path.join(condition_dir, 'cohort_info.json')
+        
+        # Check if condition directory and info exist
+        if not os.path.exists(condition_info_path):
+            print(f"Warning: Condition cohort info not found for '{condition}'")
+            return None
+            
+        # Load condition info
+        with open(condition_info_path, 'r') as f:
+            condition_info = json.load(f)
+            
         # Filter usable cohorts
         usable_trait_cohorts = {k: v for k, v in trait_info.items() if v.get('is_usable', False)}
         usable_condition_cohorts = {k: v for k, v in condition_info.items() if v.get('is_usable', False)}
         
         if not usable_trait_cohorts or not usable_condition_cohorts:
-            return None, None
+            return None
         
         # Create all possible pairs with their product of sample sizes
         pairs = []
-        for trait_id, trait_info in usable_trait_cohorts.items():
-            for cond_id, cond_info in usable_condition_cohorts.items():
-                trait_size = trait_info.get('sample_size', 0)
-                cond_size = cond_info.get('sample_size', 0)
+        for trait_id, trait_info_item in usable_trait_cohorts.items():
+            for cond_id, cond_info_item in usable_condition_cohorts.items():
+                trait_size = trait_info_item.get('sample_size', 0)
+                cond_size = cond_info_item.get('sample_size', 0)
                 pairs.append((trait_id, cond_id, trait_size * cond_size))
         
         # Sort by product of sample sizes (largest first)
@@ -270,17 +264,17 @@ def select_cohorts(trait_info, condition_info=None, trait_dir=None, condition_di
                     condition_data = pd.read_csv(condition_data_path, index_col=0).astype('float')
                     
                     # Check for common gene regressors
-                    gene_info_path = './metadata/task_info.json'
                     gene_regressors = get_gene_regressors(trait, condition, trait_data, condition_data, gene_info_path)
                     
                     if gene_regressors:
                         return trait_id, cond_id
-                except Exception:
+                except Exception as e:
+                    print(f"Error processing pair ({trait_id}, {cond_id}): {str(e)}")
                     # If there's an error, try the next pair
                     continue
         
         # No valid pair found
-        return None, None
+        return None
 
 
 def calculate_metrics_from_confusion(tp, fp, tn, fn):
@@ -461,14 +455,14 @@ def display_running_average(pbar, metrics_list, task_name, metrics_to_show=None,
     
     # Determine which metrics to show
     if metrics_to_show is None:
-        metrics_to_show = [k for k, v in avg_metrics.items() if isinstance(v, (int, float)) and not isinstance(v, bool)]
+        metrics_to_show = [k for k, v in avg_metrics.items() if isinstance(v, (int, float))]
     
     # Filter out metadata keys that aren't metrics
     metrics_to_show = [m for m in metrics_to_show if m not in ['trait', 'file', 'condition', 'category']]
     
     # Create compact description for progress bar
     desc_parts = []
-    for metric in metrics_to_show[:3]:  # Show up to 3 metrics in the description
+    for metric in metrics_to_show:
         if metric in avg_metrics:
             desc_parts.append(f"{metric[:3]}={avg_metrics[metric]:.2f}")
     
@@ -479,13 +473,13 @@ def display_running_average(pbar, metrics_list, task_name, metrics_to_show=None,
         
         if second_metrics_to_show is None:
             second_metrics_to_show = [k for k, v in second_avg_metrics.items() 
-                                     if isinstance(v, (int, float)) and not isinstance(v, bool)]
+                                     if isinstance(v, (int, float))]
         
         # Filter out metadata keys that aren't metrics
         second_metrics_to_show = [m for m in second_metrics_to_show 
                                  if m not in ['trait', 'file', 'condition', 'category']]
         
-        for metric in second_metrics_to_show[:3]:  # Show up to 3 metrics in the description
+        for metric in second_metrics_to_show:
             if metric in second_avg_metrics:
                 second_desc_parts.append(f"{metric[:3]}={second_avg_metrics[metric]:.2f}")
     
@@ -652,7 +646,6 @@ def evaluate_statistical_analysis(pred_dir, ref_dir):
             pred_file = os.path.join(pred_regress_dir, trait, filename)
             all_files.append((trait, condition, ref_file, pred_file))
     
-    # Process all files with a single progress bar
     metrics_for_display = []
     with tqdm(total=len(all_files), desc="Evaluating statistical analysis") as pbar:
         for i, (trait, condition, ref_file, pred_file) in enumerate(all_files):
@@ -776,14 +769,14 @@ def main(pred_dir, ref_dir, tasks=None, preprocess_subtasks=None):
             filtering_avg = results["selection"]["filtering_metrics"]["average"]
             print("\nFiltering Average Metrics:")
             for metric, value in filtering_avg.items():
-                if isinstance(value, (int, float)) and not isinstance(value, bool):
+                if isinstance(value, (int, float)):
                     print(f"  {metric}: {value:.4f}")
         
         if "selection_metrics" in results["selection"]:
             selection_avg = results["selection"]["selection_metrics"]["average"]
             print("\nSelection Average Metrics:")
             for metric, value in selection_avg.items():
-                if isinstance(value, (int, float)) and not isinstance(value, bool):
+                if isinstance(value, (int, float)):
                     print(f"  {metric}: {value:.4f}")
     
     # Evaluate preprocessing
@@ -798,7 +791,7 @@ def main(pred_dir, ref_dir, tasks=None, preprocess_subtasks=None):
                 avg_metrics = subtask_results["average"]
                 print(f"\n{subtask.capitalize()} Average Metrics:")
                 for metric, value in avg_metrics.items():
-                    if isinstance(value, (int, float)) and not isinstance(value, bool):
+                    if isinstance(value, (int, float)):
                         print(f"  {metric}: {value:.4f}")
             else:
                 print(f"  No results available for {subtask}")
@@ -817,7 +810,7 @@ def main(pred_dir, ref_dir, tasks=None, preprocess_subtasks=None):
         for category, metrics in categorized_metrics.items():
             print(f"\n{category} Metrics:")
             for metric, value in metrics.items():
-                if isinstance(value, (int, float)) and not isinstance(value, bool):
+                if isinstance(value, (int, float)):
                     print(f"  {metric}: {value:.4f}")
     
     return results
