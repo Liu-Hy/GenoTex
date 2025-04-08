@@ -56,11 +56,11 @@ Each problem in the benchmark involves identifying genes associated with a speci
 
 GenoTEX is distributed in two ways:
 1. **GitHub repository + Cloud storage**: In this approach, we host the code and documentation in the [GitHub repository](https://github.com/Liu-Hy/GenoTEX), while the data is accessible through separate cloud storage links below. This approach allows for efficient access to the analysis methods and their latest updates, while keeping the large data files separate.
-  - Data Available at: [[Google Drive](https://drive.google.com/drive/folders/1ZQ8AflAecW61SrNclaMby-6x9GLCpJoW) | [Baidu Cloud Disk](https://pan.baidu.com/s/1mKfBRiBNY0GUK6LRLnn7UA?pwd=1234)]. 
+  - Data Available at: [ [Google Drive](https://drive.google.com/drive/folders/1ZQ8AflAecW61SrNclaMby-6x9GLCpJoW) | [Baidu Cloud Disk](https://pan.baidu.com/s/1mKfBRiBNY0GUK6LRLnn7UA?pwd=1234) ] 
   - Total data size: 82.0 GB — Please ensure you have sufficient disk space before downloading.
 
 2. **Complete Datasets on Data Platforms**: We also provide a complete, bundled version (code + data) on [Kaggle](https://www.kaggle.com/datasets/haoyangliu14/genotex-llm-agent-benchmark-for-genomic-analysis) and [Hugging Face Hub](https://huggingface.co/datasets/Liu-Hy/GenoTEX).
-These versions are convenient for users who prefer a single download and want to leverage the rich functionalities of these platforms. 
+These versions are convenient for users who prefer a single download and want to leverage the functionalities of these platforms. 
 
 ### The Data Part
 
@@ -284,13 +284,13 @@ The code part of the benchmark includes:
 
 - **For the GitHub version**
 
-    (1). Clone this repository
+    (1) Clone this repository:
 
       ```bash
       git clone https://github.com/Liu-Hy/GenoTEX.git
       cd GenoTEX
       ```
-    (2). Download the data folders ('metadata', 'input', 'output') from the provided cloud storage links, and place them in the root directory of this repository.
+    (2) Download the data folders ('metadata', 'input', 'output') from the provided cloud storage links, and place them in the root directory of this repository.
 - **For the bundled version**
 
   Download the dataset folder containing code and data directly from the data platform.
