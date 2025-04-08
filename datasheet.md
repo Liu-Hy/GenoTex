@@ -18,12 +18,12 @@ This research was supported by the National AI Research Resource (NAIRR) under g
 
 **What do the instances that comprise the dataset represent?**
 
-The dataset represents 1,384 gene identification problems, each uniquely identified by a (trait, condition) pair. Each problem represents a scientific inquiry to identify significant genes associated with a specific trait (e.g., a disease) while accounting for the influence of a condition (e.g., age, gender, or another trait). The condition is either another trait, or 'Age', 'Gender', or 'None' for unconditional problems.
+The dataset represents 1,384 gene-trait association (GTA) analysis problems, each uniquely identified by a (trait, condition) pair. Each problem represents a scientific inquiry to identify significant genes associated with a specific trait (e.g., a disease) while accounting for the influence of a condition (e.g., age, gender, or another trait). The condition is either another trait, or 'Age', 'Gender', or 'None' for unconditional problems.
 
 **How many instances are there in total (of each type, if appropriate)?**
 
 The dataset includes:
-- 1,384 gene identification problems (132 unconditional problems and 1,252 conditional problems)
+- 1,384 GTA analysis problems (132 unconditional problems and 1,252 conditional problems)
 - 911 input datasets from GEO and TCGA related to 132 traits
 - 41.5 GB of input data with 152,415 total samples (average of 167 samples per dataset)
 - 237,907 lines of analysis code (average 261 lines per dataset)
@@ -40,11 +40,11 @@ For each problem, the dataset contains:
 2. Analysis code: Annotated code for data preprocessing and statistical analysis
 3. Output data: Preprocessed datasets and the significant genes identified from statistical analyses
 
-Note that each gene identification problem reuses datasets related to its trait and condition. For example, if problem_1 is (trait_A, trait_B) and problem_2 is (trait_A, trait_C), then both problems use the preprocessed datasets for trait_A. 
+Note that each GTA analysis problem reuses datasets related to its trait and condition. For example, if problem_1 is (trait_A, trait_B) and problem_2 is (trait_A, trait_C), then both problems use the preprocessed datasets for trait_A. 
 
 **Is there a label or target associated with each instance?**
 
-Yes, each gene identification problem has associated "reference answer" in the form of significant genes identified by expert bioinformaticians following a standardized analysis pipeline. These are stored in JSON files with gene symbols, their coefficients, and absolute coefficients in the trained regression model.
+Yes, each GTA analysis problem has associated "reference answer" in the form of significant genes identified by expert bioinformaticians following a standardized analysis pipeline. These are stored in JSON files with gene symbols, their coefficients, and absolute coefficients in the trained regression model.
 
 **Is any information missing from individual instances?**
 
@@ -98,7 +98,7 @@ The analysis code and results were directly created by a team of bioinformaticia
 
 The input datasets were programmatically searched and downloaded from the GEO database using Entrez Utilities and from the TCGA Hub of the UCSC Xena platform. The scripts used for this process are included in the './download/' directory of the repository.
 
-For the analysis part, a team of 4 researchers designed the problem list and developed example code for solving gene identification problems. They extracted common patterns from these examples to develop guidelines for the entire benchmark. Then, a team of 9 bioinformaticians was assembled and trained to analyze the complete set of problems following these guidelines. They submitted their analysis code and results weekly over a period of 20 weeks.
+For the analysis part, a team of 4 researchers designed the problem list and developed example code for solving GTA analysis problems. They extracted common patterns from these examples to develop guidelines for the entire benchmark. Then, a team of 9 bioinformaticians was assembled and trained to analyze the complete set of problems following these guidelines. They submitted their analysis code and results weekly over a period of 20 weeks.
 
 <a id="sampling-strategy"></a>**If the dataset is a sample from a larger set, what was the sampling strategy?**
 
@@ -133,7 +133,7 @@ The authors mention engaging in extensive discussions and consultations to addre
 
 Yes, extensive preprocessing was performed on the raw gene expression data according to a standardized pipeline. The preprocessing steps included:
 
-1. **Dataset filtering and selection**: Filtering out irrelevant datasets and selecting the best dataset for each gene identification problem based on relevance, quality, and sample size.
+1. **Dataset filtering and selection**: Filtering out irrelevant datasets and selecting the best dataset for each GTA analysis problem based on relevance, quality, and sample size.
 
 2. **Gene expression data preprocessing**: For microarray data, starting with raw datasets identified by probe IDs and mapping these to gene symbols using platform-specific gene annotation data. For RNA-seq data, handling sequence reads that require alignment to a reference genome. Normalizing and deduplicating gene symbols by querying a local gene database to prevent inaccuracies arising from different gene naming conventions.
 
@@ -187,9 +187,14 @@ GenoTEX should NOT be used for:
 
 Yes, GenoTEX is publicly available for research purposes.
 
-**How will the dataset will be distributed?**
+**How will the dataset will be distributed? Does the dataset have a digital object identifier (DOI)?**
 
-GenoTEX is distributed through GitHub (https://github.com/Liu-Hy/GenoTEX) for the code and documentation, with the data part accessible through Google Drive and Baidu Cloud Disk links provided in the repository.
+GenoTEX is distributed in two main ways:
+
+1.  **GitHub Repository + Cloud Storage**: The [GitHub repository](https://github.com/Liu-Hy/GenoTEX) hosts the code and documentation, with data accessible via cloud storage links (Google Drive/Baidu Cloud Disk). This is good for accessing the latest code updates.
+2.  **Complete Bundled Datasets**: Available on [Kaggle](https://www.kaggle.com/datasets/haoyangliu14/genotex-llm-agent-benchmark-for-genomic-analysis) and [Hugging Face Hub](https://huggingface.co/datasets/Liu-Hy/GenoTEX), containing both code and data for convenience.
+
+The dataset's DOI is: [https://doi.org/10.34740/kaggle/dsv/11309048](https://doi.org/10.34740/kaggle/dsv/11309048)
 
 **When will the dataset be distributed?**
 

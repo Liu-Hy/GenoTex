@@ -1,4 +1,4 @@
-# GenoTEX: A Benchmark for Automated Gene Expression Data Analysis
+# GenoTEX: An LLM Agent Benchmark for Automated Gene Expression Data Analysis
 
 <div align="center">
   <img src="./imgs/genotex_logo.png" alt="GenoTEX Logo" width="200px"/>
@@ -18,7 +18,7 @@
   </a>
 </div>
 
-GenoTEX (**Geno**mics Data Au**t**omatic **Ex**ploration Benchmark) is a benchmark dataset for the automated analysis of gene expression data to identify disease-associated genes while considering the influence of other biological factors. It provides annotated code and results for solving a wide range of NGS analysis problems, encompassing dataset selection, preprocessing, and statistical analysis, in a pipeline that follows computational genomics standards. The benchmark includes expert-curated annotations from bioinformaticians to ensure accuracy and reliability.
+GenoTEX (**Geno**mics Data Au**t**omatic **Ex**ploration Benchmark) is a benchmark dataset for the automated analysis of gene expression data to identify disease-associated genes while considering the influence of other biological factors. It provides annotated code and results for solving a wide range of gene-trait association (GTA) analysis problems, encompassing dataset selection, preprocessing, and statistical analysis, in a pipeline that follows computational genomics standards. The benchmark includes expert-curated annotations from bioinformaticians to ensure accuracy and reliability.
 
 The below figure illustrates our benchmark curation process. For detailed information, please refer to our [paper on arXiv](https://arxiv.org/abs/2406.15341).
 
@@ -42,7 +42,7 @@ GenoTEX provides a benchmark for evaluating automated methods for gene expressio
 
 Key features of the benchmark include:
 
-- **1,384 NGS analysis problems**: 132 unconditional problems and 1,252 conditional problems
+- **1,384 GTA analysis problems**: 132 unconditional problems and 1,252 conditional problems
 - **41.5 GB of input data**: 911 datasets with an average of 167 samples per dataset (152,415 total samples)
 - **237,907 lines of analysis code**: Carefully curated by bioinformatics experts (average 261 lines per dataset)
 - **Three evaluation tasks**: Dataset selection, data preprocessing, and statistical analysis
@@ -54,17 +54,15 @@ Each problem in the benchmark involves identifying genes associated with a speci
 <a id="dataset-structure"></a>
 ## 🗂️ Dataset Structure
 
-The complete dataset consists of code hosted directly in this repository and data accessible through cloud storage. This structure allows for efficient access to the analysis methods while keeping the large data files separate.
+GenoTEX is distributed in two ways:
+1. **GitHub repository + Cloud storage**: In this approach, we host the code and documentation in the [GitHub repository](https://github.com/Liu-Hy/GenoTEX), while the data is accessible through separate cloud storage links below. This approach allows for efficient access to the analysis methods and their latest updates, while keeping the large data files separate.
+  - Data Available at: [[Google Drive](https://drive.google.com/drive/folders/1ZQ8AflAecW61SrNclaMby-6x9GLCpJoW) | [Baidu Cloud Disk](https://pan.baidu.com/s/1mKfBRiBNY0GUK6LRLnn7UA?pwd=1234)]. 
+  - Total data size: 82.0 GB — Please ensure you have sufficient disk space before downloading.
 
-### Data (Download Required)
+2. **Complete Datasets on Data Platforms**: We also provide a complete, bundled version (code + data) on [Kaggle](https://www.kaggle.com/datasets/haoyangliu14/genotex-llm-agent-benchmark-for-genomic-analysis) and [Hugging Face Hub](https://huggingface.co/datasets/Liu-Hy/GenoTEX).
+These versions are convenient for users who prefer a single download and want to leverage the rich functionalities of these platforms. 
 
-The data part is accessible through:
-- [Google Drive Link](https://drive.google.com/drive/folders/1ZQ8AflAecW61SrNclaMby-6x9GLCpJoW)
-- [Baidu Cloud Disk Link](https://pan.baidu.com/s/1mKfBRiBNY0GUK6LRLnn7UA?pwd=1234)
-
-Total data size: 82.0 GB — Please ensure you have sufficient disk space before downloading.
-
-Download these files and place them in the root directory of this repository.
+### The Data Part
 
 The data is organized into three main directories:
 
@@ -108,7 +106,7 @@ The data is organized into three main directories:
 │       └── ...
 │
 └── metadata/            # Problem specifications and domain knowledge
-    ├── task_info.json   # NGS analysis problems; known gene-trait associations
+    ├── task_info.json   # GTA analysis problems; domain knowledge about gene-trait associations
     └── gene_synonym.json # Gene symbol mapping
 ```
 
@@ -192,7 +190,7 @@ This file contains outputs of dataset filtering (initial filtering and quality v
 <a id="regression-results-structure"></a>
 **4. Regression Results Structure**:
    
-   The 'output/regress/' folder is also organized by predefined trait names. It holds the regression analysis outputs for all NGS analysis problems in our benchmark that involve the same trait. These problems are uniquely identified by a trait-condition pair.
+   The 'output/regress/' folder is also organized by predefined trait names. It holds the regression analysis outputs for all GTA analysis problems in our benchmark that involve the same trait. These problems are uniquely identified by a trait-condition pair.
    
    The analysis output for each problem is stored in a file named "significant_genes_condition_{condition name}.json", where the condition name is either a predefined trait name, or 'Age', 'Gender', or 'None'. A 'None' condition represents an unconditional problem—"What are the significant genes related to this trait?"—without considering the influence of any conditions.
    
@@ -218,7 +216,7 @@ This file contains outputs of dataset filtering (initial filtering and quality v
 
 **5. Metadata Structure**:
    
-   - `task_info.json`: Contains full specifications for the NGS analysis problems in our benchmark, and domain knowledge about gene-trait associations. For each trait, it includes:
+   - `task_info.json`: Contains full specifications for the GTA analysis problems in our benchmark, and domain knowledge about gene-trait associations. For each trait, it includes:
    
       ```json
       {
@@ -234,7 +232,7 @@ This file contains outputs of dataset filtering (initial filtering and quality v
       ```
    
      - `related_genes`: A list of genes known to be associated with the trait, sourced from [the Open Targets Platform](https://platform.opentargets.org/downloads)
-     - `conditions`: The list of conditions paired with the trait to form the NGS analysis problems in our benchmark
+     - `conditions`: The list of conditions paired with the trait to form the GTA analysis problems in our benchmark
    
    - `gene_synonym.json`: Stores the mapping from common acronyms of human gene symbols to their standard symbols, sourced from [the NCBI Gene FTP Site](https://ftp.ncbi.nlm.nih.gov/gene/DATA/). This is useful for normalizing gene symbols during preprocessing to prevent inaccuracies arising from different gene naming conventions. Standard symbols are mapped to themselves.
    
@@ -248,7 +246,7 @@ This file contains outputs of dataset filtering (initial filtering and quality v
       ```
    
 
-### Code (In This Repository)
+### The Code Part
 
 ```
 ./
@@ -270,28 +268,41 @@ This file contains outputs of dataset filtering (initial filtering and quality v
 
 The code part of the benchmark includes:
 
-- **code/**: Contains our code for gene expression data analysis. The main part is the code for preprocessing each cohort dataset, organized by predefined trait names. We provide the code as Jupyter Notebook files with the name '{cohort_ID}.ipynb', showing the output of each step to facilitate interactive analysis. `regress.py` implements our regression analysis method in fixed logic, for solving the NGS analysis problems in our benchmark.
+- **code/**: Contains our code for gene expression data analysis. The main part is the code for preprocessing each cohort dataset, organized by predefined trait names. We provide the code as Jupyter Notebook files with the name '{cohort_ID}.ipynb', showing the output of each step to facilitate interactive analysis. `regress.py` implements our regression analysis method in fixed logic, for solving the GTA analysis problems in our benchmark.
 
 - **tools/**: Contains the function tools that are accessible to both human bioinformaticians and LLM agents for gene expression data analysis.
 
 - **utils/**: Contains the helper functions used for this project outside of the data analysis tasks, e.g., experiment logging, evaluation metrics, etc.
 
-- **download/**: Contains the scripts for programmatically searching and downloading input gene expression datasets, and acquiring domain knowledge files from public repositories. It also includes the script for selecting important trait-condition pairs to form our NGS analysis problems.
+- **download/**: Contains the scripts for programmatically searching and downloading input gene expression datasets, and acquiring domain knowledge files from public repositories. It also includes the script for selecting important trait-condition pairs to form our GTA analysis problems.
 
 - **Documentation files**: `datasheet.md` provides the [Datasheets for Datasets](https://arxiv.org/abs/1803.09010) documentation of our benchmark, and `metadata.json` provides [the Croissant metadata](https://github.com/mlcommons/croissant) in [JSON-LD](https://json-ld.org/) format.
 
 <a id="installation"></a>
 ## 📥 Installation
+**1. Download the dataset**
 
-1. Clone this repository:
+- **For the GitHub version**
+
+    (1). Clone this repository
+
+      ```bash
+      git clone https://github.com/Liu-Hy/GenoTEX.git
+      cd GenoTEX
+      ```
+    (2). Download the data folders ('metadata', 'input', 'output') from the provided cloud storage links, and place them in the root directory of this repository.
+- **For the bundled version**
+
+  Download the dataset folder containing code and data directly from the data platform.
+
+**2. (For Kaggle users only) Recompress files** 
+
+Kaggle automatically unzips all `.gz` files, but our code requires certain files to remain compressed. Run the provided script to recompress these files (this will also save significant disk space):
    ```bash
-   git clone https://github.com/Liu-Hy/GenoTEX.git
-   cd GenoTEX
+   python recompress_files.py
    ```
 
-2. Download the data folders ('metadata', 'input', 'output') from the provided cloud storage links and place them in the root directory of this repository.
-
-3. Create and activate a conda environment:
+**3. Create and activate a conda environment**
    ```bash
    conda create -n genotex python=3.10
    conda activate genotex
