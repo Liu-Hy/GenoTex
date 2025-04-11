@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f42d40ca-2cc5-439e-9264-44bb0abc9084" name="Changes" comment="minor update">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+    <list default="true" id="f42d40ca-2cc5-439e-9264-44bb0abc9084" name="Changes" comment="add script and ack">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +114,8 @@
       <workItem from="1744062005428" duration="5000" />
       <workItem from="1744070687401" duration="16000" />
       <workItem from="1744070713235" duration="7395000" />
+      <workItem from="1744332713413" duration="2690000" />
+      <workItem from="1744393499395" duration="855000" />
     </task>
     <task id="LOCAL-00001" summary="inital commit">
       <created>1718225127717</created>
@@ -301,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744082709154</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add script and ack">
+      <option name="closed" value="true" />
+      <created>1744333619267</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1744333619267</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,6 +348,7 @@
     <MESSAGE value="delete files" />
     <MESSAGE value="add kaggle and hf link; corret term" />
     <MESSAGE value="minor update" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor update" />
+    <MESSAGE value="add script and ack" />
+    <option name="LAST_COMMIT_MESSAGE" value="add script and ack" />
   </component>
 </project>

@@ -374,4 +374,4 @@ The GenoTEX dataset is released under a Creative Commons Attribution 4.0 Interna
 <a id="acknowledgments"></a>
 ## 🙏 Acknowledgments
 
-This research was supported by the National AI Research Resource (NAIRR) under grant number 240283. We thank Yijiang Li for his great suggestions to the baseline method, and Jinglin Jian, Jianrong Lu, Shuyi Guo, Taincheng Xing, Yuxuan Cheng, Jinglei Zhu, Mianchen Zhang, Miantong Zhang for their valuable contribution to the benchmark curation.
+This research was supported by the National AI Research Resource (NAIRR) under grant number 240283. We thank [Yijiang Li](https://williamium3000.github.io/) for his great suggestions to the baseline method, and [Jinglin Jian](https://scholar.google.com/citations?hl=en&user=pXY2xYkAAAAJ), [Jianrong Lu](https://scholar.google.com/citations?hl=en&user=k-oe9TUAAAAJ), [Shuyi Guo](https://github.com/Shuyi1011), Taincheng Xing, Yuxuan Cheng, Jinglei Zhu, Mianchen Zhang, Miantong Zhang for their valuable contribution to the benchmark curation.
