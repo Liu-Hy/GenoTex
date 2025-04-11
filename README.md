@@ -34,6 +34,7 @@ The below figure illustrates our benchmark curation process. For detailed inform
 - [Usage](#usage)
 - [Citation](#citation)
 - [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 <a id="dataset-overview"></a>
 ## 📊 Dataset Overview
@@ -369,3 +370,8 @@ If you use GenoTEX in your research, please cite our paper:
 ## ⚖️ License
 
 The GenoTEX dataset is released under a Creative Commons Attribution 4.0 International (CC BY 4.0) license, which allows for broad usage while protecting the rights of the creators. The authors bear full responsibility for ensuring that the dataset adheres to this license and for any potential violations of rights. For the full license text, please see the [LICENSE.md](./LICENSE.md) file in this repository.
+
+<a id="acknowledgments"></a>
+## 🙏 Acknowledgments
+
+This research was supported by the National AI Research Resource (NAIRR) under grant number 240283. We thank Yijiang Li for his great suggestions to the baseline method, and Jinglin Jian, Jianrong Lu, Shuyi Guo, Taincheng Xing, Yuxuan Cheng, Jinglei Zhu, Mianchen Zhang, Miantong Zhang for their valuable contribution to the benchmark curation.
